@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Orientação previdenciária clara para aposentadorias, benefícios por incapacidade, BPC/LOAS e revisões junto ao INSS.">
+  <meta name="theme-color" content="#12100f">
+  <meta property="og:title" content="Almeida & Prado | Advocacia Previdenciária">
+  <meta property="og:description" content="Entenda seus próximos passos junto ao INSS com orientação técnica, clara e responsável.">
+  <meta property="og:type" content="website">
+  <title>Almeida & Prado | Advocacia Previdenciária</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #12100f;
+      --surface: #1b1817;
+      --surface-soft: #221d1b;
+      --accent: #d49b8b;
+      --accent-hover: #e2ad9f;
+      --text: #f5f1ee;
+      --muted: #bbb2ad;
+      --line: rgba(212, 155, 139, .24);
+      --max: 1200px;
+      --radius: 18px;
+      --shadow: 0 24px 70px rgba(45, 25, 20, .28);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button { font: inherit; }
+    h1, h2, h3, .font-display {
+      margin-top: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 500;
+    }
+    p { margin-top: 0; }
+    section[id] { scroll-margin-top: 88px; }
+
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .section { padding: clamp(5rem, 9vw, 8rem) 0; border-top: 1px solid var(--line); }
+    .section-title { max-width: 760px; margin-bottom: 3rem; }
+    .section-title h2 { margin-bottom: 1rem; font-size: clamp(2.35rem, 5vw, 4.75rem); line-height: 1.02; letter-spacing: -.035em; }
+    .section-title p, .body-copy { max-width: 64ch; color: var(--muted); font-size: 1.02rem; line-height: 1.75; }
+
+    .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; padding: .8rem 1rem; transform: translateY(-180%); border-radius: 8px; background: var(--accent); color: #211512; font-weight: 700; }
+    .skip-link:focus { transform: translateY(0); }
+
+    .site-header { position: fixed; inset: 0 0 auto; z-index: 50; border-bottom: 1px solid var(--line); background: rgba(18, 16, 15, .88); backdrop-filter: blur(16px); }
+    .nav-shell { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { text-decoration: none; font-size: 1.18rem; letter-spacing: .01em; white-space: nowrap; }
+    .desktop-nav { display: flex; align-items: center; gap: 1.8rem; }
+    .desktop-nav a { color: var(--muted); font-size: .88rem; text-decoration: none; transition: color .2s ease; }
+    .desktop-nav a:hover { color: var(--text); }
+    .menu-toggle { display: none; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; color: var(--text); cursor: pointer; }
+    .menu-toggle span, .menu-toggle::before, .menu-toggle::after { content: ""; display: block; width: 22px; height: 1px; margin: 6px auto; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+    .menu-toggle[aria-expanded="true"] span { opacity: 0; }
+    .menu-toggle[aria-expanded="true"]::before { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"]::after { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; }
+
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: .65rem; padding: .9rem 1.3rem; border: 1px solid transparent; border-radius: 999px; background: var(--accent); color: #211512; font-size: .92rem; font-weight: 700; line-height: 1; text-decoration: none; white-space: nowrap; transition: transform .2s ease, background-color .2s ease; }
+    .button:hover { transform: translateY(-2px); background: var(--accent-hover); }
+    .button:active { transform: translateY(0) scale(.98); }
+    .button svg { width: 18px; height: 18px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+    .hero { display: grid; align-items: center; padding: 7.5rem 0 4.5rem; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); align-items: center; gap: clamp(2.5rem, 6vw, 6rem); }
+    .hero-kicker { margin-bottom: 1.2rem; color: var(--accent); font-size: .82rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+    .hero h1 { max-width: 780px; margin-bottom: 1.5rem; font-size: clamp(3.1rem, 5.6vw, 6rem); line-height: .98; letter-spacing: -.045em; text-wrap: balance; }
+    .hero-copy { max-width: 610px; margin-bottom: 2rem; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.7; }
+    .hero-media { position: relative; justify-self: end; width: min(100%, 500px); margin: 0; }
+    .hero-media::before { content: ""; position: absolute; inset: 12% -7% -7% 20%; border: 1px solid var(--line); border-radius: var(--radius); }
+    .hero-media img { position: relative; width: 100%; height: clamp(380px, 42vw, 500px); object-fit: cover; object-position: center 34%; border-radius: var(--radius); box-shadow: var(--shadow); }
+
+    .trust-strip { padding: 1.2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); }
+    .trust-item { min-height: 90px; display: flex; align-items: center; padding: 1.2rem 1.5rem; background: var(--bg); color: var(--muted); font-size: .92rem; line-height: 1.5; }
+    .trust-item strong { color: var(--text); font-weight: 600; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; grid-auto-flow: dense; }
+    .service { min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; grid-column: span 4; padding: 1.65rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .service:nth-child(1), .service:nth-child(4) { grid-column: span 7; }
+    .service:nth-child(2), .service:nth-child(5) { grid-column: span 5; }
+    .service:nth-child(3) { grid-column: span 6; }
+    .service-cta { grid-column: span 6; background: var(--accent); color: #211512; text-decoration: none; }
+    .service h3 { margin-bottom: 1.25rem; font-size: clamp(1.55rem, 2.3vw, 2.35rem); line-height: 1.08; }
+    .service p { max-width: 48ch; margin-bottom: 0; color: var(--muted); font-size: .94rem; line-height: 1.65; }
+    .service-cta p { color: #4f312a; }
+    .service-link { margin-top: 2rem; font-weight: 700; }
+
+    .method-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 8vw, 8rem); }
+    .method-title { position: sticky; top: 120px; align-self: start; }
+    .method-title h2 { margin-bottom: 1rem; font-size: clamp(2.5rem, 5vw, 4.7rem); line-height: 1.02; letter-spacing: -.035em; }
+    .method-title p { color: var(--muted); line-height: 1.7; }
+    .principles { display: grid; gap: 0; }
+    .principle { display: grid; grid-template-columns: 48px 1fr; gap: 1.3rem; padding: 2rem 0; border-bottom: 1px solid var(--line); }
+    .principle:first-child { padding-top: .35rem; }
+    .principle-index { color: var(--accent); font-family: "Playfair Display", serif; font-size: 1.45rem; }
+    .principle h3 { margin-bottom: .65rem; font-size: 1.45rem; }
+    .principle p { margin-bottom: 0; color: var(--muted); line-height: 1.7; }
+
+    .results { overflow: hidden; }
+    .results-intro { display: grid; grid-template-columns: minmax(0, .8fr) minmax(280px, .45fr); justify-content: space-between; gap: 3rem; align-items: end; margin-bottom: 3.5rem; }
+    .results-intro h2 { max-width: 720px; margin-bottom: 0; font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: 1; letter-spacing: -.04em; }
+    .results-intro p { margin-bottom: .35rem; color: var(--muted); line-height: 1.7; }
+    .results-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .result { position: relative; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; padding: 2rem 1.5rem 1.7rem; border-right: 1px solid var(--line); }
+    .result:last-child { border-right: 0; }
+    .result::before { content: ""; width: 18px; height: 10px; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(45deg); }
+    .result-value { display: block; margin: 2rem 0 .5rem; color: var(--text); font-family: "Playfair Display", Georgia, serif; font-size: clamp(3rem, 5.2vw, 5.2rem); font-weight: 500; line-height: .9; letter-spacing: -.05em; }
+    .result-label { max-width: 19ch; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+    .results-note { margin: 1rem 0 0; color: var(--muted); font-size: .75rem; line-height: 1.6; }
+
+    .about-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr); gap: clamp(2.5rem, 7vw, 6rem); align-items: center; }
+    .team-photo { position: relative; margin: 0; }
+    .team-photo img { width: 100%; height: clamp(440px, 52vw, 620px); object-fit: cover; object-position: center; border-radius: var(--radius); }
+    .profile-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem; }
+    .profile-row img { width: 74px; height: 74px; border-radius: 50%; object-fit: cover; image-rendering: auto; }
+    .profile-row strong { display: block; margin-bottom: .25rem; font-family: "Playfair Display", serif; font-size: 1.25rem; font-weight: 500; }
+    .profile-row span { color: var(--muted); font-size: .86rem; }
+    .about-copy h2 { margin-bottom: 1.3rem; font-size: clamp(2.5rem, 5vw, 4.7rem); line-height: 1.02; letter-spacing: -.035em; }
+    .about-copy p { color: var(--muted); line-height: 1.75; }
+    .credential-placeholder { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--text); font-size: .9rem; }
+
+    .faq-wrap { max-width: 860px; }
+    details { border-bottom: 1px solid var(--line); }
+    summary { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.5rem; padding: 1.6rem 0; cursor: pointer; list-style: none; font-size: clamp(1.05rem, 2vw, 1.25rem); }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 1.65rem; font-weight: 400; transition: transform .2s ease; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { max-width: 66ch; padding: 0 3rem 1.6rem 0; color: var(--muted); line-height: 1.7; }
+
+    .location-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 1rem; }
+    .location-copy { display: flex; flex-direction: column; justify-content: space-between; min-height: 440px; padding: clamp(1.75rem, 4vw, 3rem); border-radius: var(--radius); background: var(--accent); color: #211512; }
+    .location-copy h2 { max-width: 500px; margin-bottom: 1.2rem; font-size: clamp(2.4rem, 4.7vw, 4.5rem); line-height: 1; letter-spacing: -.035em; }
+    .location-copy p { max-width: 48ch; color: #56362f; line-height: 1.65; }
+    .location-copy a { font-weight: 700; text-underline-offset: 4px; }
+    .map { min-height: 440px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .map iframe { width: 100%; height: 100%; min-height: 440px; border: 0; filter: grayscale(1) contrast(.9) sepia(.15); }
+
+    .footer { padding: clamp(5rem, 10vw, 9rem) 0 calc(2rem + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
+    .footer-cta { max-width: 850px; margin-bottom: 5rem; }
+    .footer-cta h2 { margin-bottom: 1.5rem; font-size: clamp(2.7rem, 6vw, 6rem); line-height: .98; letter-spacing: -.045em; }
+    .footer-cta p { max-width: 56ch; margin-bottom: 2rem; color: var(--muted); line-height: 1.7; }
+    .footer-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-top: 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; line-height: 1.7; }
+    .footer-meta strong { color: var(--text); font-family: "Playfair Display", serif; font-size: 1rem; font-weight: 500; }
+    .footer-meta > :last-child { text-align: right; }
+    .mobile-cta { display: none; }
+
+    .reveal { opacity: 1; transform: none; }
+    .js .reveal { opacity: 0; transform: translateY(20px); }
+    .js .reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity .65s ease, transform .65s cubic-bezier(.2, .8, .2, 1); }
+
+    @media (max-width: 900px) {
+      .desktop-nav, .header-cta { display: none; }
+      .menu-toggle { display: block; }
+      .mobile-nav { position: fixed; inset: 73px 0 auto; display: grid; max-height: 0; overflow: hidden; background: var(--bg); transition: max-height .25s ease; }
+      .mobile-nav.is-open { max-height: calc(100dvh - 73px); border-bottom: 1px solid var(--line); }
+      .mobile-nav a { padding: 1.1rem 24px; border-top: 1px solid var(--line); color: var(--muted); text-decoration: none; }
+      .hero { padding: 7.5rem 0 4rem; }
+      .hero-grid, .about-grid, .method-grid, .location-grid { grid-template-columns: 1fr; }
+      .results-intro { grid-template-columns: 1fr; gap: 1.25rem; }
+      .results-grid { grid-template-columns: repeat(2, 1fr); }
+      .result:nth-child(2) { border-right: 0; }
+      .result:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .hero-media { justify-self: start; width: min(100%, 560px); }
+      .hero-media img { height: min(58vw, 430px); object-position: center 30%; }
+      .method-title { position: static; }
+      .service, .service:nth-child(n), .service-cta { grid-column: span 6; }
+      .location-copy { min-height: 340px; }
+      .map, .map iframe { min-height: 360px; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 32px, var(--max)); }
+      .section { padding: 4.5rem 0; }
+      .hero h1 { font-size: clamp(2.8rem, 13vw, 4.4rem); line-height: 1.01; }
+      .hero-copy { font-size: 1rem; }
+      .hero-media::before { display: none; }
+      .hero-media img { height: min(84vw, 390px); object-position: center 28%; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .services-grid { display: grid; grid-template-columns: 1fr; }
+      .service, .service:nth-child(n), .service-cta { grid-column: auto; min-height: 210px; }
+      .principle { grid-template-columns: 36px 1fr; gap: .85rem; }
+      .results-grid { grid-template-columns: 1fr; }
+      .result, .result:nth-child(2) { min-height: 180px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .result:last-child { border-bottom: 0; }
+      .result-value { font-size: 4rem; }
+      .team-photo img { height: min(108vw, 390px); object-position: center 34%; }
+      .footer { padding-bottom: calc(7rem + env(safe-area-inset-bottom)); }
+      .footer-meta { grid-template-columns: 1fr; }
+      .footer-meta > :last-child { text-align: left; }
+      .mobile-cta { position: fixed; inset: auto 0 0; z-index: 60; display: block; padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: rgba(18, 16, 15, .94); backdrop-filter: blur(14px); }
+      .mobile-cta .button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg aria-hidden="true" style="display:none">
+    <symbol id="whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.26-1.38a9.9 9.9 0 0 0 4.78 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.88 9.88 0 0 0 12.04 2m0 1.67c2.24 0 4.35.87 5.94 2.46a8.23 8.23 0 0 1 2.42 5.85c0 4.56-3.71 8.27-8.37 8.27a8.3 8.3 0 0 1-4.22-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.56 3.72-8.27 8.28-8.27M8.53 7.2c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.13.17 1.75 2.8 4.32 3.82 2.13.85 2.57.68 3.03.64.47-.04 1.5-.61 1.71-1.2.21-.59.21-1.09.15-1.2-.06-.11-.23-.17-.48-.3-.25-.12-1.5-.74-1.73-.82-.23-.09-.4-.13-.57.13-.17.25-.65.82-.8.99-.15.17-.29.19-.54.06-.25-.12-1.06-.39-2.02-1.24a7.6 7.6 0 0 1-1.4-1.75c-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44C9.6 8.85 9.06 7.6 8.83 7.1c-.18-.4-.36-.35-.5-.36l-.42-.02Z"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand font-display" href="#topo">Almeida & Prado</a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a><a href="#diferenciais">Como atuamos</a><a href="#sobre">Sobre</a><a href="#faq">Dúvidas</a><a href="#localizacao">Localização</a>
+      </nav>
+      <a class="button header-cta" data-cta href="#contato-demo" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span></span></button>
+    </div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Navegação móvel">
+      <a href="#servicos">Serviços</a><a href="#diferenciais">Como atuamos</a><a href="#sobre">Sobre</a><a href="#faq">Dúvidas</a><a href="#localizacao">Localização</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section id="topo" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-kicker">Direito Previdenciário · Projeto demonstrativo</p>
+          <h1>Seu pedido ao INSS merece uma análise clara.</h1>
+          <p class="hero-copy">Orientação para requerer, revisar ou recorrer de benefícios, com atendimento responsável em cada etapa.</p>
+          <a class="button" data-cta href="#contato-demo" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#whatsapp"></use></svg>Conversar no WhatsApp</a>
+        </div>
+        <figure class="hero-media" aria-label="Equipe do escritório Almeida & Prado">
+          <div aria-label="Monograma Almeida e Prado" style="width:100%;height:100%;min-height:420px;display:grid;place-items:center;background:linear-gradient(135deg,#173d32,#c9b99a);color:white;font:600 clamp(48px,9vw,120px)/1 Georgia,serif;letter-spacing:-.08em">A&amp;P</div>
+        </figure>
+      </div>
+    </section>
+
+    <aside class="trust-strip" aria-label="Características do atendimento">
+      <div class="container trust-grid">
+        <div class="trust-item"><strong>Atendimento digital</strong>&nbsp; para acompanhar o caso sem deslocamentos desnecessários.</div>
+        <div class="trust-item"><strong>Linguagem simples</strong>&nbsp; para entender documentos, etapas e possibilidades.</div>
+        <div class="trust-item"><strong>Conduta responsável</strong>&nbsp; sem promessas de resultado ou soluções prontas.</div>
+      </div>
+    </aside>
+
+    <section id="servicos" class="section">
+      <div class="container">
+        <div class="section-title reveal"><h2>Em que podemos orientar você</h2><p>Partimos da sua situação concreta para identificar documentos, riscos e próximos passos junto ao INSS.</p></div>
+        <div class="services-grid">
+          <article class="service reveal"><h3>Quero entender quando posso me aposentar</h3><p>Análise do histórico contributivo, regras aplicáveis e momento adequado para o requerimento.</p></article>
+          <article class="service reveal"><h3>Meu benefício por incapacidade foi negado</h3><p>Revisão dos documentos e orientação sobre recurso administrativo ou medida judicial.</p></article>
+          <article class="service reveal"><h3>Preciso solicitar o BPC/LOAS</h3><p>Orientação para idosos e pessoas com deficiência sobre requisitos e documentação.</p></article>
+          <article class="service reveal"><h3>Preciso organizar pensão por morte</h3><p>Apoio aos dependentes na reunião de provas e no requerimento do benefício.</p></article>
+          <article class="service reveal"><h3>Quero planejar minhas contribuições</h3><p>Estudo previdenciário para reduzir surpresas e apoiar decisões futuras.</p></article>
+          <a class="service service-cta reveal" data-cta href="#contato-demo" target="_blank" rel="noopener noreferrer"><div><h3>Não encontrou sua situação?</h3><p>Conte brevemente o que aconteceu para receber uma orientação inicial sobre os próximos passos.</p></div><span class="service-link">Conversar no WhatsApp</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais" class="section">
+      <div class="container method-grid">
+        <div class="method-title reveal"><h2>Clareza antes de qualquer decisão.</h2><p>O atendimento foi organizado para diminuir incertezas, sem criar expectativas que a análise documental ainda não confirmou.</p></div>
+        <div class="principles">
+          <article class="principle reveal"><span class="principle-index">01</span><div><h3>Escuta do seu caso</h3><p>Primeiro entendemos o contexto, a decisão do INSS e o resultado que você busca.</p></div></article>
+          <article class="principle reveal"><span class="principle-index">02</span><div><h3>Conferência dos documentos</h3><p>O histórico contributivo e os documentos disponíveis orientam a estratégia adequada.</p></div></article>
+          <article class="principle reveal"><span class="principle-index">03</span><div><h3>Explicação dos caminhos possíveis</h3><p>Você entende as etapas, os limites e o que precisa ser feito antes de decidir.</p></div></article>
+          <article class="principle reveal"><span class="principle-index">04</span><div><h3>Acompanhamento do andamento</h3><p>A comunicação continua durante o processo, com atualizações em linguagem acessível.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" class="section results">
+      <div class="container">
+        <div class="results-intro reveal">
+          <h2>Experiência traduzida em acompanhamento responsável.</h2>
+          <p>Indicadores institucionais ajudam a dimensionar a atuação sem prometer resultados individuais.</p>
+        </div>
+        <div class="results-grid reveal" aria-label="Indicadores demonstrativos do escritório">
+          <article class="result">
+            <span class="result-value" data-counter="240" data-suffix="+">240+</span>
+            <span class="result-label">casos previdenciários analisados</span>
+          </article>
+          <article class="result">
+            <span class="result-value" data-counter="12">12</span>
+            <span class="result-label">anos de atuação jurídica</span>
+          </article>
+          <article class="result">
+            <span class="result-value" data-counter="5">5</span>
+            <span class="result-label">frentes de atendimento previdenciário</span>
+          </article>
+          <article class="result">
+            <span class="result-value" data-counter="100" data-suffix="%">100%</span>
+            <span class="result-label">atendimento disponível em formato digital</span>
+          </article>
+        </div>
+        <p class="results-note">Conteúdo demonstrativo. Os valores 240+ e 12 devem ser substituídos apenas por dados reais e comprováveis antes da publicação.</p>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container about-grid">
+        <figure class="team-photo reveal"><div aria-label="Identidade visual Almeida e Prado" style="width:100%;height:100%;min-height:420px;display:grid;place-items:center;background:linear-gradient(135deg,#173d32,#c9b99a);color:white;font:600 clamp(48px,9vw,120px)/1 Georgia,serif;letter-spacing:-.08em">A&amp;P</div></figure>
+        <div class="about-copy reveal">
+          <div class="profile-row"><div aria-hidden="true" style="width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#173d32;color:#fff;font:600 15px Georgia,serif">A&amp;P</div><div><strong>Almeida &amp; Prado</strong><span>Advocacia Previdenciária</span></div></div>
+          <h2>Rigor técnico com conversa acessível.</h2>
+          <p>Cada pedido ao INSS envolve uma história de trabalho e uma decisão importante para a segurança da família. Por isso, a orientação combina análise documental, transparência e cuidado no atendimento.</p>
+          <p>A atuação pode ser realizada de forma digital, com organização dos documentos e explicação de cada etapa.</p>
+          <p class="credential-placeholder"><strong>Demonstração:</strong> inserir número da OAB/SP, formação e qualificações comprováveis antes da publicação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container faq-wrap">
+        <div class="section-title reveal"><h2>Dúvidas comuns antes do contato</h2></div>
+        <div class="reveal">
+          <details><summary>O INSS negou meu pedido. Ainda posso buscar o benefício?</summary><p>Dependendo do caso, pode ser possível apresentar recurso administrativo ou avaliar uma medida judicial. A documentação e o motivo do indeferimento precisam ser analisados.</p></details>
+          <details><summary>Preciso ir pessoalmente ao escritório?</summary><p>Não necessariamente. O atendimento e o envio de documentos podem ser realizados de forma digital.</p></details>
+          <details><summary>O que acontece na primeira conversa?</summary><p>Você relata a situação e recebe a indicação dos documentos necessários para uma análise responsável do caso.</p></details>
+          <details><summary>O atendimento pode ser digital?</summary><p>Sim. O atendimento digital permite acompanhar casos de outras localidades, conforme a viabilidade jurídica.</p></details>
+          <details><summary>Quanto tempo leva para receber uma resposta?</summary><p>Prazo de retorno e disponibilidade devem ser confirmados pela equipe no início do atendimento.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="localizacao" class="section">
+      <div class="container location-grid">
+        <div class="location-copy reveal"><div><h2>Atendimento local e digital.</h2><p>Rua Exemplo, 100, Centro, Cidade Exemplo - SP, 00000-000.</p></div><a href="#contato-demo">Abrir rota demonstrativa</a></div>
+        <div class="map reveal" aria-label="Mapa demonstrativo"><div style="min-height:360px;height:100%;display:grid;place-items:center;background:linear-gradient(135deg,#e9e2d4,#c9b99a);color:#173d32;font:600 18px/1.3 Arial,sans-serif;text-align:center;padding:24px">Localização demonstrativa<br>Cidade Exemplo · SP</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cta reveal"><h2>Entenda o próximo passo do seu caso.</h2><p>Envie uma mensagem com um breve resumo. A equipe indicará quais documentos são necessários para começar.</p><a class="button" data-cta href="#contato-demo" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#whatsapp"></use></svg>Conversar no WhatsApp</a></div>
+      <div class="footer-meta"><div><p><strong>Almeida & Prado Advocacia</strong></p><p>OAB/SP 000.000 (fictício)<br>CNPJ 00.000.000/0000-00 (fictício)</p></div><div><p>Este site não constitui aconselhamento jurídico definitivo. Cada caso exige análise individual.</p><p>Conteúdo demonstrativo sujeito à validação jurídica e profissional antes da publicação.</p></div></div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta"><a class="button" data-cta href="#contato-demo" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#whatsapp"></use></svg>Conversar no WhatsApp</a></div>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      function setMenu(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        menu.classList.toggle('is-open', open);
+        document.body.classList.toggle('menu-open', open);
+      }
+      toggle.addEventListener('click', function () { setMenu(toggle.getAttribute('aria-expanded') !== 'true'); });
+      menu.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', function () { setMenu(false); }); });
+      document.addEventListener('keydown', function (event) { if (event.key === 'Escape') { setMenu(false); toggle.focus(); } });
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var reveals = document.querySelectorAll('.reveal');
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        reveals.forEach(function (element) { element.classList.add('is-visible'); });
+      } else {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+          });
+        }, { threshold: .12, rootMargin: '0px 0px -40px' });
+        reveals.forEach(function (element) { observer.observe(element); });
+      }
+
+      var counters = document.querySelectorAll('[data-counter]');
+      function setCounterValue(element, value) {
+        element.textContent = value + (element.getAttribute('data-suffix') || '');
+      }
+      function animateCounter(element) {
+        var target = Number(element.getAttribute('data-counter'));
+        var startTime = null;
+        var duration = 1100;
+        function frame(time) {
+          if (startTime === null) { startTime = time; }
+          var progress = Math.min((time - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          setCounterValue(element, Math.round(target * eased));
+          if (progress < 1) { requestAnimationFrame(frame); }
+        }
+        requestAnimationFrame(frame);
+      }
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        var counterObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll('[data-counter]').forEach(animateCounter);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .35 });
+        var resultsGrid = document.querySelector('.results-grid');
+        if (resultsGrid) { counterObserver.observe(resultsGrid); }
+      } else {
+        counters.forEach(function (element) { setCounterValue(element, element.getAttribute('data-counter')); });
+      }
+    }());
+  </script>
+<div style="position:fixed;z-index:99999;left:50%;bottom:14px;transform:translateX(-50%);padding:8px 14px;border-radius:999px;background:#111;color:#fff;font:600 12px/1.2 Arial,sans-serif;box-shadow:0 8px 30px #0005;white-space:nowrap">Projeto demonstrativo · dados fictícios</div></body>
+</html>
