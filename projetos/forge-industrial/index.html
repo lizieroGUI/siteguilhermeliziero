@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forge Industrial | Máquinas industriais e suporte técnico</title>
+<meta name="description" content="Máquinas, equipamentos e suporte técnico para processos da indústria de artefatos de borracha.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A1D24'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='%23525883' stroke-width='9'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23525883'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --steel:#525883;
+    --steel-600:#454a6f;
+    --steel-700:#383c5c;
+    --steel-100:#e7e8f2;
+    --steel-50:#f0f1f7;
+    --graphite:#1a1d24;
+    --graphite-700:#22262f;
+    --graphite-600:#2b303b;
+    --industry:#f4f5f8;
+    --white:#ffffff;
+    --line:#dcdfea;
+    --line-dark:#383c48;
+    --ink:#1a1d24;
+    --ink-muted:#5b5f6f;
+    --paper-ink:#e9eaf2;
+    --paper-muted:#9a9fb2;
+    --radius-sm:8px;
+    --radius-md:10px;
+    --radius-lg:12px;
+    --font-head:'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-body:'Outfit', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:88px;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--industry);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:var(--font-head); margin:0; letter-spacing:-0.01em; font-weight:600;}
+  p{margin:0;}
+  ul{margin:0; padding:0; list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+
+  .container{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  :focus-visible{outline:2.5px solid var(--steel); outline-offset:3px;}
+
+  .skip-link{
+    position:absolute; left:-999px; top:0; background:var(--graphite); color:var(--white);
+    padding:10px 16px; border-radius:0 0 8px 0; z-index:200;
+  }
+  .skip-link:focus{left:0;}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    font-family:var(--font-body); font-weight:600; font-size:0.97rem;
+    padding:14px 24px; border-radius:var(--radius-sm);
+    text-decoration:none; border:1px solid transparent;
+    transition:transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:active{transform:translateY(1px) scale(.985);}
+  .btn-primary{background:var(--steel); color:var(--white);}
+  .btn-primary:hover{background:var(--steel-600); box-shadow:0 12px 28px rgba(56,60,92,.22);}
+  .btn-outline{
+    background:transparent; border-color:var(--steel); color:var(--steel-700);
+  }
+  .btn-outline:hover{background:var(--steel); color:var(--white);}
+  .btn-on-dark{
+    background:transparent; border-color:var(--line-dark); color:var(--paper-ink);
+  }
+  .btn-on-dark:hover{border-color:var(--paper-muted);}
+  .btn-lg{padding:17px 32px; font-size:1.02rem;}
+  .btn svg{width:18px; height:18px; flex:none;}
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(244,245,248,0.86);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; max-width:1180px; margin:0 auto;
+  }
+  .logo{
+    display:inline-flex; align-items:center; text-decoration:none;
+  }
+  .logo img{width:150px; height:auto;}
+  .nav-links{display:flex; gap:32px;}
+  .nav-links a{
+    text-decoration:none; color:var(--ink-muted); font-size:0.95rem; font-weight:500;
+    transition:color .15s ease; position:relative;
+  }
+  .nav-links a:hover{color:var(--graphite);}
+  .nav-actions{display:flex; align-items:center; gap:14px;}
+  .btn-nav{padding:10px 18px; font-size:0.9rem;}
+  .menu-toggle{
+    display:none; width:40px; height:40px; border:1px solid var(--line);
+    border-radius:var(--radius-sm); background:var(--white);
+    align-items:center; justify-content:center; position:relative;
+  }
+  .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after{
+    content:''; position:absolute; width:18px; height:2px; background:var(--graphite);
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .menu-toggle span::before{transform:translateY(-6px);}
+  .menu-toggle span::after{transform:translateY(6px);}
+  .menu-toggle[aria-expanded="true"] span{background:transparent;}
+  .menu-toggle[aria-expanded="true"] span::before{transform:rotate(45deg);}
+  .menu-toggle[aria-expanded="true"] span::after{transform:rotate(-45deg);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    background:var(--graphite);
+    min-height:calc(100dvh - 73px);
+    padding:88px 0 92px;
+    display:flex; align-items:center;
+  }
+  .hero-backdrop{position:absolute; inset:0; z-index:0;}
+  .hero-backdrop img{width:100%; height:100%; display:block; object-fit:cover; object-position:center;}
+  .hero-backdrop::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(100deg, rgba(26,29,36,0.99) 0%, rgba(26,29,36,0.94) 38%, rgba(26,29,36,0.64) 62%, rgba(26,29,36,0.18) 100%);
+  }
+  .hero-inner{position:relative; z-index:1;}
+  .hero-copy{max-width:760px;}
+  .hero-copy h1{
+    font-size:clamp(2.7rem, 1.9rem + 3.5vw, 4.75rem);
+    line-height:1.02; color:var(--paper-ink); letter-spacing:-0.035em; text-wrap:balance;
+  }
+  .hero-sub{
+    margin-top:24px; font-size:1.1rem; color:#c4c7d5; max-width:50ch; line-height:1.55; text-wrap:pretty;
+  }
+  .hero-ctas{margin-top:34px; display:flex; flex-wrap:wrap; gap:14px;}
+
+  /* ---------- Logos strip ---------- */
+  .logos-section{padding:40px 0 48px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .logos-label{
+    text-align:center; font-size:0.85rem; color:var(--ink-muted); margin-bottom:24px;
+  }
+  .logos-track-outer{overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);}
+  .logos-track{
+    display:flex; gap:64px; width:max-content;
+    animation:scrollLogos 28s linear infinite;
+  }
+  .logo-chip{
+    display:flex; align-items:center; gap:8px; color:var(--ink-muted); font-family:var(--font-head);
+    font-weight:600; font-size:1.05rem; white-space:nowrap; filter:grayscale(1);
+  }
+  .logo-chip svg{width:22px; height:22px; flex:none; color:#b6bacb;}
+  @keyframes scrollLogos{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ---------- Section heads ---------- */
+  .section{padding:88px 0;}
+  .section-head{max-width:640px; margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.7rem, 1.45rem + 1vw, 2.35rem); color:var(--graphite);}
+  .section-head p{margin-top:14px; color:var(--ink-muted); font-size:1.03rem;}
+
+  /* ---------- About / bento ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); grid-auto-rows:auto; gap:20px;
+  }
+  .bento-item{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:32px;
+  }
+  .about-grid{grid-auto-flow:dense;}
+  .about-text{grid-column:span 2; grid-row:span 2;}
+  .about-text h2{font-size:clamp(1.6rem, 1.4rem + 0.8vw, 2.05rem); color:var(--graphite); margin-bottom:16px;}
+  .about-text p{color:var(--ink-muted); font-size:1.02rem; max-width:52ch;}
+  .about-visual{
+    grid-column:span 1; grid-row:span 2; background:var(--graphite); border-color:var(--graphite);
+    padding:0; display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .about-visual img{width:100%; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.16,1,.3,1);}
+  .about-visual:hover img{transform:scale(1.035);}
+  .capability-card{grid-column:span 1;}
+  .capability-card h3{font-size:1.05rem; color:var(--graphite); margin-bottom:8px;}
+  .capability-card p{font-size:0.92rem; color:var(--ink-muted);}
+  .capability-card .cap-icon{
+    width:36px; height:36px; border-radius:var(--radius-sm); background:var(--steel-100);
+    display:flex; align-items:center; justify-content:center; color:var(--steel-700); margin-bottom:14px;
+  }
+  .capability-card .cap-icon svg{width:19px; height:19px;}
+
+  /* ---------- Team (subaba dentro de Sobre) ---------- */
+  .team-block{margin-top:72px; padding-top:56px; border-top:1px solid var(--line);}
+  .team-heading{font-size:clamp(1.7rem, 1.45rem + 1vw, 2.35rem); color:var(--graphite);}
+  .team-grid{display:grid; grid-template-columns:1.1fr 1fr 1fr; gap:20px;}
+  .team-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg);
+    overflow:hidden; display:flex; flex-direction:column;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .team-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 22px 40px rgba(26,29,36,0.14);
+    border-color:var(--steel);
+  }
+  .team-card::before{content:''; display:block; height:4px; background:var(--steel); flex:none;}
+  .team-photo{position:relative; aspect-ratio:16/10; background:var(--graphite); overflow:hidden; flex:none;}
+  .team-photo img{width:100%; height:100%; object-fit:cover; filter:saturate(.72) contrast(1.04); transition:transform .7s cubic-bezier(.16,1,.3,1);}
+  .team-card:hover .team-photo img{transform:scale(1.035);}
+  .team-photo--graphic{display:grid; place-items:center; background:linear-gradient(135deg,var(--graphite),var(--steel-700));}
+  .team-mark{font-family:var(--font-head); color:var(--paper-ink); font-size:2.2rem; font-weight:700; letter-spacing:-.04em;}
+  .team-content{padding:26px 24px 30px; text-align:left;}
+  .team-card h3{font-size:1.22rem; color:var(--graphite); margin-bottom:6px;}
+  .team-role{
+    font-size:0.9rem; color:var(--steel-700); font-weight:600;
+    margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid var(--line);
+  }
+  .team-bio{font-size:0.94rem; color:var(--ink-muted); line-height:1.65; max-width:34ch;}
+  .person-contact{display:flex; flex-direction:column; gap:7px; margin-top:18px;}
+  .person-contact a,.person-contact span{font-size:.93rem; color:var(--ink-muted); overflow-wrap:anywhere;}
+  .person-contact a:hover{color:var(--steel-700);}
+
+
+  /* ---------- Demonstrative metrics ---------- */
+  .metrics-section{background:var(--graphite); color:var(--paper-ink); padding:64px 0;}
+  .metrics-note{font-size:.78rem; color:var(--paper-muted); margin-bottom:28px;}
+  .metrics-grid{display:grid; grid-template-columns:repeat(4,1fr);}
+  .metric{padding:8px 32px 4px; border-left:1px solid var(--line-dark);}
+  .metric:first-child{border-left:0; padding-left:0;}
+  .metric-value{display:block; font-family:var(--font-head); font-size:clamp(2.5rem,5vw,4.4rem); font-weight:700; line-height:1; letter-spacing:-.055em; color:var(--white);}
+  .metric-label{display:block; margin-top:12px; font-size:.95rem; color:var(--paper-muted);}
+
+  /* ---------- Equipment and services ---------- */
+  .equipment-grid{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line);}
+  .equipment-item{min-height:310px; padding:0; border-right:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; flex-direction:column; background:var(--white); transition:background-color .2s ease,color .2s ease; overflow:hidden;}
+  .equipment-item:hover{background:var(--graphite);}
+  .equipment-media{height:210px; background:#eef0f4; overflow:hidden; display:grid; place-items:center;}
+  .equipment-media img{width:100%; height:100%; object-fit:contain; transition:transform .55s cubic-bezier(.16,1,.3,1);}
+  .equipment-item:hover .equipment-media img{transform:scale(1.035);}
+  .equipment-media img.equipment-image--metrology{width:78%; height:88%; object-position:center center;}
+  .equipment-copy{display:flex; flex-direction:column; gap:9px; padding:22px 24px 26px; flex:1;}
+  .equipment-number{font-family:var(--font-head); font-size:.78rem; color:var(--steel); font-weight:700; letter-spacing:.08em;}
+  .equipment-item h3{font-size:1.05rem; color:var(--graphite); line-height:1.25;}
+  .equipment-item:hover h3{color:var(--paper-ink);}
+  .support-panel{margin-top:56px; padding:40px; border-radius:var(--radius-lg); background:var(--steel-50); border:1px solid var(--line);}
+  .support-head{margin:0 0 8px; font-size:1.5rem; color:var(--graphite);}
+  .support-intro{color:var(--ink-muted); margin-bottom:28px; max-width:60ch;}
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;
+  }
+  .service-card{
+    background:var(--steel); border:1px solid var(--steel); border-radius:var(--radius-lg);
+    padding:32px; display:flex; flex-direction:column; gap:16px;
+    transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .service-card:hover{border-color:var(--steel-600); background:var(--steel-600); transform:translateY(-3px); box-shadow:0 18px 40px rgba(56,60,92,.16);}
+  .service-icon{
+    width:44px; height:44px; border-radius:var(--radius-sm); background:var(--steel-100);
+    color:var(--white); display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .service-icon svg{width:22px; height:22px;}
+  .service-card h3{font-size:1.08rem; color:var(--white);}
+  .service-card p{font-size:0.93rem; color:rgba(255,255,255,.78);}
+  .service-link{
+    margin-top:auto; padding-top:4px; align-self:flex-start;
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:0.88rem; font-weight:600; color:var(--steel-700); text-decoration:none;
+  }
+  .service-link svg{width:15px; height:15px; flex:none; color:var(--steel);}
+  .service-link:hover{text-decoration:underline;}
+
+  .service-card .service-icon{background:rgba(255,255,255,0.14);}
+  .services-cta{margin-top:28px; display:flex; justify-content:flex-start;}
+
+  /* ---------- Differentiators ---------- */
+  .diff-section{background:var(--steel-700); color:var(--paper-ink);}
+  .diff-section .section-head h2{color:var(--white);}
+  .diff-section .section-head p{color:#c7cad8;}
+  .diff-list{display:grid; grid-template-columns:repeat(4, 1fr); gap:1px; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.18);}
+  .diff-item{
+    background:var(--steel-700); padding:40px 30px; display:flex; flex-direction:column; gap:18px;
+  }
+  .diff-item .diff-icon{width:32px; height:32px; color:var(--white);}
+  .diff-item h3{font-size:1.12rem; color:var(--white);}
+  .diff-item p{font-size:0.94rem; color:#c7cad8;}
+
+  /* ---------- FAQ ---------- */
+  .faq-section{max-width:760px; margin:0 auto;}
+  .faq-list{border-top:1px solid var(--line);}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%; background:none; border:none; padding:24px 4px;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+    text-align:left; font-family:var(--font-head); font-weight:600; font-size:1.03rem; color:var(--graphite);
+  }
+  .faq-icon{
+    width:24px; height:24px; flex:none; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .faq-icon::before, .faq-icon::after{
+    content:''; position:absolute; background:var(--steel); transition:transform .25s ease;
+  }
+  .faq-icon::before{width:10px; height:1.6px;}
+  .faq-icon::after{width:1.6px; height:10px;}
+  .faq-item[data-open="true"] .faq-icon::after{transform:rotate(90deg); opacity:0;}
+  .faq-answer{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+  }
+  .faq-answer p{padding:0 4px 24px; color:var(--ink-muted); font-size:0.97rem; max-width:64ch;}
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{background:var(--graphite); padding:96px 0; text-align:center;}
+  .final-cta h2{
+    color:var(--paper-ink); font-size:clamp(1.7rem, 1.4rem + 1.4vw, 2.6rem);
+    max-width:20ch; margin:0 auto 32px;
+  }
+
+  /* ---------- Footer ---------- */
+  .site-footer{background:var(--graphite-700); padding:64px 0 28px; color:var(--paper-muted);}
+  .footer-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; padding-bottom:40px;
+    border-bottom:1px solid var(--line-dark);
+  }
+  .footer-brand .logo{color:var(--paper-ink);}
+  .footer-brand p{margin-top:14px; font-size:0.92rem; max-width:34ch; line-height:1.6;}
+  .footer-col h4{
+    color:var(--paper-ink); font-family:var(--font-head); font-size:0.92rem; font-weight:600; margin-bottom:16px;
+  }
+  .footer-col ul{display:flex; flex-direction:column; gap:11px;}
+  .footer-col a{text-decoration:none; font-size:0.92rem; color:var(--paper-muted); transition:color .15s ease;}
+  .footer-col a:hover{color:var(--paper-ink);}
+  .footer-bottom{
+    padding-top:24px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between;
+    font-size:0.83rem;
+  }
+  .demo-note{color:#b9bdcb;}
+
+  /* ---------- Contact ---------- */
+  .contact-section{background:var(--white); border-top:1px solid var(--line);}
+  .contact-grid{display:grid; grid-template-columns:.85fr 1.35fr; gap:24px; align-items:stretch;}
+  .contact-panel{background:var(--graphite); border-radius:var(--radius-lg); overflow:hidden; color:var(--paper-ink);}
+  .contact-photo{aspect-ratio:16/8; overflow:hidden; background:var(--steel-50);}
+  .contact-photo img{width:100%; height:100%; object-fit:cover; image-rendering:auto;}
+  .contact-copy{padding:32px;}
+  .contact-copy h2{font-size:clamp(1.7rem,1.4rem + 1vw,2.35rem); color:var(--paper-ink); margin-bottom:14px;}
+  .contact-copy address{font-style:normal; color:var(--paper-muted); line-height:1.75;}
+  .contact-copy .btn{margin-top:24px;}
+  .map-frame{min-height:440px; border:0; border-radius:var(--radius-lg); width:100%; height:100%; background:var(--steel-50);}
+
+  /* ---------- Contact float ---------- */
+  .contact-float{
+    position:fixed; right:20px; bottom:20px; min-height:50px; border-radius:var(--radius-sm);
+    background:var(--steel); color:var(--white); display:flex; align-items:center; justify-content:center;
+    padding:0 20px; font-weight:600; box-shadow:0 8px 22px rgba(56,60,92,0.24); z-index:150; text-decoration:none;
+    animation:floatIn .5s ease .3s both;
+  }
+  .contact-float:hover{background:var(--steel-600); transform:translateY(-2px);}
+  @keyframes floatIn{
+    from{opacity:0; transform:translateY(16px) scale(0.9);}
+    to{opacity:1; transform:translateY(0) scale(1);}
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1);}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+    .contact-float{animation:none;}
+    .logos-track{animation:none;}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .nav-links{display:none;}
+    .menu-toggle{display:flex;}
+    .nav-links.mobile-open{
+      display:flex; flex-direction:column; gap:0; position:absolute; top:100%; left:0; right:0;
+      background:var(--white); border-bottom:1px solid var(--line); padding:8px 24px 20px;
+    }
+    .nav-links.mobile-open a{padding:12px 0; border-bottom:1px solid var(--line);}
+    .btn-nav{display:none;}
+    .hero{min-height:auto; padding:84px 0 76px;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-text{grid-column:span 1; grid-row:auto;}
+    .about-visual{grid-column:span 1; grid-row:auto; aspect-ratio:16/7;}
+    .team-grid{grid-template-columns:1fr 1fr;}
+    .team-card:last-child{grid-column:1/-1;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .services-grid .service-card:last-child{grid-column:1/-1;}
+    .equipment-grid{grid-template-columns:repeat(2,1fr);}
+    .metrics-grid{grid-template-columns:1fr 1fr; gap:32px 0;}
+    .metric:nth-child(3){border-left:0; padding-left:0;}
+    .diff-list{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .map-frame{min-height:380px;}
+    .support-panel{padding:30px;}
+  }
+  @media (max-width:620px){
+    .container{padding:0 20px;}
+    .hero{padding:68px 0 64px;}
+    .hero-backdrop img{object-position:62% center;}
+    .hero-backdrop::after{background:linear-gradient(100deg,rgba(26,29,36,.99),rgba(26,29,36,.92) 72%,rgba(26,29,36,.62));}
+    .hero-copy h1{font-size:clamp(2.35rem,11.2vw,3.2rem); line-height:1.04;}
+    .hero-sub{font-size:1rem; max-width:32ch;}
+    .section{padding:64px 0;}
+    .services-grid{grid-template-columns:1fr;}
+    .services-grid .service-card:last-child{grid-column:auto;}
+    .equipment-grid{grid-template-columns:1fr;}
+    .metrics-grid{grid-template-columns:1fr 1fr; gap:28px 0;}
+    .metric{padding:0 18px;}
+    .metric:nth-child(odd){border-left:0; padding-left:0;}
+    .metric-value{font-size:2.6rem;}
+    .diff-list{grid-template-columns:1fr;}
+    .footer-grid{gap:28px;}
+    .team-grid{grid-template-columns:1fr;}
+    .team-card:last-child{grid-column:auto;}
+    .faq-section .container{padding:0 20px !important;}
+    .site-footer{padding-bottom:96px;}
+    .hero-ctas .btn{width:100%;}
+    .contact-float{right:16px; bottom:16px; min-height:46px; padding:0 16px;}
+    .support-panel{padding:24px 20px;}
+  }
+</style>
+</head>
+<body>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.28-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.02h-.01a8.15 8.15 0 0 1-4.15-1.14l-.3-.18-3.08.81.83-3-.2-.31a8.09 8.09 0 0 1-1.25-4.29c0-4.48 3.65-8.13 8.15-8.13 2.18 0 4.22.85 5.76 2.39a8.1 8.1 0 0 1 2.38 5.75c0 4.49-3.65 8.14-8.13 8.14Zm4.47-6.1c-.24-.12-1.45-.72-1.68-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.78.97-.14.16-.29.18-.53.06-.24-.12-1.02-.38-1.95-1.2-.72-.65-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.51.59.19 1.13.16 1.55.1.47-.07 1.45-.59 1.66-1.17.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"/></symbol>
+</svg>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="#top" aria-label="Forge Industrial - início"><strong style="font:700 21px/1 'Space Grotesk',sans-serif;letter-spacing:-.04em">FORGE <span style="color:#525883">//</span> INDUSTRIAL</strong></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#sobre">Sobre</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-nav" href="#contato">Fale conosco</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-backdrop" aria-hidden="true">
+      <img src="Forge Industrial-hero-industrial.webp" width="1920" height="1080" alt="" fetchpriority="high">
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <h1>Máquinas e suporte para a indústria da borracha.</h1>
+        <p class="hero-sub">Quatro décadas de experiência conectando processos industriais a equipamentos, fabricantes e suporte técnico especializado.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="#contato">Fale conosco</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <section class="logos-section" aria-label="Soluções para a indústria da borracha">
+    <p class="logos-label">Soluções para a indústria da borracha</p>
+    <div class="logos-track-outer">
+      <div class="logos-track" id="logosTrack">
+        <!-- set A -->
+        <span class="logo-chip">Injetoras de borracha</span>
+        <span class="logo-chip">Prensas vulcanizadoras</span>
+        <span class="logo-chip">Blocos de canais frios</span>
+        <span class="logo-chip">Rebarbação criogênica</span>
+        <span class="logo-chip">Pós-cura</span>
+        <span class="logo-chip">Inspeção ótica</span>
+        <!-- set B (duplicate for seamless loop) -->
+        <span class="logo-chip" aria-hidden="true">Injetoras de borracha</span>
+        <span class="logo-chip" aria-hidden="true">Prensas vulcanizadoras</span>
+        <span class="logo-chip" aria-hidden="true">Blocos de canais frios</span>
+        <span class="logo-chip" aria-hidden="true">Rebarbação criogênica</span>
+        <span class="logo-chip" aria-hidden="true">Pós-cura</span>
+        <span class="logo-chip" aria-hidden="true">Inspeção ótica</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="bento-item about-text reveal">
+          <h2>Sobre a Forge Industrial</h2>
+          <p>A Forge Industrial Comércio de Máquinas nasceu da união de sócios com mais de 40 anos de experiência junto às indústrias de artefatos de borracha. A empresa oferece soluções para processos de produção que envolvem injetoras, prensas, canais frios, rebarbação, pós-cura, inspeção ótica e instrumentação de laboratório.</p>
+        </div>
+        <div class="bento-item about-visual reveal">
+          <img src="Forge Industrial-showroom.webp" width="1440" height="900" loading="lazy" alt="Espaço industrial com máquinas e equipamentos representados pela Forge Industrial">
+        </div>
+        <div class="bento-item capability-card reveal">
+          <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v6M12 21v-6M3 12h6M21 12h-6"/><circle cx="12" cy="12" r="2.4"/></svg></div>
+          <h3>40 anos de experiência</h3>
+          <p>Conhecimento acumulado junto às indústrias de artefatos de borracha.</p>
+        </div>
+        <div class="bento-item capability-card reveal">
+          <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 17l6-6-4-4-4 4M14 21l7-7-3-3-7 7"/></svg></div>
+          <h3>Engenharia de aplicação</h3>
+          <p>Especificação técnica alinhada à realidade do seu processo produtivo.</p>
+        </div>
+        <div class="bento-item capability-card reveal">
+          <div class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+          <h3>Centro técnico Yizumi</h3>
+          <p>Suporte no Brasil para prensas vulcanizadoras e injetoras de borracha.</p>
+        </div>
+      </div>
+
+      <div class="team-block" id="equipe">
+        <div class="section-head reveal" style="margin-bottom:36px;">
+          <h3 class="team-heading">Nossa equipe</h3>
+          <p>Três contatos diretos para conversar sobre máquinas, aplicações e suporte técnico.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card reveal">
+            <div class="team-photo team-photo--graphic"><span class="team-mark" aria-hidden="true">MP</span></div>
+            <div class="team-content">
+              <h3>Engenharia de aplicação</h3>
+              <p class="team-role">Atendimento demonstrativo</p>
+              <div class="person-contact">
+                <a href="#contato-demo">(11) 0000-0000</a>
+                <a href="mailto:contato@exemplo.com">contato@exemplo.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="team-card reveal">
+            <div class="team-photo team-photo--graphic"><span class="team-mark" aria-hidden="true">WB</span></div>
+            <div class="team-content">
+              <h3>Consultoria comercial</h3>
+              <p class="team-role">Atendimento demonstrativo</p>
+              <div class="person-contact">
+                <a href="#contato-demo">(11) 0000-0000</a>
+                <a href="mailto:contato@exemplo.com">contato@exemplo.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="team-card reveal">
+            <div class="team-photo team-photo--graphic"><span class="team-mark" aria-hidden="true">EG</span></div>
+            <div class="team-content">
+              <h3>Suporte técnico</h3>
+              <p class="team-role">Atendimento demonstrativo</p>
+              <div class="person-contact">
+                <span>(11) 0000-0000</span>
+                <a href="mailto:contato@exemplo.com">contato@exemplo.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDICADORES DEMONSTRATIVOS -->
+  <section class="metrics-section" aria-labelledby="metricas-titulo">
+    <div class="container">
+      <p class="metrics-note" id="metricas-titulo">Indicadores demonstrativos para apresentação. Validar antes da publicação.</p>
+      <div class="metrics-grid reveal">
+        <div class="metric">
+          <strong class="metric-value" data-counter="40" data-suffix="+" aria-label="Mais de 40">40+</strong>
+          <span class="metric-label">anos de experiência reunida</span>
+        </div>
+        <div class="metric">
+          <strong class="metric-value" data-counter="120" data-suffix="+" aria-label="Mais de 120">120+</strong>
+          <span class="metric-label">projetos acompanhados</span>
+        </div>
+        <div class="metric">
+          <strong class="metric-value" data-counter="14" aria-label="14">14</strong>
+          <span class="metric-label">estados atendidos</span>
+        </div>
+        <div class="metric">
+          <strong class="metric-value" data-counter="8" aria-label="8">8</strong>
+          <span class="metric-label">linhas de solução</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section" id="servicos" style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Soluções e equipamentos</h2>
+        <p>Principais famílias de máquinas e tecnologias para processos de produção de artefatos de borracha.</p>
+      </div>
+      <div class="equipment-grid reveal">
+        <article class="equipment-item"><div class="equipment-media"><img src="Forge Industrial-produto-injetora.webp" width="800" height="696" loading="lazy" alt="Injetora de borracha Yizumi"></div><div class="equipment-copy"><span class="equipment-number">01</span><h3>Injetoras de borracha e silicone</h3></div></article>
+        <article class="equipment-item"><div class="equipment-media"><img src="Forge Industrial-produto-prensa.webp" width="558" height="455" loading="lazy" alt="Prensa vulcanizadora industrial"></div><div class="equipment-copy"><span class="equipment-number">02</span><h3>Prensas vulcanizadoras</h3></div></article>
+        <article class="equipment-item"><div class="equipment-media"><img src="Forge Industrial-produto-blococanalfrio.webp" width="603" height="371" loading="lazy" alt="Bloco de canal frio para processamento de borracha"></div><div class="equipment-copy"><span class="equipment-number">03</span><h3>Blocos de canais frios</h3></div></article>
+        <article class="equipment-item"><div class="equipment-media"><img src="Forge Industrial-produto-criogenia.webp" width="470" height="832" loading="lazy" alt="Máquina de rebarbação criogênica"></div><div class="equipment-copy"><span class="equipment-number">04</span><h3>Rebarbadoras criogênicas</h3></div></article>
+        <article class="equipment-item"><div class="equipment-media"><img src="Forge Industrial-produto-centrifuga.webp" width="696" height="521" loading="lazy" alt="Máquina rebarbadora centrífuga"></div><div class="equipment-copy"><span class="equipment-number">05</span><h3>Rebarbadores centrífugos</h3></div></article>
+        <article class="equipment-item"><div class="equipment-media"><img src="Forge Industrial-produto-estufa.webp" width="307" height="371" loading="lazy" alt="Estufa industrial de pós-cura"></div><div class="equipment-copy"><span class="equipment-number">06</span><h3>Estufas de pós-cura</h3></div></article>
+        <article class="equipment-item"><div class="equipment-media"><img src="Forge Industrial-produto-maqinsp.webp" width="521" height="470" loading="lazy" alt="Máquina de inspeção ótica industrial"></div><div class="equipment-copy"><span class="equipment-number">07</span><h3>Inspeção ótica e controle de qualidade</h3></div></article>
+        <article class="equipment-item"><div class="equipment-media"><img class="equipment-image--metrology" src="Forge Industrial-produto-labemetrologia.webp" width="385" height="504" loading="lazy" alt="Instrumento de laboratório e metrologia"></div><div class="equipment-copy"><span class="equipment-number">08</span><h3>Laboratório e metrologia</h3></div></article>
+      </div>
+      <div class="support-panel reveal">
+        <h3 class="support-head">Como a Forge Industrial apoia cada projeto</h3>
+        <p class="support-intro">Da especificação ao acompanhamento técnico, uma equipe próxima em cada etapa da decisão.</p>
+        <div class="services-grid">
+        <div class="service-card">
+          <div>
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+            <h3 style="margin-top:16px;">Venda e especificação de máquinas</h3>
+            <p style="margin-top:6px;">Apoio na escolha de equipamentos coerentes com o processo, a aplicação e os objetivos de produção.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="2" y="15" width="5" height="6" rx="1.5"/><rect x="17" y="15" width="5" height="6" rx="1.5"/></svg></div>
+          <h3>Suporte técnico especializado</h3>
+          <p>Orientação técnica e acompanhamento para os equipamentos e soluções comercializados.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14.7 6.3a4 4 0 0 1-5.5 5.4L4 17l3 3 5.3-5.2a4 4 0 0 1 5.4-5.5l-3 3-2-2 3-3Z"/></svg></div>
+          <h3>Centro técnico Yizumi no Brasil</h3>
+          <p>Referência técnica para prensas vulcanizadoras e injetoras de borracha da marca.</p>
+        </div>
+        </div>
+        <div class="services-cta">
+          <a class="btn btn-primary btn-lg" href="#contato">Fale conosco</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="section diff-section" id="diferenciais">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Diferenciais</h2>
+        <p>Experiência de processo, relacionamento com fabricantes e acompanhamento técnico no Brasil.</p>
+      </div>
+      <div class="diff-list reveal">
+        <div class="diff-item">
+          <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3>Corpo técnico especializado</h3>
+          <p>Engenheiros e técnicos com domínio de campo, não só de catálogo.</p>
+        </div>
+        <div class="diff-item">
+          <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V4l8 5 8-5v16"/><path d="M4 20h16"/></svg>
+          <h3>Marcas de referência</h3>
+          <p>Representação oficial de fabricantes reconhecidos no mercado industrial.</p>
+        </div>
+        <div class="diff-item">
+          <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3>Foco no pós-venda</h3>
+          <p>A relação continua depois da entrega, com suporte de verdade.</p>
+        </div>
+        <div class="diff-item">
+          <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          <h3>Dimensionamento realista</h3>
+          <p>Especificações pensadas para a operação real do seu chão de fábrica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section" id="faq">
+    <div class="container" style="padding:0;">
+      <div class="section-head reveal" style="margin-bottom:32px;">
+        <h2>Perguntas frequentes</h2>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-urgencia">
+            Como funciona o suporte técnico?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-urgencia">
+            <p>A equipe orienta clientes sobre os equipamentos e soluções comercializados, avaliando cada solicitação conforme a aplicação e a necessidade apresentada.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-pecas">
+            Quais tipos de equipamentos a Forge Industrial oferece?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-pecas">
+            <p>O portfólio inclui injetoras, prensas, blocos de canais frios, equipamentos de rebarbação, pós-cura, inspeção ótica e instrumentação de laboratório.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-prazo">
+            A Forge Industrial representa a Yizumi no Brasil?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-prazo">
+            <p>A Forge Industrial é o Centro técnico da Yizumi no Brasil para prensas vulcanizadoras e injetoras de borracha.</p>
+          </div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-cobertura">
+            A Forge Industrial atende apenas uma região ou todo o Brasil?
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" id="faq-cobertura">
+            <p>A atuação é voltada ao mercado brasileiro. Para confirmar a cobertura e a melhor forma de atendimento para sua localidade, fale diretamente com a equipe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="reveal">Quer falar sobre uma máquina, aplicação ou suporte técnico?</h2>
+      <a class="btn btn-primary btn-lg reveal" href="#contato">Fale conosco</a>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section contact-section" id="contato">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-panel reveal">
+          <div class="contact-photo">
+            <img src="Forge Industrial-fachada.webp" width="160" height="160" loading="lazy" alt="Fachada da Forge Industrial em Atibaia">
+          </div>
+          <div class="contact-copy">
+            <h2>Visite ou fale com a Forge Industrial</h2>
+            <address>
+              Estrada Municipal dos Pires, 11255<br>
+              Atibaia, SP<br>
+              CEP 12952-361
+            </address>
+            <a class="btn btn-on-dark" target="_blank" rel="noopener" href="#contato-demo">Abrir no Google Maps</a>
+          </div>
+        </div>
+        <iframe class="map-frame reveal" title="Localização da Forge Industrial em Atibaia" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Estrada+Municipal+dos+Pires,+11255,+Atibaia,+SP,+12952-361&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#top"><strong style="font:700 21px/1 'Space Grotesk',sans-serif;letter-spacing:-.04em">FORGE <span style="color:#858bb5">//</span> INDUSTRIAL</strong></a>
+        <p>Máquinas, equipamentos e suporte técnico para processos da indústria de artefatos de borracha.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@exemplo.com">Engenharia de aplicação</a></li>
+          <li><a href="mailto:contato@exemplo.com">Consultoria comercial</a></li>
+          <li><a href="mailto:contato@exemplo.com">Suporte técnico</a></li>
+          <li><a href="#contato">Atibaia, SP</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Forge Industrial. Todos os direitos reservados.</span>
+      <span class="demo-note">Demonstração conceitual. Conteúdo sujeito a validação antes da publicação.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="contact-float" aria-label="Ir para a seção de contato" href="#contato">Fale conosco</a>
+
+<script>
+(function(){
+  var year = document.getElementById('year');
+  if(year){ year.textContent = new Date().getFullYear(); }
+
+  var toggle = document.getElementById('menuToggle');
+  var navLinks = document.getElementById('navLinks');
+  if(toggle && navLinks){
+    function closeMenu(){
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menu');
+      navLinks.classList.remove('mobile-open');
+    }
+    toggle.addEventListener('click', function(){
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Abrir menu' : 'Fechar menu');
+      navLinks.classList.toggle('mobile-open', !open);
+    });
+    navLinks.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function(event){
+      if(event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true'){
+        closeMenu();
+        toggle.focus();
+      }
+    });
+    document.addEventListener('click', function(event){
+      if(toggle.getAttribute('aria-expanded') === 'true' && !event.target.closest('.nav-wrap')){
+        closeMenu();
+      }
+    });
+  }
+
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    var answer = item.querySelector('.faq-answer');
+    btn.addEventListener('click', function(){
+      var isOpen = item.getAttribute('data-open') === 'true';
+      document.querySelectorAll('.faq-item').forEach(function(other){
+        other.setAttribute('data-open', 'false');
+        other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        other.querySelector('.faq-answer').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.setAttribute('data-open', 'true');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      var openAnswer = document.querySelector('.faq-item[data-open="true"] .faq-answer');
+      if(openAnswer){ openAnswer.style.maxHeight = openAnswer.scrollHeight + 'px'; }
+    }, 150);
+  });
+
+  var counters = document.querySelectorAll('[data-counter]');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function animateCounter(element){
+    var target = Number(element.getAttribute('data-counter')) || 0;
+    var suffix = element.getAttribute('data-suffix') || '';
+    if(reduceMotion){ element.textContent = target + suffix; return; }
+    var startTime = null;
+    function step(time){
+      if(startTime === null){ startTime = time; }
+      var progress = Math.min((time - startTime) / 1200, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = Math.round(target * eased) + suffix;
+      if(progress < 1){ window.requestAnimationFrame(step); }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  if('IntersectionObserver' in window && !reduceMotion){
+    var counterObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.65});
+    counters.forEach(function(counter){ counterObserver.observe(counter); });
+  } else {
+    counters.forEach(animateCounter);
+  }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+  }
+})();
+</script>
+<div style="position:fixed;z-index:99999;left:50%;bottom:14px;transform:translateX(-50%);padding:8px 14px;border-radius:999px;background:#111;color:#fff;font:600 12px/1.2 Arial,sans-serif;box-shadow:0 8px 30px #0005;white-space:nowrap">Projeto demonstrativo · dados fictícios</div></body>
+</html>
