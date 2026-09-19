@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Amora — Sabores autênticos, ingredientes bem escolhidos</title>
+<meta name="description" content="Casa Amora — gastronomia inspirada nas tradições italiana e portuguesa, em um ambiente sereno e acolhedor. Reserve sua mesa pelo WhatsApp.">
+<meta property="og:title" content="Casa Amora">
+<meta property="og:description" content="Sabores autênticos, ingredientes bem escolhidos. Uma cozinha inspirada nas tradições italiana e portuguesa.">
+<meta name="theme-color" content="#171714">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171714'/%3E%3Cpath d='M16 44V19l16 17 16-17v25' fill='none' stroke='%23B89A68' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Casa Amora — DESIGN TOKENS
+   ============================================================ */
+:root{
+  --charcoal:#171714;
+  --olive-dark:#20251F;
+  --ivory:#F3EFE6;
+  --coffee:#27231F;
+  --cream:#F5F0E7;
+  --terracotta:#9A4F3D;
+  --terracotta-soft:#B36954;
+  --gold:#B89A68;
+  --olive:#77775C;
+
+  --serif:'Instrument Serif', 'Cormorant Garamond', Georgia, serif;
+  --sans:'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --fs-hero: clamp(2.9rem, 3.2vw + 2.1rem, 5.5rem);
+  --fs-h2: clamp(2.3rem, 1.9vw + 1.7rem, 4rem);
+  --fs-h3: clamp(1.5rem, 0.7vw + 1.3rem, 2rem);
+  --fs-lead: clamp(1.05rem, 0.35vw + 0.95rem, 1.25rem);
+  --fs-body: clamp(1rem, 0.15vw + 0.95rem, 1.125rem);
+  --fs-label: 0.8rem;
+
+  --header-h: 84px;
+  --ease: cubic-bezier(.4,0,.2,1);
+  --maxw: 1240px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-size:var(--fs-body);
+  color:var(--coffee);
+  background:var(--ivory);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+h1,h2,h3,h4{ margin:0; font-family:var(--serif); font-weight:400; line-height:1.08; }
+p{ margin:0; }
+section{ scroll-margin-top: 90px; }
+
+:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+.container{ max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+@media(max-width:640px){ .container{ padding:0 22px; } }
+
+.skip-link{
+  position:absolute; left:-9999px; top:0; background:var(--charcoal); color:var(--cream);
+  padding:12px 20px; z-index:999; border-radius:2px;
+}
+.skip-link:focus{ left:16px; top:16px; }
+
+.label{
+  font-family:var(--sans);
+  font-size:var(--fs-label);
+  text-transform:uppercase;
+  letter-spacing:0.16em;
+  font-weight:700;
+  display:inline-block;
+}
+.label--dark{ color:var(--gold); }
+.label--light{ color:var(--terracotta); }
+
+.hairline{
+  width:44px; height:1px; background:var(--gold); border:none; margin:18px 0;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:16px 32px;
+  font-family:var(--sans); font-weight:700; font-size:0.82rem;
+  text-transform:uppercase; letter-spacing:0.1em;
+  border-radius:2px; border:1px solid transparent;
+  transition:background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), transform .35s var(--ease);
+  white-space:nowrap;
+}
+.btn-primary{ background:var(--terracotta); color:var(--cream); }
+.btn-primary:hover{ background:var(--terracotta-soft); transform:translateY(-1px); }
+.btn-outline-light{ border-color:rgba(245,240,231,0.55); color:var(--cream); }
+.btn-outline-light:hover{ border-color:var(--gold); color:var(--gold); }
+.btn-outline-dark{ border-color:rgba(39,35,31,0.4); color:var(--coffee); }
+.btn-outline-dark:hover{ border-color:var(--terracotta); color:var(--terracotta); }
+.btn-text{
+  display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:0.8rem;
+  text-transform:uppercase; letter-spacing:0.1em; color:var(--terracotta);
+  border-bottom:1px solid transparent; padding-bottom:3px;
+  transition:border-color .3s var(--ease), gap .3s var(--ease);
+}
+.btn-text:hover{ border-color:var(--terracotta); gap:12px; }
+.btn-text--light{ color:var(--gold); }
+.btn-text--light:hover{ border-color:var(--gold); }
+
+/* Photo placeholders (sem fotos reais disponíveis — molduras prontas p/ substituição) */
+.photo{
+  position:relative; overflow:hidden; border-radius:2px;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(184,154,104,0.18), transparent 55%),
+    linear-gradient(135deg, #2c2620 0%, #1c1a15 45%, #302019 100%);
+  display:flex; align-items:center; justify-content:center;
+}
+.photo::before{
+  content:''; position:absolute; inset:0; opacity:.5; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+.photo--light{
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(154,79,61,0.14), transparent 55%),
+    linear-gradient(135deg, #e9e2d2 0%, #ded4bd 50%, #e5dccb 100%);
+}
+.photo-icon{ position:relative; z-index:1; width:34%; max-width:64px; opacity:.55; color:var(--gold); }
+.photo--light .photo-icon{ color:var(--terracotta); opacity:.45; }
+.photo-ratio{ width:100%; }
+.photo-ratio > .photo{ width:100%; height:100%; position:absolute; inset:0; }
+.photo-ratio{ position:relative; }
+.photo img,
+.photo-ratio img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.photo--image{ display:block; background:#1c1a15; }
+.photo--image::before{ display:none; }
+
+/* História e cozinha */
+.historia-grid{ display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+.historia-copy h2{ font-size:var(--fs-h2); margin-top:14px; }
+.historia-copy p{ margin-top:20px; max-width:52ch; opacity:.82; }
+.historia-photo{ aspect-ratio:1/1; overflow:hidden; }
+.fundadores{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin-top:30px; }
+.fundador{ border-top:1px solid rgba(39,35,31,.18); padding-top:18px; }
+.fundador h3{ font-size:1.45rem; }
+.fundador p{ margin-top:10px; font-size:.94rem; opacity:.76; }
+@media(max-width:900px){
+  .historia-grid{ grid-template-columns:1fr; gap:38px; }
+}
+@media(max-width:560px){
+  .fundadores{ grid-template-columns:1fr; }
+}
+
+.station-badge{
+  display:inline-flex; align-items:center; gap:10px; width:max-content;
+  margin-top:24px; padding:12px 16px; border-radius:999px;
+  background:rgba(154,79,61,.1); color:var(--terracotta); font-weight:800;
+}
+.station-badge::before{ content:''; width:8px; height:8px; border-radius:50%; background:var(--terracotta); }
+.hours-list{ margin-top:10px; display:grid; gap:5px; }
+.hours-list li{ display:flex; justify-content:space-between; gap:22px; font-size:.94rem; }
+.hours-list span:first-child{ font-weight:700; }
+@media(max-width:420px){ .hours-list li{ align-items:flex-start; } }
+
+/* Reveal on scroll */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ transition:none; opacity:1; transform:none; }
+  html{ scroll-behavior:auto; }
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:fixed; top:0; left:0; right:0; z-index:500;
+  height:var(--header-h);
+  display:flex; align-items:center;
+  background:transparent;
+  transition:background .4s var(--ease), backdrop-filter .4s var(--ease), border-color .4s var(--ease), height .3s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.site-header.scrolled{
+  background:rgba(23,23,20,0.82);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom-color:rgba(184,154,104,0.25);
+  height:72px;
+}
+.header-inner{
+  width:100%; display:flex; align-items:center; justify-content:space-between;
+  max-width:var(--maxw); margin:0 auto; padding:0 28px;
+}
+.logo{
+  font-family:var(--serif); font-size:1.5rem; color:var(--cream); letter-spacing:0.02em;
+}
+.main-nav{ display:flex; gap:38px; }
+.main-nav a{
+  font-size:0.82rem; text-transform:uppercase; letter-spacing:0.08em; font-weight:600;
+  color:var(--cream); opacity:.88; position:relative; padding-bottom:4px;
+}
+.main-nav a::after{
+  content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold);
+  transition:width .35s var(--ease);
+}
+.main-nav a:hover{ opacity:1; }
+.main-nav a:hover::after{ width:100%; }
+.header-cta{ display:flex; align-items:center; gap:22px; }
+.header-cta .btn{ padding:13px 24px; font-size:0.76rem; }
+.hamburger{
+  display:none; background:none; border:none; padding:8px; color:var(--cream);
+}
+.hamburger svg{ width:24px; height:24px; }
+
+@media(max-width:900px){
+  .main-nav{ display:none; }
+  .header-cta .btn{ display:none; }
+  .hamburger{ display:block; }
+}
+
+/* Mobile full-screen menu */
+.mobile-menu{
+  position:fixed; inset:0; background:var(--charcoal); z-index:600;
+  display:flex; flex-direction:column;
+  transform:translateY(-100%); opacity:0; visibility:hidden;
+  transition:transform .5s var(--ease), opacity .5s var(--ease), visibility 0s linear .5s;
+}
+.mobile-menu.open{
+  transform:translateY(0); opacity:1; visibility:visible;
+  transition:transform .5s var(--ease), opacity .5s var(--ease), visibility 0s;
+}
+.mobile-menu-top{ display:flex; justify-content:space-between; align-items:center; padding:22px 22px; }
+.mobile-menu-top .logo{ font-size:1.35rem; }
+.mobile-menu-close{ background:none; border:none; color:var(--cream); padding:8px; }
+.mobile-menu-close svg{ width:24px; height:24px; }
+.mobile-menu-links{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 30px; gap:6px; }
+.mobile-menu-links a{
+  font-family:var(--serif); font-size:2.1rem; color:var(--cream); padding:12px 0;
+  border-bottom:1px solid rgba(245,240,231,0.08);
+}
+.mobile-menu-bottom{ padding:24px 30px 38px; }
+.mobile-menu-bottom .btn{ width:100%; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative; min-height:100svh; display:flex; align-items:flex-end;
+  overflow:hidden; background:var(--charcoal);
+}
+.hero-photo{ position:absolute; inset:-6% -2%; z-index:0; will-change:transform; }
+.hero-overlay{
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(23,23,20,0.55) 0%, rgba(23,23,20,0.35) 38%, rgba(23,23,20,0.78) 100%);
+}
+.hero-content{
+  position:relative; z-index:2; width:100%;
+  padding:calc(var(--header-h) + 40px) 28px 110px;
+  max-width:var(--maxw); margin:0 auto;
+}
+.hero-eyebrow{
+  color:var(--cream); margin-bottom:22px; padding:8px 12px;
+  background:rgba(23,23,20,.72); border:1px solid rgba(245,240,231,.35);
+  border-radius:2px; text-shadow:0 1px 3px rgba(0,0,0,.55);
+}
+.hero h1{
+  color:var(--cream); font-size:var(--fs-hero); max-width:14ch; letter-spacing:-0.01em;
+}
+.hero-sub{
+  color:var(--cream); opacity:.85; max-width:44ch; font-size:var(--fs-lead);
+  margin-top:24px; font-weight:400;
+}
+.hero-ctas{ display:flex; gap:18px; margin-top:40px; flex-wrap:wrap; }
+.hero-scroll{
+  position:absolute; bottom:28px; left:0; right:0; z-index:2; text-align:center;
+  color:var(--cream); opacity:.7; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+}
+.hero-scroll span{ animation:bob 2.6s ease-in-out infinite; }
+@keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(6px);} }
+@media (prefers-reduced-motion: reduce){ .hero-scroll span{ animation:none; } }
+
+@media(max-width:640px){
+  .hero-content{ padding-bottom:96px; }
+  .hero-ctas{ flex-direction:column; align-items:stretch; }
+  .hero-ctas .btn{ width:100%; }
+}
+
+/* ============================================================
+   SECTION SHELLS
+   ============================================================ */
+.section{ padding:120px 0; }
+.section--tight{ padding:100px 0; }
+.bg-ivory{ background:var(--ivory); color:var(--coffee); }
+.bg-charcoal{ background:var(--charcoal); color:var(--cream); }
+.bg-charcoal .label--dark, .bg-olive .label--dark{ color:var(--gold); }
+.bg-olive{ background:var(--olive-dark); color:var(--cream); }
+.bg-charcoal, .bg-olive{ position:relative; }
+.bg-charcoal::before, .bg-olive::before{
+  content:''; position:absolute; inset:0; opacity:.4; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+@media(max-width:640px){
+  .section{ padding:84px 0; }
+  .section--tight{ padding:70px 0; }
+}
+
+/* ============================================================
+   SOBRE / MANIFESTO
+   ============================================================ */
+.sobre-grid{
+  display:grid; grid-template-columns:0.85fr 1fr; gap:64px; align-items:center;
+}
+.sobre-media{ position:relative; }
+.sobre-media .photo-ratio{ aspect-ratio:3/4; }
+.sobre-media-secondary{
+  position:absolute; width:44%; aspect-ratio:4/3; right:-8%; bottom:-9%;
+  border:6px solid var(--ivory); z-index:2;
+}
+.sobre-text h2{ font-size:var(--fs-h2); max-width:11ch; margin-top:14px; }
+.sobre-text p{ margin-top:22px; max-width:46ch; color:var(--coffee); opacity:.86; font-size:var(--fs-body); }
+.sobre-text .btn{ margin-top:34px; }
+
+@media(max-width:900px){
+  .sobre-grid{ grid-template-columns:1fr; gap:70px; }
+  .sobre-media-secondary{ right:auto; left:8%; bottom:-10%; width:52%; }
+}
+
+/* ============================================================
+   NOSSA GASTRONOMIA (pilares editoriais)
+   ============================================================ */
+.gastronomia-head{ max-width:640px; margin-bottom:70px; }
+.gastronomia-head h2{ font-size:var(--fs-h2); margin-top:14px; }
+.gastronomia-head p{ margin-top:20px; opacity:.78; font-size:var(--fs-lead); }
+
+.pilar{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; padding:56px 0; border-top:1px solid rgba(245,240,231,0.14); }
+.pilar:last-child{ border-bottom:1px solid rgba(245,240,231,0.14); }
+.pilar-num{ font-family:var(--serif); font-size:1rem; color:var(--gold); letter-spacing:0.1em; }
+.pilar-title{ font-size:var(--fs-h3); margin-top:14px; max-width:16ch; }
+.pilar-text{ margin-top:16px; opacity:.78; max-width:44ch; }
+.pilar .photo-ratio{ aspect-ratio:5/4; }
+.pilar:nth-child(even){ direction:rtl; }
+.pilar:nth-child(even) > *{ direction:ltr; }
+.pilar:nth-child(odd) .photo-ratio{ order:2; }
+
+@media(max-width:900px){
+  .pilar{ grid-template-columns:1fr; gap:26px; direction:ltr !important; }
+  .pilar .photo-ratio{ order:0 !important; aspect-ratio:16/11; }
+}
+
+/* ============================================================
+   DESTAQUES DO CARDÁPIO (carrossel)
+   ============================================================ */
+.cardapio-top{
+  display:flex; justify-content:space-between; align-items:flex-end; gap:30px; margin-bottom:52px; flex-wrap:wrap;
+}
+.cardapio-top h2{ font-size:var(--fs-h2); margin-top:14px; max-width:12ch; }
+.carousel-controls{ display:flex; gap:12px; }
+.carousel-arrow{
+  width:46px; height:46px; border-radius:50%; border:1px solid rgba(39,35,31,0.25);
+  display:flex; align-items:center; justify-content:center; background:transparent;
+  transition:border-color .3s var(--ease), background .3s var(--ease);
+}
+.carousel-arrow:hover{ border-color:var(--terracotta); background:rgba(154,79,61,0.06); }
+.carousel-arrow svg{ width:18px; height:18px; }
+
+.dish-track{
+  display:flex; gap:28px; overflow-x:auto; scroll-snap-type:x mandatory;
+  padding-bottom:8px; margin:0 -28px; padding-left:28px; padding-right:28px;
+  scrollbar-width:none;
+}
+.dish-track::-webkit-scrollbar{ display:none; }
+.dish-card{
+  flex:0 0 auto; width:340px; scroll-snap-align:start;
+}
+.dish-card .photo-ratio{ aspect-ratio:4/5; }
+.dish-num{ font-family:var(--serif); color:var(--terracotta); font-size:1rem; margin-top:20px; }
+.dish-card h3{ font-size:1.4rem; margin-top:8px; }
+.dish-card p{ margin-top:8px; opacity:.72; font-size:0.94rem; }
+.dish-card .btn-text{ margin-top:14px; }
+
+.cardapio-bottom{ text-align:center; margin-top:58px; }
+
+@media(max-width:640px){
+  .dish-card{ width:85vw; }
+  .cardapio-top{ align-items:flex-start; }
+}
+
+/* ============================================================
+   DIFERENCIAIS
+   ============================================================ */
+.dif-grid{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:18px;
+}
+.dif-item{
+  padding:34px; border:1px solid rgba(245,240,231,0.16);
+  background:rgba(245,240,231,.035);
+}
+.dif-num{ font-family:var(--serif); color:var(--gold); font-size:0.95rem; }
+.dif-item h3{ font-size:1.35rem; margin-top:18px; max-width:24ch; }
+.dif-item p{ margin-top:14px; opacity:.75; font-size:0.94rem; }
+.dif-head{ max-width:600px; margin-bottom:56px; }
+.dif-head h2{ font-size:var(--fs-h2); }
+
+@media(max-width:900px){
+  .dif-grid{ grid-template-columns:1fr; }
+  .dif-item{ padding:28px; }
+}
+
+/* ============================================================
+   OCASIÕES
+   ============================================================ */
+.ocasioes-head{ max-width:640px; margin-bottom:56px; }
+.ocasioes-head h2{ font-size:var(--fs-h2); margin-top:14px; }
+.ocasioes-head p{ margin-top:16px; opacity:.78; }
+.ocasioes-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:48px; }
+.ocasiao{ border-top:1px solid rgba(39,35,31,0.16); padding-top:26px; }
+.ocasiao h3{ font-size:1.25rem; }
+.ocasiao p{ margin-top:14px; opacity:.75; font-size:0.95rem; }
+.ocasioes-cta{ text-align:center; margin-top:58px; }
+
+@media(max-width:760px){
+  .ocasioes-grid{ grid-template-columns:1fr; gap:32px; }
+}
+
+/* ============================================================
+   AVALIAÇÕES (slider)
+   ============================================================ */
+.avaliacoes{ text-align:center; }
+.avaliacoes-head h2{ font-size:var(--fs-h2); margin-top:14px; }
+.avaliacoes-head p{ margin-top:14px; opacity:.72; max-width:44ch; margin-left:auto; margin-right:auto; }
+.review-slider{ max-width:760px; margin:58px auto 0; position:relative; }
+.review-stars{ color:var(--gold); letter-spacing:4px; font-size:1.1rem; }
+.review-quote{
+  font-family:var(--serif); font-size:clamp(1.5rem,1.4vw + 1.2rem,2.2rem); line-height:1.35;
+  margin-top:22px; min-height:3.6em; display:flex; align-items:center; justify-content:center;
+  transition:opacity .4s var(--ease); font-style:italic;
+}
+.review-quote.fading{ opacity:0; }
+.review-author{ margin-top:20px; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.1em; opacity:.6; }
+.review-controls{ display:flex; align-items:center; justify-content:center; gap:22px; margin-top:36px; }
+.review-dots{ display:flex; gap:8px; }
+.review-dot{ width:7px; height:7px; border-radius:50%; background:rgba(39,35,31,0.25); border:none; padding:0; transition:background .3s var(--ease); }
+.review-dot.active{ background:var(--terracotta); }
+
+/* ============================================================
+   LOCALIZAÇÃO
+   ============================================================ */
+.local-grid{ display:grid; grid-template-columns:1fr 1fr; gap:0; align-items:stretch; }
+.local-map{ position:relative; min-height:460px; }
+.local-map .map-visual{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(135deg, #e9e2d2, #dcd1b8);
+}
+.local-map svg{ position:absolute; inset:0; width:100%; height:100%; opacity:.55; }
+.local-info{ padding:70px 60px; display:flex; flex-direction:column; justify-content:center; background:var(--cream); }
+.local-info .label{ display:block; }
+.local-info h2{ font-size:var(--fs-h2); margin-top:14px; }
+.local-block{ margin-top:32px; }
+.local-block h4{ font-family:var(--sans); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em; opacity:.55; font-weight:700; }
+.local-block p, .local-block a{ margin-top:8px; font-size:1rem; display:block; }
+.local-block a:hover{ color:var(--terracotta); }
+.local-ctas{ display:flex; gap:16px; margin-top:38px; flex-wrap:wrap; }
+
+@media(max-width:900px){
+  .local-grid{ grid-template-columns:1fr; }
+  .local-map{ min-height:320px; }
+  .local-info{ padding:56px 26px; }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-grid{ display:grid; grid-template-columns:0.7fr 1.3fr; gap:70px; }
+.faq-head h2{ font-size:var(--fs-h2); margin-top:14px; max-width:10ch; }
+.faq-item{ border-top:1px solid rgba(39,35,31,0.16); }
+.faq-item:last-child{ border-bottom:1px solid rgba(39,35,31,0.16); }
+.faq-q{
+  width:100%; background:none; border:none; text-align:left; padding:24px 0;
+  display:flex; justify-content:space-between; align-items:center; gap:20px;
+  font-family:var(--serif); font-size:1.15rem; color:var(--coffee);
+}
+.faq-q-icon{ width:20px; height:20px; flex:none; position:relative; }
+.faq-q-icon::before, .faq-q-icon::after{
+  content:''; position:absolute; background:var(--terracotta); transition:transform .3s var(--ease);
+}
+.faq-q-icon::before{ width:100%; height:1px; top:50%; left:0; }
+.faq-q-icon::after{ width:1px; height:100%; left:50%; top:0; }
+.faq-item.open .faq-q-icon::after{ transform:scaleY(0); }
+.faq-answer-wrap{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .4s var(--ease); }
+.faq-item.open .faq-answer-wrap{ grid-template-rows:1fr; }
+.faq-answer{ overflow:hidden; }
+.faq-answer p{ padding-bottom:26px; opacity:.75; max-width:60ch; font-size:0.96rem; }
+
+@media(max-width:760px){
+  .faq-grid{ grid-template-columns:1fr; gap:36px; }
+}
+
+/* ============================================================
+   CTA FINAL
+   ============================================================ */
+.cta-final{ position:relative; text-align:center; overflow:hidden; }
+.cta-final-photo{ position:absolute; inset:0; z-index:0; }
+.cta-final-overlay{ position:absolute; inset:0; z-index:1; background:rgba(23,23,20,0.68); }
+.cta-final-content{ position:relative; z-index:2; max-width:620px; margin:0 auto; padding:130px 28px; }
+.cta-final-content h2{ color:var(--cream); font-size:var(--fs-h2); }
+.cta-final-content p{ color:var(--cream); opacity:.85; margin-top:20px; }
+.cta-final-ctas{ display:flex; gap:18px; justify-content:center; margin-top:38px; flex-wrap:wrap; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{ background:var(--charcoal); color:var(--cream); padding:90px 0 30px; position:relative; }
+.footer-top{ display:flex; justify-content:space-between; gap:50px; flex-wrap:wrap; padding-bottom:64px; border-bottom:1px solid rgba(245,240,231,0.12); }
+.footer-brand .logo{ font-size:1.9rem; }
+.footer-brand p{ margin-top:14px; opacity:.6; max-width:32ch; }
+.footer-cols{ display:flex; gap:70px; flex-wrap:wrap; }
+.footer-col h4{ font-size:0.76rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--gold); font-weight:700; }
+.footer-col a, .footer-col p{ display:block; margin-top:14px; opacity:.72; font-size:0.94rem; }
+.footer-col a:hover{ opacity:1; color:var(--gold); }
+.footer-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:26px; flex-wrap:wrap; gap:14px; }
+.footer-bottom-links{ display:flex; gap:26px; flex-wrap:wrap; }
+.footer-bottom-links a, .footer-copy{ font-size:0.8rem; opacity:.5; }
+.footer-bottom-links a:hover{ opacity:.85; }
+
+@media(max-width:760px){
+  .footer-top{ flex-direction:column; gap:44px; }
+  .footer-cols{ gap:44px; }
+}
+
+/* ============================================================
+   FLOATING WHATSAPP (desktop) + BARRA FIXA (mobile)
+   ============================================================ */
+.wa-float{
+  position:fixed; right:26px; bottom:26px; z-index:300;
+  width:56px; height:56px; border-radius:50%;
+  background:var(--terracotta); color:var(--cream);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 8px 24px rgba(23,23,20,0.28);
+  opacity:0; transform:translateY(10px); transition:opacity .5s var(--ease), transform .5s var(--ease), background .3s var(--ease);
+}
+.wa-float.shown{ opacity:1; transform:translateY(0); }
+.wa-float:hover{ background:var(--terracotta-soft); }
+.wa-float svg{ width:26px; height:26px; }
+
+.wa-bar{
+  display:none;
+}
+@media(max-width:900px){
+  .wa-float{ display:none; }
+  .wa-bar{
+    display:flex; position:fixed; left:0; right:0; bottom:0; z-index:400;
+    background:var(--terracotta); color:var(--cream);
+    align-items:center; justify-content:center; gap:12px;
+    padding:16px 20px; font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em;
+    transform:translateY(100%); transition:transform .4s var(--ease);
+  }
+  .wa-bar.shown{ transform:translateY(0); }
+  .wa-bar svg{ width:20px; height:20px; }
+  body{ padding-bottom:0; }
+  .site-footer{ padding-bottom:96px; }
+}
+
+/* Small utility */
+.center{ text-align:center; margin-left:auto; margin-right:auto; }
+</style>
+</head>
+<body>
+
+<a href="#hero" class="skip-link">Pular para o conteúdo</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#hero" class="logo">Casa Amora</a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#sobre">O Casa Amora</a>
+      <a href="#gastronomia">Gastronomia</a>
+      <a href="#cardapio">Cardápio</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#localizacao">Localização</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#contato-demo" class="btn btn-primary wa-link" data-msg="reservar" target="_blank" rel="noopener">Reservar uma mesa</a>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-top">
+    <span class="logo">Casa Amora</span>
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu-links" aria-label="Menu mobile">
+    <a href="#sobre" class="mm-link">O Casa Amora</a>
+    <a href="#gastronomia" class="mm-link">Gastronomia</a>
+    <a href="#cardapio" class="mm-link">Cardápio</a>
+    <a href="#avaliacoes" class="mm-link">Avaliações</a>
+    <a href="#localizacao" class="mm-link">Contato</a>
+  </nav>
+  <div class="mobile-menu-bottom">
+    <a href="#contato-demo" class="btn btn-primary wa-link" data-msg="reservar" target="_blank" rel="noopener">Reservar uma mesa</a>
+  </div>
+</div>
+
+<main id="hero">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero-photo" id="hero-photo">
+      <div class="photo photo--image" style="position:absolute;inset:0;">
+        <img src="SaveClip.App_610625954_18092310890512480_3326612552942606862_n.jpg" alt="Prato servido no Casa Amora" width="1440" height="990" fetchpriority="high">
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="label hero-eyebrow">Casa Amora</span>
+      <h1 class="reveal">Cozinha afetiva,<br>feita sem pressa.</h1>
+      <p class="hero-sub reveal">Pratos cheios de personalidade, ambiente acolhedor e uma mesa pronta para receber você em Cidade Exemplo.</p>
+      <div class="hero-ctas reveal">
+        <a href="#contato-demo" class="btn btn-primary wa-link" data-msg="reservar" target="_blank" rel="noopener">Reservar pelo WhatsApp</a>
+        <a href="#cardapio" class="btn btn-outline-light">Conhecer o cardápio</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>Descubra o Casa Amora ↓</span></div>
+  </section>
+
+  <!-- ============================================================
+       SOBRE / MANIFESTO
+       ============================================================ -->
+  <section class="section bg-ivory" id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-media reveal">
+          <div class="photo-ratio" style="aspect-ratio:3/4;">
+            <div class="photo photo--image">
+              <img src="SaveClip.App_558160432_18081504854512480_860821009800776107_n.jpg" alt="Prato da cozinha do Casa Amora" width="1440" height="1800" loading="lazy">
+            </div>
+          </div>
+          <div class="sobre-media-secondary">
+            <div class="photo photo--image" style="width:100%;height:100%;">
+              <img src="SaveClip.App_571377135_18084331211512480_3594683115531614405_n.jpg" alt="Bebida refrescante servida no Casa Amora" width="864" height="1152" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class="sobre-text reveal">
+          <span class="label label--light">Nossa essência</span>
+          <h2>Comida que acolhe.</h2>
+          <p>O Casa Amora é uma casa de cozinha autoral e afetiva, com referências italianas, portuguesas e brasileiras presentes nos sabores, nos acompanhamentos e no jeito de servir.</p>
+          <p>A proposta é simples e exigente ao mesmo tempo: ingredientes bem escolhidos, preparo cuidadoso e pratos que chegam à mesa com identidade.</p>
+          <p>Um convite para almoçar, jantar e celebrar com calma, em um ambiente íntimo em Cidade Exemplo.</p>
+          <a href="#historia" class="btn btn-outline-dark">Conheça nossa história</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ivory" id="historia">
+    <div class="container historia-grid">
+      <div class="historia-photo photo photo--image reveal">
+        <img src="SaveClip.App_497620509_18065493050512480_4574824959173595766_n.webp" alt="Prato autoral da Casa Amora" width="1080" height="1080" loading="lazy">
+      </div>
+      <div class="historia-copy reveal">
+        <span class="label label--light">Sobre nós</span>
+        <h2>Adriano e Casa Amora.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="fundadores">
+          <article class="fundador">
+            <h3>Adriano</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae nibh sed justo fermentum commodo.</p>
+          </article>
+          <article class="fundador">
+            <h3>Casa Amora</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae nibh sed justo fermentum commodo.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NOSSA GASTRONOMIA
+       ============================================================ -->
+  <section class="section bg-charcoal" id="gastronomia">
+    <div class="container">
+      <div class="gastronomia-head reveal">
+        <span class="label label--dark">Nossa cozinha</span>
+        <h2>Ingredientes, técnica<br>e sabor.</h2>
+        <p>Nossa proposta é oferecer uma gastronomia marcada pelo cuidado em cada etapa do preparo.</p>
+      </div>
+
+      <div class="pilar reveal">
+        <div class="photo-ratio">
+          <div class="photo photo--image"><img src="SaveClip.App_497620509_18065493050512480_4574824959173595766_n.webp" alt="Carne servida com acompanhamento no Casa Amora" width="1080" height="1080" loading="lazy"></div>
+        </div>
+        <div>
+          <span class="pilar-num">01 — Tradição</span>
+          <h3 class="pilar-title">Receitas e combinações reconhecíveis</h3>
+          <p class="pilar-text">Receitas e combinações inspiradas nas cozinhas italiana e portuguesa, respeitando sabores reconhecíveis e ingredientes que fazem parte dessas tradições.</p>
+        </div>
+      </div>
+
+      <div class="pilar reveal">
+        <div class="photo-ratio">
+          <div class="photo photo--image"><img src="ingredientes-frescos.jpg" alt="Ingredientes frescos selecionados para a cozinha do Casa Amora" width="1402" height="1122" loading="lazy"></div>
+        </div>
+        <div>
+          <span class="pilar-num">02 — Ingredientes</span>
+          <h3 class="pilar-title">Escolhidos com atenção</h3>
+          <p class="pilar-text">Buscamos trabalhar com ingredientes que contribuam para sabor, textura e equilíbrio em cada prato.</p>
+        </div>
+      </div>
+
+      <div class="pilar reveal">
+        <div class="photo-ratio">
+          <div class="photo photo--image"><img src="preparo-carne.jpg" alt="Carne sendo preparada na frigideira" width="1025" height="1020" loading="lazy"></div>
+        </div>
+        <div>
+          <span class="pilar-num">03 — Preparo</span>
+          <h3 class="pilar-title">Do preparo à apresentação</h3>
+          <p class="pilar-text">Do preparo à apresentação, cada prato é pensado para oferecer uma experiência agradável e consistente.</p>
+        </div>
+      </div>
+
+      <div class="pilar reveal">
+        <div class="photo-ratio">
+          <div class="photo photo--image"><img src="celebracao-Casa Amora.jpg" alt="Celebração intimista ao redor da mesa" width="1402" height="1122" loading="lazy"></div>
+        </div>
+        <div>
+          <span class="pilar-num">04 — Experiência</span>
+          <h3 class="pilar-title">Significado além do prato</h3>
+          <p class="pilar-text">Boa gastronomia ganha ainda mais significado quando acompanhada por um ambiente confortável e um atendimento atencioso.</p>
+        </div>
+      </div>
+
+      <div class="center reveal" style="margin-top:56px;">
+        <a href="#cardapio" class="btn btn-outline-light">Ver cardápio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DESTAQUES DO CARDÁPIO
+       ============================================================ -->
+  <section class="section bg-ivory" id="cardapio">
+    <div class="container">
+      <div class="cardapio-top reveal">
+        <div>
+          <span class="label label--light">Descubra nossa cozinha</span>
+          <h2>Sabores para descobrir.</h2>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-arrow" id="dish-prev" aria-label="Prato anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <button class="carousel-arrow" id="dish-next" aria-label="Próximo prato">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="dish-track reveal" id="dish-track">
+        <article class="dish-card">
+          <div class="photo-ratio"><div class="photo photo--image"><img src="SaveClip.App_497620509_18065493050512480_4574824959173595766_n.webp" alt="Carne e acompanhamento da casa" width="1080" height="1080" loading="lazy"></div></div>
+          <span class="dish-num">01</span>
+          <h3>Cortes e acompanhamentos</h3>
+          <p>Combinações preparadas com atenção ao ponto, à textura e ao sabor.</p>
+        </article>
+        <article class="dish-card">
+          <div class="photo-ratio"><div class="photo photo--image"><img src="SaveClip.App_610625954_18092310890512480_3326612552942606862_n.jpg" alt="Peixe com risoto colorido" width="1440" height="990" loading="lazy"></div></div>
+          <span class="dish-num">02</span>
+          <h3>Peixes e sabores frescos</h3>
+          <p>Pratos equilibrados, com acompanhamentos que valorizam cada ingrediente.</p>
+        </article>
+        <article class="dish-card">
+          <div class="photo-ratio"><div class="photo photo--image"><img src="SaveClip.App_729815242_18113111897512480_8218287038304862222_n.webp" alt="Polvo servido com arroz e batatas" width="1080" height="1080" loading="lazy"></div></div>
+          <span class="dish-num">03</span>
+          <h3>Receitas do mar</h3>
+          <p>Preparos marcantes, servidos com a simplicidade de uma boa mesa.</p>
+        </article>
+        <article class="dish-card">
+          <div class="photo-ratio"><div class="photo photo--image"><img src="SaveClip.App_621267487_18093732452512480_7980634418014838611_n.webp" alt="Carne com arroz preparado na casa" width="1080" height="1080" loading="lazy"></div></div>
+          <span class="dish-num">04</span>
+          <h3>Receitas que confortam</h3>
+          <p>Sabores familiares, preparados com cuidado e apresentação autoral.</p>
+        </article>
+        <article class="dish-card">
+          <div class="photo-ratio"><div class="photo photo--image"><img src="SaveClip.App_571377135_18084331211512480_3594683115531614405_n.jpg" alt="Bebidas frescas do Casa Amora" width="864" height="1152" loading="lazy"></div></div>
+          <span class="dish-num">05</span>
+          <h3>Bebidas para acompanhar</h3>
+          <p>Opções refrescantes para completar o almoço ou o jantar.</p>
+        </article>
+      </div>
+
+      <div class="cardapio-bottom reveal">
+        <a href="#contato-demo" class="btn btn-outline-dark wa-link" data-msg="cardapio" target="_blank" rel="noopener">Pedir o cardápio pelo WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DIFERENCIAIS
+       ============================================================ -->
+  <section class="section bg-olive" id="diferenciais">
+    <div class="container">
+      <div class="dif-head reveal">
+        <span class="label label--dark">Diferenciais</span>
+        <h2>O cuidado está<br>nos detalhes.</h2>
+      </div>
+      <div class="dif-grid reveal">
+        <div class="dif-item">
+          <span class="dif-num">01</span>
+          <h3>Ingredientes escolhidos com atenção</h3>
+          <p>A qualidade de uma receita começa pelos ingredientes utilizados em seu preparo.</p>
+        </div>
+        <div class="dif-item">
+          <span class="dif-num">02</span>
+          <h3>Inspiração italiana e portuguesa</h3>
+          <p>Sabores que encontram referências em duas tradições gastronômicas marcadas pela relação entre comida, cultura e bons momentos à mesa.</p>
+        </div>
+        <div class="dif-item">
+          <span class="dif-num">03</span>
+          <h3>Ambiente acolhedor</h3>
+          <p>Um espaço tranquilo e confortável para almoços, jantares, encontros e ocasiões especiais.</p>
+        </div>
+        <div class="dif-item">
+          <span class="dif-num">04</span>
+          <h3>Experiência sem excessos</h3>
+          <p>Uma proposta gastronômica que valoriza sabor, apresentação e hospitalidade sem perder a simplicidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OCASIÕES
+       ============================================================ -->
+  <section class="section bg-ivory" id="ocasioes">
+    <div class="container">
+      <div class="ocasioes-head reveal">
+        <span class="label label--light">Ocasiões</span>
+        <h2>Para diferentes momentos à mesa.</h2>
+        <p>O Casa Amora é um espaço para quem procura boa gastronomia em diferentes ocasiões.</p>
+      </div>
+      <div class="ocasioes-grid reveal">
+        <div class="ocasiao">
+          <h3>Almoços e jantares</h3>
+          <p>Uma experiência tranquila para aproveitar uma boa refeição.</p>
+        </div>
+        <div class="ocasiao">
+          <h3>Encontros</h3>
+          <p>Um ambiente confortável para compartilhar bons momentos com amigos ou família.</p>
+        </div>
+        <div class="ocasiao">
+          <h3>Comemorações</h3>
+          <p>Aniversários, encontros especiais e outras ocasiões que merecem uma boa mesa.</p>
+        </div>
+      </div>
+      <div class="ocasioes-cta reveal">
+        <a href="#contato-demo" class="btn btn-primary wa-link" data-msg="ocasioes" target="_blank" rel="noopener">Consultar disponibilidade</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AVALIAÇÕES
+       ============================================================ -->
+  <section class="section bg-ivory avaliacoes" id="avaliacoes">
+    <div class="container">
+      <div class="avaliacoes-head reveal">
+        <span class="label label--light">Avaliações</span>
+        <h2>Experiências que ficam na memória.</h2>
+        <p>Quem conhece o Casa Amora ajuda a contar nossa história. Confira algumas experiências compartilhadas por nossos clientes.</p>
+      </div>
+      <div class="review-slider reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-quote" id="review-quote">“Comida excelente e preço justo.”</p>
+        <p class="review-author" id="review-author">— Cliente fictício</p>
+        <div class="review-controls">
+          <button class="carousel-arrow" id="review-prev" aria-label="Avaliação anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="review-dots" id="review-dots"></div>
+          <button class="carousel-arrow" id="review-next" aria-label="Próxima avaliação">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <a class="btn-text" href="#contato-demo" style="margin-top:26px;">Avaliações demonstrativas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOCALIZAÇÃO E HORÁRIOS
+       ============================================================ -->
+  <section class="bg-ivory" id="localizacao">
+    <div class="local-grid">
+      <div class="local-map reveal">
+        <div class="photo photo--image" style="position:absolute;inset:0;"><img src="SaveClip.App_610625954_18092310890512480_3326612552942606862_n.jpg" alt="Prato da Casa Amora" width="1440" height="990" loading="lazy"></div>
+      </div>
+      <div class="local-info reveal">
+        <span class="label label--light">Visite o Casa Amora</span>
+        <h2>Venha nos visitar.</h2>
+        <span class="station-badge">endereço demonstrativo</span>
+        <div class="local-block">
+          <h4>Endereço</h4>
+          <p>Rua das Oliveiras, 120 — Centro<br>Cidade Exemplo — SP, CEP 00000-000</p>
+        </div>
+        <div class="local-block">
+          <h4>Horários</h4>
+          <ul class="hours-list">
+            <li><span>Segunda a quarta</span><span>11h30–15h30</span></li>
+            <li><span>Quinta a sábado</span><span>11h30–15h30 · 19h–22h</span></li>
+            <li><span>Domingo</span><span>Fechado</span></li>
+          </ul>
+        </div>
+        <div class="local-block">
+          <h4>Contato</h4>
+          <a href="#contato-demo">(11) 0000-0000</a>
+          <a href="#contato-demo" class="wa-link" data-msg="hero" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div class="local-ctas">
+          <a href="#contato-demo" class="btn btn-outline-dark" target="_blank" rel="noopener">Traçar rota</a>
+          <a href="#contato-demo" class="btn btn-primary wa-link" data-msg="hero" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINAL
+       ============================================================ -->
+  <section class="cta-final bg-charcoal" id="cta-final">
+    <div class="cta-final-photo">
+      <div class="photo photo--image" style="position:absolute;inset:0;"><img src="SaveClip.App_625157492_18106868587690161_4491509099600501146_n.webp" alt="Casa Amora ao anoitecer" width="1080" height="1080" loading="lazy"></div>
+    </div>
+    <div class="cta-final-overlay"></div>
+    <div class="cta-final-content reveal">
+      <h2>Boa gastronomia merece ser apreciada.</h2>
+      <p>Ingredientes bem escolhidos, sabores inspirados na tradição e um ambiente preparado para receber você com tranquilidade. Esperamos você no Casa Amora.</p>
+      <div class="cta-final-ctas">
+        <a href="#contato-demo" class="btn btn-primary wa-link" data-msg="reservar" target="_blank" rel="noopener">Reservar pelo WhatsApp</a>
+        <a href="#cardapio" class="btn btn-outline-light">Conhecer o cardápio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="section bg-ivory" id="faq">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="faq-head reveal">
+          <span class="label label--light">Dúvidas</span>
+          <h2>Antes da sua visita.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-q"><span>Preciso fazer reserva?</span><span class="faq-q-icon"></span></button>
+            <div class="faq-answer-wrap"><div class="faq-answer"><p>A reserva não é obrigatória em todos os momentos, mas recomendamos consultar a disponibilidade previamente, principalmente em horários de maior movimento.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>Como faço uma reserva?</span><span class="faq-q-icon"></span></button>
+            <div class="faq-answer-wrap"><div class="faq-answer"><p>Você pode entrar em contato diretamente conosco pelo WhatsApp. Nossa equipe poderá informar a disponibilidade e orientar sobre sua reserva.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>Onde posso consultar o cardápio?</span><span class="faq-q-icon"></span></button>
+            <div class="faq-answer-wrap"><div class="faq-answer"><p>O cardápio pode ser acessado diretamente pelo site. Para informações específicas sobre pratos ou disponibilidade, fale conosco pelo WhatsApp.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>A cozinha do Casa Amora é italiana ou portuguesa?</span><span class="faq-q-icon"></span></button>
+            <div class="faq-answer-wrap"><div class="faq-answer"><p>Nossa gastronomia encontra inspiração principalmente nas tradições italiana e portuguesa, incorporando referências dessas cozinhas em diferentes pratos e preparos.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>O restaurante atende pessoas com restrições alimentares?</span><span class="faq-q-icon"></span></button>
+            <div class="faq-answer-wrap"><div class="faq-answer"><p>Alguns pratos podem permitir adaptações ou atender determinadas necessidades. Recomendamos consultar nossa equipe previamente pelo WhatsApp.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>Posso comemorar aniversários ou outras ocasiões no Casa Amora?</span><span class="faq-q-icon"></span></button>
+            <div class="faq-answer-wrap"><div class="faq-answer"><p>Sim. Para organizar melhor sua experiência, entre em contato conosco e consulte disponibilidade e possibilidades para sua ocasião.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>Posso tirar dúvidas antes de fazer uma reserva?</span><span class="faq-q-icon"></span></button>
+            <div class="faq-answer-wrap"><div class="faq-answer"><p>Sim. Você pode falar diretamente conosco pelo WhatsApp para esclarecer dúvidas sobre cardápio, horários, reservas ou atendimento.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo">Casa Amora</span>
+        <p>Gastronomia para ser apreciada sem pressa.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Visite</h4>
+          <p>Rua das Oliveiras, 120<br>Centro, Cidade Exemplo — SP</p>
+          <a href="#contato-demo" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <a href="#contato-demo" class="wa-link" data-msg="hero" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="#contato-demo">(11) 0000-0000</a>
+        </div>
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <p>Seg–qua: 11h30–15h30<br>Qui–sáb: 11h30–15h30 e 19h–22h<br>Domingo: fechado</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-links">
+        <a href="#cardapio">Cardápio</a>
+      </div>
+      <span class="footer-copy">© 2026 Casa Amora</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flutuante (desktop) -->
+<a href="#contato-demo" class="wa-float wa-link" id="wa-float" data-msg="hero" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.68 4.56 1.86 6.42L4 29l7.76-1.83a11.94 11.94 0 0 0 4.26.78h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3Zm7.02 17.2c-.3.85-1.72 1.62-2.36 1.7-.6.08-1.36.11-2.2-.14-.5-.15-1.15-.36-1.98-.71-3.48-1.5-5.75-5-5.92-5.24-.17-.24-1.42-1.9-1.42-3.62 0-1.72.9-2.56 1.22-2.9.32-.34.7-.43.94-.43.23 0 .47 0 .67.01.22.01.5-.08.78.6.3.72 1.02 2.48 1.1 2.66.09.18.15.39.03.63-.12.24-.18.39-.36.6-.18.21-.38.47-.54.63-.18.18-.37.38-.16.74.21.36.93 1.53 2 2.48 1.37 1.22 2.53 1.6 2.89 1.78.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.8-.18.33.12 2.08.98 2.44 1.16.36.18.6.27.68.42.09.16.09.9-.21 1.75Z"/></svg>
+</a>
+
+<!-- Barra WhatsApp fixa (mobile) -->
+<a href="#contato-demo" class="wa-bar wa-link" id="wa-bar" data-msg="hero" target="_blank" rel="noopener">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.68 4.56 1.86 6.42L4 29l7.76-1.83a11.94 11.94 0 0 0 4.26.78h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3Zm7.02 17.2c-.3.85-1.72 1.62-2.36 1.7-.6.08-1.36.11-2.2-.14-.5-.15-1.15-.36-1.98-.71-3.48-1.5-5.75-5-5.92-5.24-.17-.24-1.42-1.9-1.42-3.62 0-1.72.9-2.56 1.22-2.9.32-.34.7-.43.94-.43.23 0 .47 0 .67.01.22.01.5-.08.78.6.3.72 1.02 2.48 1.1 2.66.09.18.15.39.03.63-.12.24-.18.39-.36.6-.18.21-.38.47-.54.63-.18.18-.37.38-.16.74.21.36.93 1.53 2 2.48 1.37 1.22 2.53 1.6 2.89 1.78.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.36.48-.3.8-.18.33.12 2.08.98 2.44 1.16.36.18.6.27.68.42.09.16.09.9-.21 1.75Z"/></svg>
+  <span>WhatsApp — Reservar uma mesa</span>
+</a>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- WhatsApp: mensagens contextuais ---------- */
+  var WA_NUMBER = "";
+  var WA_MESSAGES = {
+    hero: "Olá! Vim pelo site do Casa Amora e gostaria de saber mais sobre reservas.",
+    reservar: "Olá! Conheci o Casa Amora pelo site e gostaria de consultar a disponibilidade para uma reserva.",
+    cardapio: "Olá! Gostaria de ver o cardápio completo do Casa Amora.",
+    ambiente: "Olá! Gostaria de conhecer mais sobre o ambiente do Casa Amora.",
+    ocasioes: "Olá! Gostaria de consultar disponibilidade para uma ocasião especial no Casa Amora."
+  };
+  document.querySelectorAll(".wa-link").forEach(function(el){
+    var key = el.getAttribute("data-msg") || "hero";
+    var msg = WA_MESSAGES[key] || WA_MESSAGES.hero;
+    el.setAttribute("href", "#contato-demo");
+  });
+
+  /* ---------- Header: fundo ao rolar ---------- */
+  var header = document.getElementById("site-header");
+  function onScrollHeader(){
+    if (window.scrollY > 40) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+  }
+  onScrollHeader();
+  window.addEventListener("scroll", onScrollHeader, { passive: true });
+
+  /* ---------- Menu mobile ---------- */
+  var hamburger = document.getElementById("hamburger-btn");
+  var mobileMenu = document.getElementById("mobile-menu");
+  var closeBtn = document.getElementById("mobile-menu-close");
+  function openMenu(){
+    mobileMenu.classList.add("open");
+    hamburger.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenu(){
+    mobileMenu.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+  hamburger.addEventListener("click", openMenu);
+  closeBtn.addEventListener("click", closeMenu);
+  mobileMenu.querySelectorAll(".mm-link").forEach(function(link){
+    link.addEventListener("click", closeMenu);
+  });
+
+  /* ---------- Reveal on scroll ---------- */
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var revealEls = document.querySelectorAll(".reveal");
+  if (!reduceMotion && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("is-visible"); });
+  }
+
+  /* ---------- Hero: parallax muito leve ---------- */
+  var heroPhoto = document.getElementById("hero-photo");
+  if (!reduceMotion && heroPhoto){
+    var ticking = false;
+    window.addEventListener("scroll", function(){
+      if (!ticking){
+        window.requestAnimationFrame(function(){
+          var y = window.scrollY;
+          if (y < window.innerHeight * 1.2){
+            heroPhoto.style.transform = "translateY(" + (y * 0.12) + "px)";
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive:true });
+  }
+
+  /* ---------- Carrossel de pratos ---------- */
+  var track = document.getElementById("dish-track");
+  var prevBtn = document.getElementById("dish-prev");
+  var nextBtn = document.getElementById("dish-next");
+  function scrollDishes(dir){
+    var card = track.querySelector(".dish-card");
+    var amount = card ? (card.getBoundingClientRect().width + 28) : 340;
+    track.scrollBy({ left: dir * amount, behavior: "smooth" });
+  }
+  if (prevBtn) prevBtn.addEventListener("click", function(){ scrollDishes(-1); });
+  if (nextBtn) nextBtn.addEventListener("click", function(){ scrollDishes(1); });
+
+  /* ---------- Slider de avaliações ---------- */
+  var reviews = [
+    { text: "Comida excelente e preço justo.", author: "Cliente fictício" },
+    { text: "Alta gastronomia, ótimo atendimento e ambiente agradável.", author: "Cliente fictício" },
+    { text: "Uma experiência acolhedora, com pratos bem apresentados e atendimento atencioso.", author: "Cliente fictício" }
+  ];
+  var reviewIndex = 0;
+  var quoteEl = document.getElementById("review-quote");
+  var authorEl = document.getElementById("review-author");
+  var dotsWrap = document.getElementById("review-dots");
+  var reviewTimer;
+
+  reviews.forEach(function(_, i){
+    var dot = document.createElement("button");
+    dot.className = "review-dot" + (i === 0 ? " active" : "");
+    dot.setAttribute("aria-label", "Ver avaliação " + (i + 1));
+    dot.addEventListener("click", function(){ setReview(i); resetAutoplay(); });
+    dotsWrap.appendChild(dot);
+  });
+
+  function setReview(i){
+    reviewIndex = (i + reviews.length) % reviews.length;
+    if (!reduceMotion){
+      quoteEl.classList.add("fading");
+      setTimeout(function(){
+        quoteEl.textContent = "\u201C" + reviews[reviewIndex].text + "\u201D";
+        authorEl.textContent = "\u2014 " + reviews[reviewIndex].author;
+        quoteEl.classList.remove("fading");
+      }, 220);
+    } else {
+      quoteEl.textContent = "\u201C" + reviews[reviewIndex].text + "\u201D";
+      authorEl.textContent = "\u2014 " + reviews[reviewIndex].author;
+    }
+    dotsWrap.querySelectorAll(".review-dot").forEach(function(d, di){
+      d.classList.toggle("active", di === reviewIndex);
+    });
+  }
+  function resetAutoplay(){
+    clearInterval(reviewTimer);
+    reviewTimer = setInterval(function(){ setReview(reviewIndex + 1); }, 7000);
+  }
+  document.getElementById("review-prev").addEventListener("click", function(){ setReview(reviewIndex - 1); resetAutoplay(); });
+  document.getElementById("review-next").addEventListener("click", function(){ setReview(reviewIndex + 1); resetAutoplay(); });
+  resetAutoplay();
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    var q = item.querySelector(".faq-q");
+    q.addEventListener("click", function(){
+      item.classList.toggle("open");
+    });
+  });
+
+  /* ---------- WhatsApp: botão flutuante + barra mobile ---------- */
+  var waFloat = document.getElementById("wa-float");
+  var waBar = document.getElementById("wa-bar");
+  function onScrollWA(){
+    var pastHero = window.scrollY > window.innerHeight * 0.75;
+    waFloat.classList.toggle("shown", window.scrollY > 100);
+    waBar.classList.toggle("shown", pastHero);
+  }
+  onScrollWA();
+  window.addEventListener("scroll", onScrollWA, { passive:true });
+
+})();
+</script>
+<div style="position:fixed;z-index:99999;left:50%;bottom:14px;transform:translateX(-50%);padding:8px 14px;border-radius:999px;background:#111;color:#fff;font:600 12px/1.2 Arial,sans-serif;box-shadow:0 8px 30px #0005;white-space:nowrap">Projeto demonstrativo · dados fictícios</div></body>
+</html>
+
