@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ateliê Serena | Estética Integrativa em Cidade Exemplo</title>
+<meta name="description" content="Uma experiência de estética integrativa guiada por escuta, naturalidade e protocolos sob medida. Conheça o projeto conceitual Ateliê Serena.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#fff7f8">
+<meta name="color-scheme" content="light only">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23FFF4F4'/%3E%3Cpath d='M20 24 50 78 80 24 64 24 50 53 36 24Z' fill='%239B365D'/%3E%3Ccircle cx='71' cy='28' r='9' fill='%23F0C6D5'/%3E%3C/svg%3E">
+
+<style>
+/* ============================================================
+   1. RESET & VARIÁVEIS
+   ============================================================ */
+:root{
+  color-scheme:only light;
+  --c1:#FFF4F4; /* branco rosado - topo */
+  --c2:#FFD6E0; /* rosa suave */
+  --c3:#BDB2FF; /* lilás pastel */
+  --c4:#3A86FF; /* azul vibrante - CTA */
+  --c5:#0F2540; /* azul profundo */
+  --c6:#050E1A; /* azul noturno - rodapé */
+
+  --ink:#3a2b33;      /* texto em fundos claros */
+  --ink-soft:#6b5560; /* texto secundário em fundos claros */
+  --cream:#fbf7fb;    /* texto em fundos escuros */
+  --cream-soft:#c9d3e0;/* texto secundário em fundos escuros */
+
+  --font-head:'Cormorant Garamond', serif;
+  --font-body:'Plus Jakarta Sans', sans-serif;
+
+  --container:1120px;
+  --radius:20px;
+  --eyebrow-light:#8a4d68; /* contraste AA sobre fundos claros (era #a6779a, ~3.4:1) */
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
+
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  overflow-x:hidden;
+  /* gradiente fluido único, contínuo do topo ao rodapé da página inteira */
+  background-image:linear-gradient(
+    to bottom,
+    var(--c1) 0%,
+    var(--c2) 14%,
+    var(--c2) 20%,
+    var(--c3) 34%,
+    var(--c3) 46%,
+    var(--c4) 60%,
+    var(--c5) 74%,
+    var(--c5) 86%,
+    var(--c6) 100%
+  );
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-attachment:scroll;
+}
+
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ margin:0; padding:0; list-style:none; }
+h1,h2,h3{ font-family:var(--font-head); font-weight:600; margin:0; line-height:1.15; }
+p{ margin:0; }
+button{ font-family:inherit; cursor:pointer; }
+
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
+}
+
+.section{
+  position:relative;
+  padding:110px 0;
+}
+
+.section-dark{ color:var(--cream); }
+.section-dark .eyebrow{ color:var(--c3); }
+.section-dark p{ color:var(--cream-soft); }
+
+.eyebrow{
+  display:inline-block;
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--eyebrow-light);
+  margin-bottom:14px;
+}
+
+.lead-text{ font-size:18px; color:var(--ink); font-weight:500; margin-bottom:24px; }
+.text-accent{ color:var(--c4); }
+.btn-ghost-accent{ border-color:var(--c4); color:#2c2140; }
+
+/* Foco visível para navegação por teclado */
+a:focus-visible, button:focus-visible, summary:focus-visible{
+  outline:2px solid var(--c4);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+.section-title{
+  font-size:clamp(30px, 4.2vw, 46px);
+  margin-bottom:18px;
+}
+
+.section-subtitle{
+  font-size:clamp(16px,2vw,19px);
+  max-width:640px;
+  color:var(--ink-soft);
+  font-weight:400;
+}
+
+.section-dark .section-subtitle{ color:var(--cream-soft); }
+
+.center{ text-align:center; margin-left:auto; margin-right:auto; }
+
+/* Botões */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:16px 30px;
+  border-radius:100px;
+  font-weight:700;
+  font-size:15px;
+  border:none;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  max-width:100%;
+}
+.btn-primary{
+  background:var(--c4);
+  color:#fff;
+  box-shadow:0 10px 30px -8px rgba(58,134,255,.55);
+}
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 34px -8px rgba(58,134,255,.65); }
+.btn-ghost{
+  background:transparent;
+  border:1.5px solid currentColor;
+  color:inherit;
+}
+.btn-ghost:hover{ background:rgba(0,0,0,.06); }
+.section-dark .btn-ghost:hover{ background:rgba(255,255,255,.15); }
+.btn svg, .icon-wa{ width:19px; height:19px; flex-shrink:0; }
+
+.microcopy{
+  margin-top:14px;
+  font-size:13.5px;
+  color:var(--ink-soft);
+  font-style:italic;
+}
+.section-dark .microcopy{ color:var(--cream-soft); }
+
+/* ============================================================
+   2. HEADER
+   ============================================================ */
+.site-header{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  padding:20px 0;
+  transition:padding .3s ease, background .3s ease, box-shadow .3s ease;
+}
+.site-header.is-scrolled{
+  padding:12px 0;
+  background:rgba(255,244,244,.72);
+  backdrop-filter:blur(14px) saturate(150%);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 8px 30px -12px rgba(58,20,40,.18);
+}
+.site-header.is-scrolled.theme-dark{
+  background:rgba(5,14,26,.6);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{
+  font-family:var(--font-head);
+  font-size:22px;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+.logo span{ color:var(--c4); }
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:34px;
+  font-size:15px;
+  font-weight:600;
+}
+.nav-links a{
+  position:relative;
+  padding:4px 0;
+  opacity:.85;
+}
+.nav-links a:hover{ opacity:1; }
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  left:0; bottom:-2px;
+  width:0; height:2px;
+  background:currentColor;
+  transition:width .25s ease;
+}
+.nav-links a:hover::after{ width:100%; }
+
+.header-cta{ display:flex; align-items:center; gap:18px; }
+.header-cta .btn{ padding:11px 22px; font-size:14px; }
+
+.nav-toggle{
+  display:none;
+  width:42px; height:42px;
+  border:none;
+  background:rgba(255,255,255,.5);
+  border-radius:12px;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
+.nav-toggle span{
+  display:block; width:20px; height:2px; background:var(--ink);
+  transition:transform .3s ease, opacity .3s ease;
+}
+.nav-toggle.is-open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.nav-toggle.is-open span:nth-child(2){ opacity:0; }
+.nav-toggle.is-open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+.mobile-nav{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:999;
+  transform:translateY(-100%);
+}
+
+/* ============================================================
+   3. HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:120px;
+  overflow:hidden;
+}
+.hero-bg-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.sakura-branch{
+  position:absolute;
+  will-change:transform;
+}
+.sakura-branch svg{ display:block; }
+.branch-tl{ top:-40px; left:-60px; width:min(46vw,520px); }
+.branch-tr{ top:-20px; right:-80px; width:min(38vw,420px); transform:scaleX(-1); }
+.branch-br{ bottom:-60px; right:-40px; width:min(40vw,460px); transform:rotate(8deg); }
+
+.petals{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+}
+.petal{
+  position:absolute;
+  top:-5%;
+  width:14px;
+  height:14px;
+  background:linear-gradient(135deg,#ffd7e2,#ffb6c9);
+  border-radius:70% 5% 70% 5%;
+  opacity:.85;
+  animation:fall linear infinite;
+  will-change:transform;
+}
+@keyframes fall{
+  0%{ transform:translate(0,-10vh) rotate(0deg); }
+  100%{ transform:translate(var(--drift,40px), 115vh) rotate(360deg); }
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:680px;
+}
+.hero-title{
+  font-size:clamp(34px,5.4vw,58px);
+  margin-bottom:22px;
+}
+.hero-subtitle{
+  font-size:clamp(16px,2.1vw,20px);
+  color:var(--ink-soft);
+  max-width:520px;
+  margin-bottom:34px;
+}
+.hero-scroll-cue{
+  position:absolute;
+  bottom:34px; left:50%;
+  transform:translateX(-50%);
+  z-index:2;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-soft);
+  opacity:.8;
+}
+.scroll-line{
+  width:1px; height:36px;
+  background:linear-gradient(to bottom, var(--ink-soft), transparent);
+  animation:scrollcue 1.8s ease-in-out infinite;
+}
+@keyframes scrollcue{
+  0%,100%{ transform:scaleY(1); opacity:.5; }
+  50%{ transform:scaleY(1.3); opacity:1; }
+}
+
+/* ============================================================
+   4. SOBRE
+   ============================================================ */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.about-copy p{
+  font-size:16.5px;
+  line-height:1.75;
+  color:var(--ink-soft);
+  margin-bottom:26px;
+}
+.about-visual{
+  position:relative;
+  aspect-ratio:4/5;
+  border-radius:28px;
+  background:linear-gradient(160deg, rgba(255,255,255,.6), rgba(255,214,224,.35));
+  border:2px dashed rgba(58,43,51,.28);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.about-visual .placeholder-label{
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  font-size:13px; color:var(--ink-soft); text-align:center; padding:20px;
+}
+.about-visual .placeholder-label svg{ width:32px; height:32px; opacity:.6; }
+.trust-strip{
+  margin-top:56px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:36px;
+  padding-top:36px;
+  border-top:1px solid rgba(58,43,51,.12);
+}
+.trust-item{
+  display:flex; align-items:center; gap:10px;
+  font-size:14px; font-weight:600; color:var(--ink-soft);
+}
+.trust-item svg{ width:20px; height:20px; color:var(--c4); flex-shrink:0; }
+
+/* ============================================================
+   5. SERVIÇOS
+   ============================================================ */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:56px;
+}
+.service-card{
+  position:relative;
+  padding:38px 30px;
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.22);
+  border:1px solid rgba(255,255,255,.45);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  box-shadow:0 20px 40px -24px rgba(15,10,40,.35);
+  transition:transform .3s ease, box-shadow .3s ease;
+  display:flex; flex-direction:column;
+}
+.service-card:hover{ transform:translateY(-6px); box-shadow:0 26px 48px -20px rgba(15,10,40,.4); }
+.service-icon{
+  width:52px; height:52px;
+  border-radius:16px;
+  background:rgba(255,255,255,.55);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:22px;
+}
+.service-icon svg{ width:26px; height:26px; color:#4b3a6b; }
+.service-card h3{
+  font-size:23px;
+  margin-bottom:12px;
+  color:#2c2140;
+}
+.service-card p{
+  font-size:15px;
+  line-height:1.65;
+  color:#4b3f5e;
+  margin-bottom:24px;
+  flex-grow:1;
+}
+.service-card .card-cta{
+  font-size:14px;
+  font-weight:700;
+  color:#2c2140;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.service-card .card-cta svg{ width:15px; height:15px; transition:transform .2s ease; }
+.service-card:hover .card-cta svg{ transform:translateX(4px); }
+
+/* ============================================================
+   6. DIFERENCIAIS + DEPOIMENTOS
+   ============================================================ */
+.diff-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:start;
+  margin-top:50px;
+}
+.diff-list{ display:flex; flex-direction:column; gap:30px; }
+.diff-item{ display:flex; gap:18px; }
+.diff-num{
+  flex-shrink:0;
+  width:44px; height:44px;
+  border-radius:50%;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.3);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-head); font-weight:600; font-size:18px;
+}
+.diff-item h4{ font-size:19px; margin-bottom:6px; font-family:var(--font-head); font-weight:600; }
+.diff-item p{ font-size:14.5px; line-height:1.6; }
+
+.testimonials{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.chat-bubble{
+  position:relative;
+  max-width:92%;
+  padding:16px 20px;
+  border-radius:18px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.22);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  font-size:14.5px;
+  line-height:1.55;
+}
+.chat-bubble.mine{
+  align-self:flex-end;
+  background:rgba(255,255,255,.92);
+  color:#2c2140;
+  border-bottom-right-radius:4px;
+}
+.chat-bubble.theirs{
+  align-self:flex-start;
+  border-bottom-left-radius:4px;
+}
+.chat-bubble .chat-name{
+  display:block;
+  font-weight:700;
+  font-size:12.5px;
+  margin-bottom:4px;
+  color:var(--c4);
+}
+.chat-bubble.mine .chat-name{ color:#8a6a2c; }
+.testimonial-note{
+  margin-top:6px;
+  font-size:12px;
+  opacity:.65;
+  font-style:italic;
+}
+
+/* ============================================================
+   7. FAQ
+   ============================================================ */
+.faq-list{ margin-top:50px; max-width:760px; }
+.faq-item{
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.faq-item summary{
+  list-style:none;
+  cursor:pointer;
+  padding:24px 4px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  font-family:var(--font-head);
+  font-size:19px;
+  font-weight:600;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item .chev{
+  flex-shrink:0;
+  width:22px; height:22px;
+  transition:transform .3s ease;
+  color:var(--c3);
+}
+.faq-item[open] .chev{ transform:rotate(135deg); }
+.faq-answer{
+  padding:0 4px 26px;
+  font-size:15px;
+  line-height:1.7;
+  color:var(--cream-soft);
+  max-width:640px;
+}
+
+/* ============================================================
+   8. CTA FINAL + FOOTER
+   ============================================================ */
+.final-cta{ text-align:center; padding-bottom:70px; }
+.final-cta .section-title{ max-width:680px; margin-left:auto; margin-right:auto; }
+.final-cta .section-subtitle{ margin-left:auto; margin-right:auto; margin-bottom:36px; }
+
+footer{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding:50px 0 34px;
+  font-size:13.5px;
+  color:var(--cream-soft);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:40px;
+  margin-bottom:40px;
+}
+.footer-brand .logo{ color:var(--cream); margin-bottom:12px; }
+.footer-brand p{ max-width:280px; line-height:1.6; }
+.footer-col h5{
+  font-family:var(--font-body);
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#8fa2bd;
+  margin-bottom:16px;
+  font-weight:700;
+}
+.footer-col ul{ display:flex; flex-direction:column; gap:10px; }
+.footer-col a:hover{ color:var(--cream); }
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.footer-note{
+  color:#5f7186;
+  font-size:12px;
+}
+
+/* ============================================================
+   9. BOTÃO FLUTUANTE WHATSAPP
+   ============================================================ */
+.whatsapp-float{
+  position:fixed;
+  bottom:24px; right:24px;
+  width:60px; height:60px;
+  border-radius:50%;
+  background:var(--c4);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 12px 28px -8px rgba(58,134,255,.6);
+  z-index:900;
+  opacity:0;
+  transform:translateY(20px) scale(.8);
+  pointer-events:none;
+  transition:opacity .35s ease, transform .35s ease;
+}
+.whatsapp-float.is-visible{
+  opacity:1; transform:translateY(0) scale(1); pointer-events:auto;
+}
+.whatsapp-float:hover{ transform:translateY(-3px) scale(1.05); }
+.whatsapp-float svg{ width:29px; height:29px; color:#fff; }
+
+/* ============================================================
+   10. RESPONSIVO
+   ============================================================ */
+@media (max-width:960px){
+  .about-grid{ grid-template-columns:1fr; }
+  .about-visual{ order:-1; aspect-ratio:16/9; }
+  /* 3 colunas mais estreitas em vez de 2+1 órfão — evita card desalinhado sozinho na linha */
+  .services-grid{ gap:18px; }
+  .service-card{ padding:30px 22px; }
+  .diff-grid{ grid-template-columns:1fr; gap:50px; }
+  .footer-grid{ grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width:720px){
+  .nav-links, .header-cta .btn-ghost{ display:none; }
+  .nav-toggle{ display:flex; }
+  .header-cta{ gap:10px; }
+
+  .mobile-nav{
+    display:flex;
+    background:var(--c1);
+    flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:30px;
+    transition:transform .4s ease;
+  }
+  .mobile-nav.is-open{ transform:translateY(0); }
+  .mobile-nav a{ font-family:var(--font-head); font-size:26px; font-weight:600; }
+  .mobile-nav .btn{ margin-top:10px; }
+
+  .section{ padding:80px 0; }
+  .services-grid{ grid-template-columns:1fr; }
+  .services-grid.scroller{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:18px;
+    margin:56px -24px 0;
+    padding:0 24px 10px;
+  }
+  .services-grid.scroller .service-card{
+    scroll-snap-align:start;
+    min-width:82%;
+  }
+  .testimonials.scroller{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:14px;
+    margin:0 -24px;
+    padding:0 24px 10px;
+  }
+  .testimonials.scroller .chat-bubble{
+    scroll-snap-align:start;
+    min-width:85%;
+    max-width:85%;
+  }
+  .footer-grid{ grid-template-columns:1fr; gap:30px; }
+  .footer-bottom{ flex-direction:column; }
+  .branch-tl{ width:60vw; opacity:.7; }
+  .branch-tr{ width:52vw; opacity:.6; }
+  .branch-br{ display:none; }
+}
+
+@media (max-width:400px){
+  .btn{ padding:14px 22px; font-size:14px; gap:8px; }
+}
+
+/* ============================================================
+   11. REFINAMENTO Ateliê Serena
+   Preserva a arquitetura original e eleva marca, conversao e noite.
+   ============================================================ */
+:root{
+  --c1:#fff7f8;
+  --c2:#f8dce5;
+  --c3:#d8b7d9;
+  --c4:#9b365d;
+  --c5:#291b45;
+  --c6:#090716;
+  --ink:#30242a;
+  --ink-soft:#6a505b;
+  --cream:#fffafd;
+  --cream-soft:#e6ddea;
+  --accent:#9b365d;
+  --accent-dark:#742642;
+  --ring:rgba(155,54,93,.18);
+}
+html{ scroll-padding-top:92px; }
+body{ background-color:var(--c6); }
+.section{ isolation:isolate; }
+.site-header{ color:var(--ink); }
+.site-header.is-scrolled.theme-dark{ color:var(--cream); border-bottom:1px solid rgba(255,255,255,.08); }
+.site-header.is-scrolled.theme-dark .nav-toggle{ background:rgba(255,255,255,.13); }
+.site-header.is-scrolled.theme-dark .nav-toggle span{ background:var(--cream); }
+.site-header.is-scrolled.theme-dark .brand-mark{ color:var(--cream); }
+.site-header.is-scrolled.theme-dark .logo span{ color:var(--cream); }
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  line-height:1;
+}
+.logo-symbol{ width:35px; height:35px; flex:none; overflow:visible; }
+.logo-symbol .logo-petal{ fill:#edb7ca; }
+.logo-symbol .logo-v{ fill:currentColor; }
+.brand-copy{ display:flex; flex-direction:column; gap:3px; }
+.brand-name{ font-family:var(--font-head); font-size:21px; letter-spacing:.02em; }
+.brand-tagline{ font-family:var(--font-body); font-size:8px; letter-spacing:.18em; text-transform:uppercase; opacity:.68; }
+.btn-primary{
+  background:var(--accent);
+  box-shadow:0 13px 32px -12px rgba(116,38,66,.68);
+}
+.btn-primary:hover{ background:var(--accent-dark); box-shadow:0 16px 36px -12px rgba(116,38,66,.75); }
+.btn:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible{ outline-color:#c65380; }
+.text-accent,.logo span,.service-card .card-cta{ color:var(--accent); }
+.hero{ min-height:100svh; }
+.hero .container{ display:grid; grid-template-columns:minmax(0,1.08fr) minmax(320px,.72fr); align-items:center; gap:54px; }
+.hero-content{ max-width:700px; }
+.concept-pill{
+  display:inline-flex; align-items:center; gap:8px; margin-bottom:20px;
+  padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.58);
+  border:1px solid rgba(155,54,93,.16); color:#7d3652;
+  font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+}
+.concept-pill::before{ content:''; width:7px; height:7px; border-radius:50%; background:#b94c76; box-shadow:0 0 0 4px var(--ring); }
+.hero-title{ max-width:720px; font-size:clamp(42px,5.25vw,72px); letter-spacing:-.025em; }
+.hero-subtitle{ max-width:590px; line-height:1.65; }
+.hero-proof{ display:flex; flex-wrap:wrap; gap:10px 22px; margin:24px 0 0; font-size:12.5px; font-weight:600; color:var(--ink-soft); }
+.hero-proof span{ display:flex; align-items:center; gap:7px; }
+.hero-proof span::before{ content:'\2713'; color:var(--accent); font-weight:800; }
+.hero-visual{
+  position:relative; z-index:2; width:100%; aspect-ratio:4/5; max-height:72vh;
+  border-radius:40% 40% 26px 26px; overflow:hidden;
+  box-shadow:0 28px 70px -30px rgba(94,38,66,.42);
+  border:1px solid rgba(255,255,255,.72);
+}
+.hero-visual img{ width:100%; height:100%; object-fit:cover; }
+.hero-visual::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%,rgba(74,26,50,.16)); pointer-events:none; }
+.hero-visual-note{ position:absolute; z-index:1; right:16px; bottom:16px; padding:10px 14px; border-radius:999px; color:#fff; background:rgba(51,27,39,.55); backdrop-filter:blur(10px); font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+.about-visual{ border:none; background:#eecbd7; box-shadow:0 30px 70px -40px rgba(70,21,45,.7); }
+.about-visual img{ width:100%; height:100%; object-fit:cover; object-position:center 28%; }
+.about-visual::after{ content:'Livia Serena  \2022  fundadora'; position:absolute; left:18px; bottom:18px; padding:11px 15px; border-radius:999px; background:rgba(255,250,252,.86); backdrop-filter:blur(12px); color:#603144; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+.trust-strip{ justify-content:space-between; }
+.service-card{ border-color:rgba(255,255,255,.58); }
+.service-icon{ color:var(--accent); }
+.service-card h3{ color:#352339; }
+.journey-label{ color:#f1bfd2; font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; margin-bottom:10px; }
+.experience-card{ padding:20px 22px; border-radius:18px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); }
+.experience-card + .experience-card{ margin-top:14px; }
+.experience-card strong{ display:block; font-family:var(--font-head); font-size:20px; margin-bottom:5px; color:#fff; }
+.experience-card p{ font-size:14px; line-height:1.55; }
+.results-section{ color:var(--cream); padding-top:96px; padding-bottom:96px; }
+.results-intro{ display:flex; align-items:end; justify-content:space-between; gap:40px; margin-bottom:42px; }
+.results-intro .section-title{ max-width:650px; margin-bottom:0; }
+.results-note{ max-width:320px; color:rgba(255,250,253,.72); font-size:12px; line-height:1.6; text-align:right; }
+.results-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.result-card{
+  min-height:220px; padding:30px; border-radius:24px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.24);
+  box-shadow:0 22px 55px -36px rgba(17,5,25,.72); backdrop-filter:blur(12px);
+}
+.result-number{ font-family:var(--font-head); font-size:clamp(52px,7vw,82px); line-height:.9; letter-spacing:-.045em; color:#fff; }
+.result-label{ max-width:210px; font-size:14px; font-weight:700; line-height:1.45; color:#f4eaf1; }
+.result-detail{ margin-top:6px; font-size:12px; line-height:1.5; color:rgba(255,250,253,.68); }
+.header-cta .icon-wa,.whatsapp-float .icon-wa{
+  display:block; margin:auto; transform:translate(1px,-1px); transform-origin:center;
+}
+.header-cta .btn-primary,.whatsapp-float{ align-items:center; justify-content:center; }
+.section-night{ position:relative; overflow:hidden; }
+.section-night::before{
+  content:''; position:absolute; inset:0; z-index:-1; opacity:.7; pointer-events:none;
+  background-image:
+    radial-gradient(circle at 9% 18%,rgba(255,255,255,.9) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 22% 72%,rgba(255,255,255,.75) 0 1.2px,transparent 2px),
+    radial-gradient(circle at 48% 30%,rgba(255,238,248,.85) 0 1px,transparent 1.8px),
+    radial-gradient(circle at 72% 62%,rgba(255,255,255,.8) 0 1.3px,transparent 2px),
+    radial-gradient(circle at 91% 24%,rgba(255,255,255,.8) 0 1px,transparent 1.8px);
+  background-size:240px 220px,310px 280px,270px 250px,360px 300px,290px 260px;
+}
+.night-flowers{ position:absolute; inset:auto 0 0; height:270px; pointer-events:none; overflow:hidden; opacity:.96; }
+.night-flower{ position:absolute; width:120px; height:120px; color:#fffafd; filter:drop-shadow(0 0 18px rgba(255,255,255,.16)); }
+.night-flower.f1{ left:-20px; bottom:-25px; transform:rotate(-18deg); }
+.night-flower.f2{ right:7%; bottom:-35px; width:170px; height:170px; transform:rotate(20deg); opacity:.82; }
+.night-flower.f3{ right:34%; bottom:-60px; width:100px; height:100px; transform:rotate(-10deg); opacity:.36; }
+.final-cta{ padding-top:120px; padding-bottom:120px; }
+.final-cta .section-title{ font-size:clamp(36px,5vw,58px); }
+.demo-note{ max-width:560px; margin:18px auto 0; font-size:12px; color:#a99db2; }
+.toast{
+  position:fixed; left:50%; bottom:24px; z-index:2000; width:min(440px,calc(100% - 32px));
+  transform:translate(-50%,20px); padding:15px 18px; border-radius:16px;
+  background:#fff8fb; color:#4f2b3a; border:1px solid rgba(155,54,93,.2);
+  box-shadow:0 24px 60px -24px rgba(0,0,0,.45); opacity:0; visibility:hidden;
+  transition:opacity .25s ease,transform .25s ease,visibility .25s;
+  font-size:13px; line-height:1.5;
+}
+.toast.is-visible{ opacity:1; visibility:visible; transform:translate(-50%,0); }
+footer{ position:relative; overflow:hidden; }
+.footer-brand .brand-name{ color:var(--cream); }
+
+@media (max-width:960px){
+  .hero .container{ grid-template-columns:1fr .7fr; gap:28px; }
+  .hero-title{ font-size:clamp(39px,6vw,58px); }
+  .hero-visual{ max-height:58vh; }
+}
+@media (max-width:720px){
+  .container{ padding-left:20px; padding-right:20px; }
+  .site-header{ padding:14px 0; }
+  .header-inner{ gap:10px; }
+  .brand-tagline{ display:none; }
+  .brand-name{ font-size:18px; }
+  .logo-symbol{ width:30px; height:30px; }
+  .header-cta .btn-primary{ padding:10px 15px; font-size:12px; }
+  .hero{ padding-top:104px; padding-bottom:48px; align-items:flex-start; }
+  .hero .container{ display:flex; flex-direction:column; gap:34px; }
+  .hero-content{ display:contents; }
+  .concept-pill{ order:1; margin:0; }
+  .hero-title{ order:2; font-size:clamp(39px,12.4vw,56px); }
+  .hero-subtitle{ order:3; margin:-15px 0 0; }
+  .hero .btn-primary{ order:4; width:100%; justify-content:center; }
+  .hero .microcopy{ order:5; margin-top:-20px; text-align:center; }
+  .hero-proof{ order:6; margin:0; gap:8px 16px; }
+  .hero-visual{ order:7; aspect-ratio:4/3; max-height:none; border-radius:28px 28px 80px 28px; }
+  .hero-scroll-cue{ display:none; }
+  .about-visual{ aspect-ratio:4/5; }
+  .trust-strip{ gap:18px; }
+  .trust-item{ width:100%; }
+  .services-grid.scroller{
+    display:grid; grid-template-columns:1fr; overflow:visible; gap:18px;
+    margin:44px 0 0; padding:0;
+  }
+  .services-grid.scroller .service-card{ min-width:0; width:100%; scroll-snap-align:none; }
+  .service-card{ min-height:0; padding:28px 24px; }
+  .service-icon{ margin-left:0; }
+  .results-intro{ align-items:flex-start; flex-direction:column; gap:14px; margin-bottom:28px; }
+  .results-note{ max-width:none; text-align:left; }
+  .results-grid{ grid-template-columns:1fr; }
+  .result-card{ min-height:170px; }
+  .night-flowers{ height:180px; }
+  .night-flower.f2{ right:-35px; }
+  .whatsapp-float{ width:54px; height:54px; right:18px; bottom:18px; }
+}
+@media (max-width:400px){
+  .brand-copy{ max-width:104px; }
+  .brand-name{ font-size:16px; white-space:nowrap; }
+  .header-cta .btn-primary{ padding:9px 12px; }
+  .header-cta .btn-primary .cta-long{ display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Sprite de ícones reutilizados (evita duplicar o mesmo SVG várias vezes no código) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29z"/>
+  </symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+    <path d="M5 12h14M13 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="icon-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+    <path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/>
+  </symbol>
+  <symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+    <path d="M12 5v14M5 12h14"/>
+  </symbol>
+</svg>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#hero" class="logo brand-mark" aria-label="Ateliê Serena — início">
+      <svg class="logo-symbol" viewBox="0 0 48 48" aria-hidden="true"><path class="logo-petal" d="M32 5c9 2 13 10 10 18-3 8-11 11-19 8 1-9 3-20 9-26Z"/><path class="logo-v" d="M6 9h9l9 24L34 9h8L26 43h-5L6 9Z"/></svg>
+      <span class="brand-copy"><span class="brand-name">Ateliê Serena</span><span class="brand-tagline">Estética integrativa</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Cuidados</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="#contato" class="btn btn-ghost">Contato</a>
+      <a href="#contato" class="btn btn-primary js-demo-cta">
+        <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+        <span class="cta-long">Agendar conversa</span><span aria-hidden="true"> </span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-controls="mobileNav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#sobre">Sobre</a>
+  <a href="#servicos">Cuidados</a>
+  <a href="#diferenciais">Diferenciais</a>
+  <a href="#faq">Dúvidas</a>
+  <a href="#contato" class="btn btn-primary js-demo-cta">
+    <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+    Agendar conversa
+  </a>
+</nav>
+
+<!-- ============================================================
+     1. HERO
+     ============================================================ -->
+<section class="hero" id="hero">
+  <div class="hero-bg-layer" aria-hidden="true">
+    <div class="sakura-branch branch-tl" data-speed="0.12">
+      <svg width="420" height="360" viewBox="0 0 420 360" fill="none">
+        <path d="M-10 20 C 60 40, 110 70, 150 130 C 180 175, 200 210, 230 260" stroke="#c98fa0" stroke-width="6" stroke-linecap="round" fill="none" opacity=".55"/>
+        <path d="M60 55 C 90 40, 120 45, 140 75" stroke="#c98fa0" stroke-width="4" stroke-linecap="round" fill="none" opacity=".45"/>
+        <path d="M110 100 C 140 85, 168 92, 185 118" stroke="#c98fa0" stroke-width="4" stroke-linecap="round" fill="none" opacity=".45"/>
+        <g fill="#ffd6e0">
+          <circle cx="55" cy="45" r="13"/><circle cx="80" cy="35" r="11"/><circle cx="95" cy="58" r="12"/>
+          <circle cx="130" cy="65" r="14"/><circle cx="150" cy="50" r="10"/>
+          <circle cx="165" cy="95" r="13"/><circle cx="185" cy="108" r="11"/>
+          <circle cx="205" cy="150" r="12"/><circle cx="225" cy="140" r="10"/>
+        </g>
+        <g fill="#ffbccf">
+          <circle cx="70" cy="50" r="5"/><circle cx="140" cy="70" r="5"/><circle cx="195" cy="115" r="5"/>
+        </g>
+      </svg>
+    </div>
+    <div class="sakura-branch branch-tr" data-speed="0.08">
+      <svg width="360" height="300" viewBox="0 0 360 300" fill="none">
+        <path d="M0 10 C 60 20, 100 45, 130 90 C 150 120, 165 145, 190 180" stroke="#c98fa0" stroke-width="5" stroke-linecap="round" fill="none" opacity=".45"/>
+        <g fill="#ffd6e0" opacity=".9">
+          <circle cx="45" cy="30" r="11"/><circle cx="70" cy="22" r="9"/>
+          <circle cx="100" cy="55" r="12"/><circle cx="125" cy="80" r="10"/>
+          <circle cx="150" cy="115" r="11"/><circle cx="170" cy="150" r="9"/>
+        </g>
+      </svg>
+    </div>
+    <div class="sakura-branch branch-br" data-speed="0.15">
+      <svg width="380" height="320" viewBox="0 0 380 320" fill="none">
+        <path d="M380 320 C 320 300, 270 260, 240 210 C 220 175, 205 150, 180 110" stroke="#c98fa0" stroke-width="5" stroke-linecap="round" fill="none" opacity=".4"/>
+        <g fill="#ffd6e0" opacity=".85">
+          <circle cx="330" cy="290" r="12"/><circle cx="300" cy="260" r="10"/>
+          <circle cx="270" cy="225" r="11"/><circle cx="245" cy="190" r="9"/>
+          <circle cx="215" cy="150" r="10"/>
+        </g>
+      </svg>
+    </div>
+    <div class="petals" id="petals"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <span class="concept-pill">Projeto conceitual de portfólio</span>
+      <h1 class="hero-title">Sua pele não precisa de excessos. Precisa de um plano feito para ela.</h1>
+      <p class="hero-subtitle">Na Ateliê Serena, escuta cuidadosa e estética integrativa se encontram em protocolos faciais e corporais pensados para resultados naturais.</p>
+      <a href="#contato" class="btn btn-primary js-demo-cta">
+        <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+        Descobrir meu protocolo
+      </a>
+      <p class="microcopy">Conversa inicial sem pressão e com expectativas alinhadas.</p>
+      <div class="hero-proof" aria-label="Compromissos da experiência"><span>Escuta antes da indicação</span><span>Naturalidade como direção</span><span>Acompanhamento próximo</span></div>
+    </div>
+    <figure class="hero-visual">
+      <img src="textura-rosa-editorial.webp" alt="Composição editorial abstrata em tons de rosa, vidro e tecido translúcido" width="1024" height="1536" fetchpriority="high">
+      <figcaption class="hero-visual-note">Da luz ao florescer</figcaption>
+    </figure>
+  </div>
+
+  <div class="hero-scroll-cue"><span class="scroll-line"></span>role para descobrir</div>
+</section>
+
+<!-- ============================================================
+     2. SOBRE NÓS
+     ============================================================ -->
+<section class="section" id="sobre">
+  <div class="container">
+    <span class="eyebrow">Conheça a Maison</span>
+    <div class="about-grid">
+      <div class="about-copy">
+        <h2 class="section-title">Cuidado que começa ouvindo você.</h2>
+        <p class="lead-text">Lívia Serena idealizou um espaço onde cada escolha parte da sua rotina, da sua pele e do resultado que faz sentido para você.</p>
+        <p>Sem padrões engessados ou promessas irreais. A experiência começa com uma conversa atenta, segue com um plano claro e respeita o tempo de cada pessoa.</p>
+        <p>O conceito Ateliê Serena combina naturalidade, acolhimento e precisão em uma jornada que vai da avaliação ao acompanhamento — sempre com transparência sobre possibilidades e limites.</p>
+        <a href="#servicos" class="btn btn-ghost btn-ghost-accent">Explorar os cuidados</a>
+      </div>
+      <div class="about-visual">
+        <img src="livia-valenne.webp" alt="Retrato editorial de personagem fictícia em um estúdio de estética" width="1024" height="1536" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <div class="trust-strip">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg> Avaliação individualizada</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg> Biossegurança rigorosa</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> Atendimento humanizado</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. SERVIÇOS
+     ============================================================ -->
+<section class="section" id="servicos">
+  <div class="container">
+    <span class="eyebrow">Três caminhos de cuidado</span>
+    <h2 class="section-title">Um protocolo começa pela sua intenção.</h2>
+    <p class="section-subtitle">Escolha o ponto de partida. A recomendação final nasce da avaliação e do que você deseja sentir, preservar ou transformar.</p>
+
+    <div class="services-grid scroller">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <h3>Estética Facial Integrativa</h3>
+        <p>Tratamentos focados na saúde da pele, prevenção do envelhecimento e hidratação profunda. Protocolos ajustados exatamente para o seu tipo de pele.</p>
+        <a href="#contato" class="card-cta js-demo-cta">
+          Quero cuidar da pele
+          <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+        </a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c3 3 6 6.5 6 10.5a6 6 0 1 1-12 0C6 9.5 9 6 12 3z"/></svg>
+        </div>
+        <h3>Estética Corporal &amp; Modelagem</h3>
+        <p>Procedimentos voltados para contorno corporal, melhora da circulação, redução de inchaço e textura da pele, sempre alinhados a hábitos saudáveis.</p>
+        <a href="#contato" class="card-cta js-demo-cta">
+          Explorar cuidado corporal
+          <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+        </a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 13c0-4.5 3.5-9 8-9s8 4.5 8 9-3.5 8-8 8-8-3.5-8-8z"/><path d="M9 13a3 3 0 0 1 6 0"/></svg>
+        </div>
+        <h3>Protocolos de Relaxamento &amp; SPA</h3>
+        <p>Massagens e rituais corporais desenhados para aliviar a tensão do dia a dia e renovar suas energias em um ambiente calmo e privativo.</p>
+        <a href="#contato" class="card-cta js-demo-cta">
+          Reservar uma pausa
+          <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4. RESULTADOS CONCEITUAIS
+     ============================================================ -->
+<section class="section results-section section-dark" id="resultados">
+  <div class="container">
+    <div class="results-intro">
+      <div>
+        <span class="eyebrow">Uma história medida em cuidado</span>
+        <h2 class="section-title">Resultados que ajudam a contar essa jornada.</h2>
+      </div>
+      <p class="results-note">Números fictícios, criados exclusivamente para demonstrar a composição deste case de portfólio.</p>
+    </div>
+    <div class="results-grid" aria-label="Resultados conceituais da Ateliê Serena">
+      <article class="result-card">
+        <strong class="result-number" data-count="480" data-suffix="+">480+</strong>
+        <div><p class="result-label">clientes acolhidas</p><p class="result-detail">Jornadas pensadas de forma individual.</p></div>
+      </article>
+      <article class="result-card">
+        <strong class="result-number" data-count="1250" data-suffix="+">1.250+</strong>
+        <div><p class="result-label">procedimentos realizados</p><p class="result-detail">Entre protocolos faciais, corporais e rituais.</p></div>
+      </article>
+      <article class="result-card">
+        <strong class="result-number" data-count="6" data-suffix=" anos">6 anos</strong>
+        <div><p class="result-label">de história</p><p class="result-detail">Construída com escuta, presença e naturalidade.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. DIFERENCIAIS & EXPERIENCIA
+     ============================================================ -->
+<section class="section section-dark section-night" id="diferenciais">
+  <div class="container">
+    <span class="eyebrow">Diferenciais</span>
+    <h2 class="section-title">O que torna nossa experiência única?</h2>
+
+    <div class="diff-grid">
+      <div class="diff-list">
+        <div class="diff-item">
+          <div class="diff-num">1</div>
+          <div>
+            <h4>Avaliação Honesta e Individualizada</h4>
+            <p>Não indicamos procedimentos desnecessários. Analisamos sua queixa e alinhamos expectativas reais antes de começar.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-num">2</div>
+          <div>
+            <h4>Biossegurança e Conforto</h4>
+            <p>Esterilização rigorosa, materiais descartáveis e um ambiente higienizado, perfumado e acolhedor.</p>
+          </div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-num">3</div>
+          <div>
+            <h4>Acompanhamento Pós-Procedimento</h4>
+            <p>Nosso cuidado não termina ao fim da sessão. Acompanhamos sua evolução e ficamos disponíveis para qualquer dúvida.</p>
+          </div>
+        </div>
+      </div>
+
+      <div aria-label="Jornada da experiência">
+        <p class="journey-label">O que você pode esperar</p>
+        <div class="experience-card"><strong>01. Uma conversa sem pressa</strong><p>Objetivos, rotina e dúvidas vêm antes de qualquer recomendação.</p></div>
+        <div class="experience-card"><strong>02. Um plano que você entende</strong><p>Prioridades, etapas e expectativas apresentadas com clareza.</p></div>
+        <div class="experience-card"><strong>03. Presença depois da sessão</strong><p>Orientações e acompanhamento para dar continuidade ao cuidado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. FAQ
+     ============================================================ -->
+<section class="section section-dark section-night" id="faq">
+  <div class="container">
+    <span class="eyebrow">Dúvidas frequentes</span>
+    <h2 class="section-title">Dúvidas Frequentes</h2>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Como funciona a primeira consulta/avaliação?
+          <svg class="chev" aria-hidden="true"><use href="#icon-plus"></use></svg>
+        </summary>
+        <div class="faq-answer">Na sua primeira visita, conversamos sobre seus objetivos, histórico de saúde e analisamos a área a ser tratada para indicar o protocolo mais seguro e eficiente.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Os procedimentos doem ou exigem tempo de recuperação?
+          <svg class="chev" aria-hidden="true"><use href="#icon-plus"></use></svg>
+        </summary>
+        <div class="faq-answer">Sensibilidade e tempo de recuperação variam conforme o protocolo e cada pessoa. Esses pontos são explicados antes de qualquer decisão, junto com os cuidados necessários.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Qual é o valor dos tratamentos?
+          <svg class="chev" aria-hidden="true"><use href="#icon-plus"></use></svg>
+        </summary>
+        <div class="faq-answer">Como cada plano de cuidado é personalizado de acordo com as necessidades da sua pele ou corpo, apresentamos o orçamento detalhado logo após a avaliação inicial.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como faço para agendar um horário?
+          <svg class="chev" aria-hidden="true"><use href="#icon-plus"></use></svg>
+        </summary>
+        <div class="faq-answer">Basta clicar em qualquer um dos botões desta página para falar diretamente com nossa equipe via WhatsApp.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. CTA FINAL + RODAPÉ
+     ============================================================ -->
+<section class="section final-cta section-dark section-night" id="contato">
+  <div class="container">
+    <span class="eyebrow">Seu próximo capítulo</span>
+    <h2 class="section-title center">Quando a noite floresce, o cuidado continua.</h2>
+    <p class="section-subtitle center">Conte o que você deseja cuidar e comece por uma conversa clara, acolhedora e sem pressão.</p>
+    <a href="#contato" class="btn btn-primary js-demo-cta">
+      <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+      Iniciar minha conversa
+    </a>
+    <p class="demo-note">Demonstração de portfólio: o canal real será conectado somente antes da publicação.</p>
+  </div>
+  <div class="night-flowers" aria-hidden="true">
+    <svg class="night-flower f1" viewBox="0 0 120 120"><g fill="currentColor" opacity=".92"><ellipse cx="60" cy="34" rx="17" ry="31"/><ellipse cx="84" cy="55" rx="17" ry="31" transform="rotate(72 84 55)"/><ellipse cx="75" cy="84" rx="17" ry="31" transform="rotate(144 75 84)"/><ellipse cx="45" cy="84" rx="17" ry="31" transform="rotate(216 45 84)"/><ellipse cx="36" cy="55" rx="17" ry="31" transform="rotate(288 36 55)"/></g><circle cx="60" cy="62" r="9" fill="#e8bfd0"/></svg>
+    <svg class="night-flower f2" viewBox="0 0 120 120"><g fill="currentColor" opacity=".9"><ellipse cx="60" cy="34" rx="17" ry="31"/><ellipse cx="84" cy="55" rx="17" ry="31" transform="rotate(72 84 55)"/><ellipse cx="75" cy="84" rx="17" ry="31" transform="rotate(144 75 84)"/><ellipse cx="45" cy="84" rx="17" ry="31" transform="rotate(216 45 84)"/><ellipse cx="36" cy="55" rx="17" ry="31" transform="rotate(288 36 55)"/></g><circle cx="60" cy="62" r="9" fill="#e8bfd0"/></svg>
+    <svg class="night-flower f3" viewBox="0 0 120 120"><g fill="currentColor" opacity=".9"><ellipse cx="60" cy="34" rx="17" ry="31"/><ellipse cx="84" cy="55" rx="17" ry="31" transform="rotate(72 84 55)"/><ellipse cx="75" cy="84" rx="17" ry="31" transform="rotate(144 75 84)"/><ellipse cx="45" cy="84" rx="17" ry="31" transform="rotate(216 45 84)"/><ellipse cx="36" cy="55" rx="17" ry="31" transform="rotate(288 36 55)"/></g><circle cx="60" cy="62" r="9" fill="#e8bfd0"/></svg>
+  </div>
+</section>
+
+<footer class="section-dark">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><svg class="logo-symbol" viewBox="0 0 48 48" aria-hidden="true"><path class="logo-petal" d="M32 5c9 2 13 10 10 18-3 8-11 11-19 8 1-9 3-20 9-26Z"/><path class="logo-v" d="M6 9h9l9 24L34 9h8L26 43h-5L6 9Z"/></svg><span class="brand-copy"><span class="brand-name">Ateliê Serena</span><span class="brand-tagline">Estética integrativa</span></span></div>
+        <p>Uma marca fictícia criada como case de direção de arte, experiência e conversão para portfólio.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li>Atendimento demonstrativo</li>
+          <li>Cidade Exemplo/SP — conceito de marca</li>
+          <li>Canal real a conectar antes da publicação</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Horário</h5>
+        <ul>
+          <li>Agenda e horários ilustrativos</li>
+          <li>Fluxo pensado para WhatsApp</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Ateliê Serena — projeto conceitual.</span>
+      <span class="footer-note">Personagem, marca e contexto fictícios.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Botão flutuante WhatsApp -->
+<a href="#contato" class="whatsapp-float js-demo-cta" id="whatsappFloat" aria-label="Ver demonstração do contato">
+  <svg class="icon-wa" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+</a>
+<div class="toast" id="demoToast" role="status" aria-live="polite">Este é um projeto conceitual. Conecte o WhatsApp oficial antes de publicar.</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- CTA seguro para um projeto conceitual ---------- */
+  var demoToast = document.getElementById('demoToast');
+  var toastTimer;
+  document.querySelectorAll('.js-demo-cta').forEach(function(a){
+    a.addEventListener('click', function(event){
+      if (a.getAttribute('href') === '#contato' && a.closest('#contato')) event.preventDefault();
+      clearTimeout(toastTimer);
+      demoToast.classList.add('is-visible');
+      toastTimer = setTimeout(function(){ demoToast.classList.remove('is-visible'); }, 3600);
+    });
+  });
+
+  /* ---------- Gradiente de fundo alinhado às seções reais ----------
+     Em vez de percentuais fixos (frágil: quebra se o conteúdo mudar de
+     tamanho — fotos reais, bios maiores, etc.), medimos a posição real
+     de cada seção e construímos o gradiente com base nela. */
+  var GRADIENT_ZONES = [
+    { id:'hero',         color:'--c1' },
+    { id:'sobre',        color:'--c2' },
+    { id:'servicos',     color:'--c3' },
+    { id:'resultados',   color:'--c4' },
+    { id:'diferenciais', color:'--c5' },
+    { id:'faq',          color:'--c5' },
+    { id:'contato',      color:'--c6' }
+  ];
+  function buildGradient(){
+    var total = document.body.scrollHeight;
+    if (!total) return;
+    var stops = ['var(--c1) 0%'];
+    GRADIENT_ZONES.forEach(function(zone){
+      var el = document.getElementById(zone.id);
+      if (!el) return;
+      var bottom = el.offsetTop + el.offsetHeight;
+      var pct = Math.min(100, (bottom / total * 100)).toFixed(1) + '%';
+      stops.push('var(' + zone.color + ') ' + pct);
+    });
+    document.body.style.backgroundImage = 'linear-gradient(to bottom, ' + stops.join(', ') + ')';
+  }
+  buildGradient();
+  window.addEventListener('resize', debounce(buildGradient, 200));
+  if (document.fonts && document.fonts.ready){
+    document.fonts.ready.then(buildGradient);
+  }
+  function debounce(fn, wait){
+    var t;
+    return function(){
+      clearTimeout(t);
+      t = setTimeout(fn, wait);
+    };
+  }
+
+  /* ---------- Header scroll state ---------- */
+  var header = document.getElementById('siteHeader');
+  var darkThreshold = 0;
+  var heroHeight = 0;
+  function measurePage(){
+    darkThreshold = document.getElementById('diferenciais').offsetTop - 120;
+    heroHeight = document.getElementById('hero').offsetHeight;
+  }
+  measurePage();
+  window.addEventListener('resize', debounce(measurePage, 180));
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measurePage);
+
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('is-scrolled', y > 30);
+    header.classList.toggle('theme-dark', y > darkThreshold);
+  }
+  document.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* ---------- Mobile nav ---------- */
+  var navToggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  mobileNav.inert = true;
+  navToggle.addEventListener('click', function(){
+    var open = mobileNav.classList.toggle('is-open');
+    navToggle.classList.toggle('is-open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    mobileNav.setAttribute('aria-hidden', String(!open));
+    mobileNav.inert = !open;
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileNav.classList.remove('is-open');
+      navToggle.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menu');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      mobileNav.inert = true;
+      document.body.style.overflow = '';
+    });
+  });
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && mobileNav.classList.contains('is-open')){
+      mobileNav.classList.remove('is-open');
+      navToggle.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menu');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      mobileNav.inert = true;
+      document.body.style.overflow = '';
+      navToggle.focus();
+    }
+  });
+
+  /* ---------- Floating WhatsApp button ---------- */
+  var waFloat = document.getElementById('whatsappFloat');
+  function toggleFloat(){
+    var y = window.scrollY || window.pageYOffset;
+    waFloat.classList.toggle('is-visible', y > heroHeight * 0.6);
+  }
+  document.addEventListener('scroll', toggleFloat, { passive:true });
+  toggleFloat();
+
+  /* ---------- Sakura petals ---------- */
+  var petalsContainer = document.getElementById('petals');
+  var isMobile = window.matchMedia('(max-width: 720px)').matches;
+  var petalCount = reduceMotion ? 0 : (isMobile ? 9 : 18);
+
+  for (var i = 0; i < petalCount; i++){
+    var petal = document.createElement('span');
+    petal.className = 'petal';
+    var left = Math.random() * 100;
+    var duration = 9 + Math.random() * 9;
+    var delay = Math.random() * -18;
+    var drift = (Math.random() * 140 - 70) + 'px';
+    var size = 8 + Math.random() * 8;
+    petal.style.left = left + 'vw';
+    petal.style.width = size + 'px';
+    petal.style.height = size + 'px';
+    petal.style.animationDuration = duration + 's';
+    petal.style.animationDelay = delay + 's';
+    petal.style.setProperty('--drift', drift);
+    petal.style.opacity = (0.5 + Math.random() * 0.4).toFixed(2);
+    petalsContainer.appendChild(petal);
+  }
+
+  /* Pausa a animação das pétalas quando a hero sai da tela (performance) */
+  if (petalCount > 0 && 'IntersectionObserver' in window){
+    var heroEl = document.getElementById('hero');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        petalsContainer.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+        petalsContainer.querySelectorAll('.petal').forEach(function(p){
+          p.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+        });
+      });
+    }, { threshold: 0 });
+    io.observe(heroEl);
+  }
+
+  /* ---------- Parallax leve dos galhos na hero ---------- */
+  if (!reduceMotion){
+    var branches = document.querySelectorAll('.sakura-branch');
+    var ticking = false;
+    function updateParallax(){
+      var y = window.scrollY || window.pageYOffset;
+      if (y < heroHeight * 1.2){
+        branches.forEach(function(b){
+          var speed = parseFloat(b.getAttribute('data-speed')) || 0.1;
+          var baseTransform = b.classList.contains('branch-tr') ? 'scaleX(-1) ' : '';
+          b.style.transform = baseTransform + 'translateY(' + (y * speed) + 'px)';
+        });
+      }
+      ticking = false;
+    }
+    document.addEventListener('scroll', function(){
+      if (!ticking){
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive:true });
+  }
+
+  /* ---------- Ano no rodapé ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- Fecha outros itens do FAQ ao abrir um (accordion) ---------- */
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item){
+    item.addEventListener('toggle', function(){
+      if (item.open){
+        faqItems.forEach(function(other){
+          if (other !== item) other.open = false;
+        });
+      }
+    });
+  });
+
+  /* ---------- Motion progressivo, discreto e orientado pelo scroll ---------- */
+  function initScrollMotion(){
+    if (reduceMotion || !window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    var revealTargets = gsap.utils.toArray([
+      '.about-copy > *',
+      '.about-visual',
+      '#servicos .eyebrow',
+      '#servicos .section-title',
+      '#servicos .section-subtitle',
+      '.service-card',
+      '.results-intro > *',
+      '.result-card',
+      '#diferenciais .eyebrow',
+      '#diferenciais .section-title',
+      '.diff-item',
+      '.experience-card',
+      '#faq .eyebrow',
+      '#faq .section-title',
+      '.faq-item',
+      '#contato .container > *'
+    ].join(','));
+
+    revealTargets.forEach(function(el){ el.classList.add('reveal'); });
+    ScrollTrigger.batch(revealTargets, {
+      start:'top 88%',
+      once:true,
+      onEnter:function(batch){
+        gsap.from(batch, {
+          autoAlpha:0,
+          y:28,
+          duration:.72,
+          stagger:.07,
+          ease:'power2.out',
+          overwrite:'auto',
+          willChange:'transform,opacity',
+          clearProps:'transform,opacity,visibility,willChange'
+        });
+      }
+    });
+
+    var metricNumbers = gsap.utils.toArray('.result-number');
+    metricNumbers.forEach(function(el){
+      var target = Number(el.getAttribute('data-count')) || 0;
+      var suffix = el.getAttribute('data-suffix') || '';
+      var state = { value:0 };
+      ScrollTrigger.create({
+        trigger:el,
+        start:'top 86%',
+        once:true,
+        onEnter:function(){
+          gsap.to(state, {
+            value:target,
+            duration:1.35,
+            ease:'power2.out',
+            onUpdate:function(){
+              el.textContent = Math.round(state.value).toLocaleString('pt-BR') + suffix;
+            }
+          });
+        }
+      });
+    });
+  }
+  initScrollMotion();
+
+})();
+</script>
+<div style="position:fixed;z-index:99999;left:50%;bottom:14px;transform:translateX(-50%);padding:8px 14px;border-radius:999px;background:#111;color:#fff;font:600 12px/1.2 Arial,sans-serif;box-shadow:0 8px 30px #0005;white-space:nowrap">Projeto demonstrativo · dados fictícios</div></body>
+</html>
+
