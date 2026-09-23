@@ -9,6 +9,7 @@ Abra `index.html` para visualizar o site.
 - Ateliê Serena — estética e bem-estar
 - Pulso Fit — fitness
 - Almeida & Prado — jurídico
+- Lume Terapia — saúde e bem-estar
 
 Os nomes, contatos, endereços, credenciais, depoimentos e indicadores dessas demos são fictícios. Cada demo exibe um aviso de conteúdo demonstrativo.
 

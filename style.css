@@ -3,3 +3,8 @@
 /* Static project previews avoid loading five complete sites while scrolling. */
 .browser img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
 @media(max-width:900px){.topbar{backdrop-filter:none;background:rgba(7,16,25,.96)}.hero-orbit{animation-duration:45s}.browser{box-shadow:0 24px 52px rgba(0,0,0,.28)}}
+.therapy{background:#dbe5c9;color:#203629}.therapy:before{background:rgba(65,103,63,.1)}
+.lume-preview{height:calc(100% - 40px);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:24px 34px 45px;color:#fff;background:linear-gradient(90deg,rgba(18,38,26,.8),rgba(18,38,26,.12)),url('projetos/lume-terapia/img/hero.webp') center/cover no-repeat}
+.lume-preview__logo{font-size:1.45rem;font-weight:700;letter-spacing:-.08em}.lume-preview>div{max-width:390px;display:grid;justify-items:start;gap:16px}.lume-preview small{font-size:.58rem;letter-spacing:.17em}.lume-preview strong{font-size:clamp(2rem,3.5vw,3.8rem);line-height:1.01;font-weight:400;letter-spacing:-.06em}.lume-preview strong em{font-family:Georgia,serif;font-weight:400}.lume-preview__button{padding:9px 14px;border-radius:99px;background:#fbfaf3;color:#203629;font-size:.64rem;font-weight:700}
+@media(max-width:900px){.lume-preview{padding:20px 25px 28px}.lume-preview strong{font-size:clamp(2rem,6vw,3rem)}}
+@media(max-width:620px){.lume-preview{height:calc(100% - 26px);padding:10px 14px 15px}.lume-preview__logo{font-size:.9rem}.lume-preview>div{gap:6px}.lume-preview small{font-size:.35rem}.lume-preview strong{font-size:clamp(1.1rem,5vw,2rem)}.lume-preview__button{font-size:.4rem;padding:5px 8px}}
