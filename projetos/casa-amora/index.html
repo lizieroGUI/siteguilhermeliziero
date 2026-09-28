@@ -378,6 +378,8 @@ section{ scroll-margin-top: 90px; }
   scrollbar-width:none;
 }
 .dish-track::-webkit-scrollbar{ display:none; }
+/* o carrossel sangra 28px para as laterais; em telas estreitas isso liberava rolagem lateral */
+html, body{ overflow-x:clip; }
 .dish-card{
   flex:0 0 auto; width:340px; scroll-snap-align:start;
 }
