@@ -10,6 +10,7 @@ Abra `index.html` para visualizar o site.
 - Pulso Fit — fitness
 - Almeida & Prado — jurídico
 - Lume Terapia — saúde e bem-estar
+- Estúdio Prumo — arquitetura
 
 Os nomes, contatos, endereços, credenciais, depoimentos e indicadores dessas demos são fictícios. Cada demo exibe um aviso de conteúdo demonstrativo.
 
