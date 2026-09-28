@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    Demo de portfólio (Guilherme Liziero). Nina Arcanjo, clientes, depoimentos, preços e números são fictícios.
+    Fotos ilustrativas do Unsplash. Nenhum formulário envia dados.
+  -->
+  <title>Nina Arcanjo | Fotografia analógica e polaroid em Ubatuba</title>
+  <meta name="description" content="Retratos, casais, famílias e amigos em luz de fim de tarde, com câmera de filme e polaroid. Ensaios em Ubatuba e litoral norte de SP.">
+  <meta name="theme-color" content="#DDD8D0">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Nina Arcanjo | Fotografia analógica e polaroid">
+  <meta property="og:description" content="Momentos que dá vontade de rebobinar.">
+  <meta property="og:url" content="https://www.guilhermeliziero.com.br/projetos/nina-arcanjo/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1619896849560-f92c4330f1a6?w=1200&h=630&fit=crop&q=75&auto=format">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='3' width='24' height='27' rx='1.5' fill='%23F7F4EE' stroke='%23161412' stroke-width='1.5'/%3E%3Crect x='7' y='6' width='18' height='16' fill='%231F4FBF'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Poiret+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Esconde o hero até a animação de revelação começar. Se o GSAP não carregar em 2,5 s, mostra tudo. -->
+  <script>
+    document.documentElement.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('motion');
+      setTimeout(function () { document.documentElement.classList.remove('motion'); }, 2500);
+    }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="demo-bar"><span class="demo-bar__long">Projeto demonstrativo de portfólio · fotógrafa, clientes, preços e depoimentos fictícios</span><span class="demo-bar__short">Projeto demonstrativo · dados fictícios</span></div>
+    <div class="nav-wrap">
+      <div class="container nav">
+        <a class="logo" href="#topo" aria-label="Nina Arcanjo, página inicial">Nina Arcanjo<span>fotografia</span></a>
+        <nav class="nav__links" id="menu" aria-label="Navegação principal">
+          <a href="#portfolio">Portfólio</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#ensaios">Ensaios</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a class="btn btn--small" href="#agendar">Agendar ensaio</a>
+        </nav>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- HERO: mural de polaroids que "revelam" ao carregar -->
+    <section class="hero" id="topo">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="bracket">fotografia analógica &amp; polaroid · Ubatuba</p>
+          <h1 class="display hero__title">Momentos que dá vontade de rebobinar</h1>
+          <p class="hero__lead">Retratos, casais, famílias e amigos na luz de fim de tarde. Você recebe as fotos digitais e leva as <em>polaroids na mão</em>, no mesmo dia.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#agendar">Agendar um ensaio <span aria-hidden="true">↗</span></a>
+            <a class="link" href="#portfolio">Ver portfólio ↓</a>
+          </div>
+          <p class="hero__note">Ensaios a partir de R$ 490 · resposta em até 1 dia com datas e a hora do pôr do sol</p>
+        </div>
+        <div class="wall" aria-label="Mural de polaroids">
+          <figure class="polaroid wall__p wall__p--1"><span class="tape" aria-hidden="true"></span>
+            <img src="https://images.unsplash.com/photo-1619896849560-f92c4330f1a6?w=560&h=560&fit=crop&q=75&auto=format" width="560" height="560" fetchpriority="high" alt="Mulher de casaco contra o sol baixo do fim de tarde">
+            <figcaption>itamambuca, 17h42</figcaption></figure>
+          <figure class="polaroid wall__p wall__p--2"><span class="tape" aria-hidden="true"></span>
+            <img src="https://images.unsplash.com/photo-1625065556489-5d539068eb82?w=520&h=520&fit=crop&q=75&auto=format" width="520" height="520" alt="Duas amigas de costas num campo aberto no fim da tarde">
+            <figcaption>a gente, antes de tudo mudar</figcaption></figure>
+          <figure class="polaroid wall__p wall__p--3"><span class="tape" aria-hidden="true"></span>
+            <img src="https://images.unsplash.com/photo-1596944716787-21fe9a9f8a44?w=480&h=480&fit=crop&q=75&auto=format" width="480" height="480" alt="Farol no alto de um penhasco coberto de neblina">
+            <figcaption>farol, 6h da manhã</figcaption></figure>
+          <figure class="polaroid wall__p wall__p--4"><span class="tape" aria-hidden="true"></span>
+            <img src="https://images.unsplash.com/photo-1613722434757-e6990063b306?w=480&h=480&fit=crop&q=75&auto=format" width="480" height="480" alt="Casal abraçado na beira do mar ao entardecer">
+            <figcaption>1 ano de nós</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <p class="bracket">portfólio</p>
+          <h2 class="h2">Pequenas coleções de agora.</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar portfólio">
+          <button type="button" class="chip is-active" data-filter="todos" aria-pressed="true">Tudo</button>
+          <button type="button" class="chip" data-filter="retratos" aria-pressed="false">Retratos</button>
+          <button type="button" class="chip" data-filter="casais" aria-pressed="false">Casais</button>
+          <button type="button" class="chip" data-filter="familia" aria-pressed="false">Família</button>
+          <button type="button" class="chip" data-filter="amigos" aria-pressed="false">Amigos &amp; bandas</button>
+        </div>
+        <div class="gallery" id="gallery"><ul class="gcol">
+          <li data-cat="retratos"><button type="button" class="shot" data-caption="Lívia, fim de tarde em Itaguá"><img loading="lazy" src="https://images.unsplash.com/photo-1674932668403-33398b81c92f?w=700&h=875&fit=crop&q=75&auto=format" width="700" height="875" alt="Retrato de jovem com sardas olhando para a câmera"></button></li>
+          <li data-cat="casais"><button type="button" class="shot" data-caption="Caio e Bia, praia do Félix"><img loading="lazy" src="https://images.unsplash.com/photo-1575388104683-e076ee9ccaa0?w=700&h=933&fit=crop&q=75&auto=format" width="700" height="933" alt="Casal caminhando de mãos dadas na praia ao pôr do sol"></button></li>
+          <li data-cat="amigos"><button type="button" class="shot" data-caption="as meninas, dia de sol que ninguém esperava"><img loading="lazy" src="https://images.unsplash.com/photo-1756028518787-5a4ad70f0b9b?w=700&h=875&fit=crop&q=75&auto=format" width="700" height="875" alt="Duas amigas rindo na beira do mar em foto de tom sépia"></button></li>
+          <li data-cat="retratos"><button type="button" class="shot" data-caption="Marina, filme preto e branco"><img loading="lazy" src="https://images.unsplash.com/photo-1504275490777-45f30792f13f?w=700&h=933&fit=crop&q=75&auto=format" width="700" height="933" alt="Retrato em preto e branco de mulher de cabelos escuros"></button></li>
+          <li data-cat="familia"><button type="button" class="shot" data-caption="os Duarte, domingo de maré baixa"><img loading="lazy" src="https://images.unsplash.com/photo-1559734840-f9509ee5677f?w=700&h=525&fit=crop&q=75&auto=format" width="700" height="525" alt="Família abraçada de costas olhando o mar"></button></li>
+          <li data-cat="retratos"><button type="button" class="shot" data-caption="Theo, o vento não deixou pentear"><img loading="lazy" src="https://images.unsplash.com/photo-1563059964-fe96af783447?w=700&h=700&fit=crop&q=75&auto=format" width="700" height="700" alt="Jovem de moletom com capuz ao anoitecer"></button></li>
+          <li data-cat="amigos"><button type="button" class="shot" data-caption="Maré Alta, ensaio pro primeiro EP"><img loading="lazy" src="https://images.unsplash.com/photo-1615228418285-43b93bcc12e2?w=700&h=525&fit=crop&q=75&auto=format" width="700" height="525" alt="Banda tocando em palco com luz lilás"></button></li>
+          <li data-cat="casais"><button type="button" class="shot" data-caption="Rafa e Duda, sentados até escurecer"><img loading="lazy" src="https://images.unsplash.com/photo-1701401942416-bea590efe2ad?w=700&h=525&fit=crop&q=75&auto=format" width="700" height="525" alt="Casal sentado de costas olhando o pôr do sol"></button></li>
+          <li data-cat="retratos"><button type="button" class="shot" data-caption="Cecília, luz de janela"><img loading="lazy" src="https://images.unsplash.com/photo-1683392969197-17547ac3e06e?w=700&h=875&fit=crop&q=75&auto=format" width="700" height="875" alt="Retrato em filme de jovem de cabelos cacheados"></button></li>
+          <li data-cat="familia"><button type="button" class="shot" data-caption="vó, mãe e neta, 3 gerações"><img loading="lazy" src="https://images.unsplash.com/photo-1618375039134-2495eca232ac?w=700&h=875&fit=crop&q=75&auto=format" width="700" height="875" alt="Família de costas na praia em preto e branco"></button></li>
+          <li data-cat="amigos"><button type="button" class="shot" data-caption="último verão antes da faculdade"><img loading="lazy" src="https://images.unsplash.com/photo-1568552814858-f7b1d76dbc4f?w=700&h=933&fit=crop&q=75&auto=format" width="700" height="933" alt="Jovem entre árvores em foto de filme com vazamento de luz"></button></li>
+          <li data-cat="retratos"><button type="button" class="shot" data-caption="Ana, blusa listrada e sol"><img loading="lazy" src="https://images.unsplash.com/photo-1556591671-8bc5c4d9fb87?w=700&h=875&fit=crop&q=75&auto=format" width="700" height="875" alt="Jovem de blusa listrada no meio do mato alto"></button></li>
+          <li data-cat="familia"><button type="button" class="shot" data-caption="dança improvisada na areia"><img loading="lazy" src="https://images.unsplash.com/photo-1721840432289-d0041522103d?w=700&h=933&fit=crop&q=75&auto=format" width="700" height="933" alt="Silhuetas de família na praia ao entardecer"></button></li>
+          <li data-cat="amigos"><button type="button" class="shot" data-caption="Pedro, primeiro show da vida"><img loading="lazy" src="https://images.unsplash.com/photo-1783585267979-b86ae222f3b3?w=700&h=700&fit=crop&q=75&auto=format" width="700" height="700" alt="Jovem de camiseta estampada em retrato preto e branco"></button></li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- SOBRE: a persona -->
+    <section class="section about" id="sobre">
+      <div class="container about__grid">
+        <div class="about__photos">
+          <figure class="polaroid about__p about__p--main"><span class="tape" aria-hidden="true"></span>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1581341465638-3ac8792d0a82?w=640&h=640&fit=crop&q=75&auto=format" width="640" height="640" alt="Nina Arcanjo de gorro e óculos segurando uma câmera instantânea">
+            <figcaption>eu, com a Kodak da minha vó</figcaption></figure>
+          <figure class="polaroid about__p about__p--small"><span class="tape" aria-hidden="true"></span>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1485842295075-1c7b2037114c?w=360&h=360&fit=crop&q=75&auto=format" width="360" height="360" alt="Borboleta azul pousada numa folha escura">
+            <figcaption>ela voltou</figcaption></figure>
+        </div>
+        <div class="about__copy">
+          <p class="bracket">sobre mim</p>
+          <h2 class="h2">Oi, eu sou a Nina.</h2>
+          <p class="hand">e sim, eu ainda revelo filme :)</p>
+          <p>Ganhei minha primeira câmera instantânea aos 16, numa feira de antiguidades em Paraty. Desde então tem sempre uma na minha bolsa, e um mural de polaroids crescendo na parede do quarto.</p>
+          <p>Fotografo gente de verdade, sem pose de catálogo: o riso que escapa, o vento que bagunça o cabelo, aquele fim de tarde que parece que não vai acabar. Você fica à vontade, e eu fico atenta.</p>
+          <ul class="facts">
+            <li><strong>8 anos</strong><span>com uma câmera na bolsa</span></li>
+            <li><strong>2.340</strong><span>polaroids reveladas</span></li>
+            <li><strong>17h40</strong><span>meu horário favorito</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENSAIOS / PACOTES -->
+    <section class="section" id="ensaios">
+      <div class="container">
+        <div class="section-head">
+          <p class="bracket">ensaios</p>
+          <h2 class="h2">Escolha o tamanho da sua lembrança.</h2>
+        </div>
+        <div class="plans">
+          <article class="plan">
+            <h3>Instante</h3>
+            <p class="plan__desc">Para um retrato seu, rápido e sem cerimônia.</p>
+            <ul>
+              <li>40 minutos, 1 locação</li>
+              <li>25 fotos digitais editadas</li>
+              <li>3 polaroids na hora</li>
+            </ul>
+            <p class="plan__price"><small>a partir de</small> R$ 490</p>
+            <a class="link" href="#agendar" data-plan="Instante">Quero esse ↗</a>
+          </article>
+          <article class="plan plan--featured">
+            <p class="plan__tag">o mais pedido</p>
+            <h3>Fim de tarde</h3>
+            <p class="plan__desc">Casais, amigos e famílias na melhor luz do dia.</p>
+            <ul>
+              <li>1h30 no pôr do sol</li>
+              <li>60 fotos digitais editadas</li>
+              <li>8 polaroids + 1 rolo de filme 35mm revelado</li>
+            </ul>
+            <p class="plan__price"><small>a partir de</small> R$ 890</p>
+            <a class="btn btn--light" href="#agendar" data-plan="Fim de tarde">Quero esse ↗</a>
+          </article>
+          <article class="plan">
+            <h3>Rolo inteiro</h3>
+            <p class="plan__desc">Um dia de história: bandas, marcas e datas especiais.</p>
+            <ul>
+              <li>3 horas, até 2 locações</li>
+              <li>120 fotos digitais editadas</li>
+              <li>Álbum com 15 polaroids</li>
+            </ul>
+            <p class="plan__price"><small>a partir de</small> R$ 1.490</p>
+            <a class="link" href="#agendar" data-plan="Rolo inteiro">Quero esse ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section" id="depoimentos">
+      <div class="container">
+        <div class="section-head">
+          <p class="bracket">depoimentos</p>
+          <h2 class="h2">Depois do ensaio.</h2>
+        </div>
+        <div class="quotes" aria-roledescription="carrossel" aria-label="Depoimentos de clientes">
+          <span class="quotes__mark" aria-hidden="true">”</span>
+          <div class="quotes__track">
+            <figure class="quote is-active">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1669846691726-1c0a23a6a31a?w=640&h=800&fit=crop&q=75&auto=format" width="640" height="800" alt="Retrato de Júlia em tons quentes">
+              <blockquote>
+                <p>Eu travo na frente da câmera. Com a Nina esqueci que tinha uma ali. A polaroid que ela me deu tá na geladeira até hoje.</p>
+                <footer>Júlia R., ensaio Instante</footer>
+              </blockquote>
+            </figure>
+            <figure class="quote">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1615966650071-855b15f29ad1?w=640&h=800&fit=crop&q=75&auto=format" width="640" height="800" alt="Silhueta de casal dançando na praia ao pôr do sol">
+              <blockquote>
+                <p>Pedimos um ensaio de namoro e ganhamos um filme. As fotos de filme chegaram pelo correio, com bilhete escrito à mão.</p>
+                <footer>Caio e Bia, ensaio Fim de tarde</footer>
+              </blockquote>
+            </figure>
+            <figure class="quote">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1713719942900-516115808847?w=640&h=800&fit=crop&q=75&auto=format" width="640" height="800" alt="Família brincando na praia ao entardecer">
+              <blockquote>
+                <p>Três crianças, um cachorro e um vento absurdo. Ela transformou o caos na foto mais bonita que a gente tem.</p>
+                <footer>Família Duarte, ensaio Fim de tarde</footer>
+              </blockquote>
+            </figure>
+          </div>
+          <div class="quotes__nav">
+            <button type="button" class="round" data-dir="-1" aria-label="Depoimento anterior">←</button>
+            <span class="quotes__count" aria-live="polite">1 / 3</span>
+            <button type="button" class="round" data-dir="1" aria-label="Próximo depoimento">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENDAR: formulário dentro de um visor de câmera -->
+    <section class="book" id="agendar">
+      <div class="container">
+        <div class="viewfinder">
+          <div class="viewfinder__hud" aria-hidden="true">
+            <span class="rec"><i></i> REC</span>
+            <span class="timecode" id="timecode">00:00:00</span>
+            <span class="iso">ISO 400 · f/2.8</span>
+            <span class="batt"><i></i></span>
+          </div>
+          <div class="book__grid">
+            <div class="book__copy">
+              <p class="bracket bracket--light">agendar</p>
+              <h2 class="h2">Pronta pra guardar o agora?</h2>
+              <p>Conte o que você imagina. Eu respondo em até 1 dia com datas livres, a previsão do pôr do sol e duas ideias de locação.</p>
+              <p class="hand hand--light">chuva? a gente remarca sem custo.</p>
+            </div>
+            <form class="form" id="bookForm" novalidate>
+              <div class="field">
+                <label for="f-nome">Seu nome</label>
+                <input id="f-nome" name="nome" autocomplete="name" required>
+                <p class="field__error" id="e-nome">Conta seu nome pra eu saber com quem falo.</p>
+              </div>
+              <div class="field">
+                <label for="f-zap">WhatsApp</label>
+                <input id="f-zap" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(12) 99999-9999" required>
+                <p class="field__error" id="e-zap">Coloca um número com DDD, tipo (12) 99999-9999.</p>
+              </div>
+              <div class="field field--half">
+                <label for="f-tipo">Tipo de ensaio</label>
+                <select id="f-tipo" name="tipo" required>
+                  <option value="">Escolha</option>
+                  <option>Retrato</option><option>Casal</option><option>Família</option><option>Amigos ou banda</option>
+                </select>
+                <p class="field__error" id="e-tipo">Escolha um tipo de ensaio.</p>
+              </div>
+              <div class="field field--half" id="planField">
+                <label for="f-plano">Pacote</label>
+                <select id="f-plano" name="pacote">
+                  <option>Ainda não sei</option><option>Instante</option><option>Fim de tarde</option><option>Rolo inteiro</option>
+                </select>
+                <p class="field__ok" id="planOk" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-data">Data que você imagina <span>(opcional)</span></label>
+                <input id="f-data" name="data" type="date">
+              </div>
+              <button class="btn btn--light form__submit" type="submit">Enviar pedido <span aria-hidden="true">↗</span></button>
+              <p class="form__note">Projeto demonstrativo: nada é enviado.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DÚVIDAS -->
+    <section class="section" id="duvidas">
+      <div class="container faq__grid">
+        <div>
+          <p class="bracket">dúvidas</p>
+          <h2 class="h2">Você pergunta, eu respondo.</h2>
+          <figure class="polaroid faq__p"><span class="tape" aria-hidden="true"></span>
+            <img loading="lazy" src="https://images.unsplash.com/photo-1549890762-75fd80457275?w=420&h=420&fit=crop&q=75&auto=format" width="420" height="420" alt="Silhueta de farol contra o céu laranja do entardecer">
+            <figcaption>o farol no fim do dia</figcaption></figure>
+        </div>
+        <div class="faq">
+          <details><summary>Quando recebo as fotos?</summary><p>As polaroids você leva no dia. As digitais chegam em até 15 dias por uma galeria online, e o filme 35mm leva cerca de 3 semanas para revelar.</p></details>
+          <details><summary>Não sei posar. E agora?</summary><p>Ninguém sabe, e ainda bem. Eu vou conduzindo com coisas simples: andar, conversar, olhar o mar. As melhores fotos acontecem entre uma instrução e outra.</p></details>
+          <details><summary>E se chover?</summary><p>A gente remarca sem custo. Às vezes um céu nublado rende fotos lindas, então eu te aviso antes e você decide.</p></details>
+          <details><summary>Posso levar meu cachorro?</summary><p>Pode e deve. Bicho de estimação é da família e costuma roubar a cena.</p></details>
+          <details><summary>Fotografa fora de Ubatuba?</summary><p>Sim, em todo o litoral norte (Caraguá, Ilhabela, São Sebastião) e em Paraty. Para outras cidades, a gente combina o deslocamento.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img class="footer__bg" loading="lazy" src="https://images.unsplash.com/photo-1601789986669-e6acb191dcec?w=1600&h=900&fit=crop&q=70&auto=format" alt="" width="1600" height="900">
+    <div class="container footer__inner">
+      <div class="footer__cols">
+        <nav aria-label="Rodapé"><a href="#portfolio">Portfólio</a><a href="#sobre">Sobre</a><a href="#ensaios">Ensaios</a><a href="#agendar">Agendar</a></nav>
+        <p>Ubatuba · litoral norte de SP<br>Instagram @nina.arcanjo (fictício)</p>
+        <p>Projeto demonstrativo criado para o portfólio de Guilherme Liziero.<br><a href="../../index.html">Voltar ao portfólio</a></p>
+      </div>
+      <p class="footer__name display" aria-hidden="true">Nina Arcanjo</p>
+    </div>
+  </footer>
+
+  <a class="sticky-cta btn" href="#agendar" id="stickyCta">Agendar ensaio <span aria-hidden="true">↗</span></a>
+
+  <!-- lightbox do portfólio -->
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+    <button class="lightbox__close round" type="button" aria-label="Fechar">×</button>
+    <figure class="polaroid lightbox__p">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lightbox__nav round" type="button" data-dir="-1" aria-label="Foto anterior">←</button>
+    <button class="lightbox__nav round" type="button" data-dir="1" aria-label="Próxima foto">→</button>
+  </dialog>
+
+  <!-- aviso da demo -->
+  <dialog class="demo-dialog" id="demoDialog" aria-labelledby="demoTitle">
+    <button class="demo-dialog__close" type="button" aria-label="Fechar">×</button>
+    <p class="bracket">projeto demonstrativo</p>
+    <h2 id="demoTitle" class="h3">A Nina é fictícia.</h2>
+    <p>Este site foi criado para mostrar a direção de arte e o fluxo de agendamento. Na versão real, o pedido chegaria assim no WhatsApp:</p>
+    <p class="demo-dialog__msg" id="demoMsg"></p>
+    <a href="../../index.html">Conheça o portfólio de Guilherme ↗</a>
+  </dialog>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="motion.js" defer></script>
+</body>
+</html>

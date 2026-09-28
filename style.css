@@ -12,3 +12,4 @@
 .legal:before{background:rgba(242,169,59,.12)}.legal .project-link span{color:#f2a93b}
 /* o anel girando do hero passava da borda direita e liberava rolagem lateral no mobile */
 html,body{overflow-x:clip}
+.photo{background:#bba7da;color:#161412}.photo:before{background:rgba(255,255,255,.22)}.photo .browser{outline:10px solid rgba(22,20,18,.08)}
