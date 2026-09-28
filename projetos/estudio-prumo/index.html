@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    Demo de portfólio (Guilherme Liziero). Marca, arquiteta, endereço, números e fotos são fictícios/ilustrativos.
+    Na versão real, os botões .js-wa apontam para wa.me/<número> com a mensagem de qualificação.
+  -->
+  <title>Estúdio Prumo | Arquitetura e interiores em São Paulo</title>
+  <meta name="description" content="Arquitetura residencial, interiores e projetos comerciais em São Paulo. Projeto autoral, imagens 3D e custo estimado desde o primeiro estudo. Fale com um arquiteto pelo WhatsApp.">
+  <link rel="canonical" href="https://guilhermeliziero.com.br/projetos/estudio-prumo/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Estúdio Prumo">
+  <meta property="og:title" content="Estúdio Prumo | Arquitetura e interiores em São Paulo">
+  <meta property="og:description" content="Projetos que funcionam na obra, não só no papel. Converse com um arquiteto pelo WhatsApp.">
+  <meta property="og:url" content="https://guilhermeliziero.com.br/projetos/estudio-prumo/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=630&fit=crop&q=75&auto=format">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230C0C0B'/%3E%3Cpath d='M9 8h11v3h-7.5v3.5H19v3h-6.5V21H20v3H9z' fill='%23FEFEFE'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=75&auto=format"
+    imagesrcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=75&auto=format 800w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=75&auto=format 1200w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=75&auto=format 1600w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2200&q=75&auto=format 2200w"
+    imagesizes="100vw">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Esconde o texto do hero até a animação de entrada começar. Se o GSAP não carregar em 2,5 s, mostra tudo. -->
+  <script>
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('motion');
+      setTimeout(() => document.documentElement.classList.remove('motion'), 2500);
+    }
+  </script>
+</head>
+<body>
+<a href="#topo" class="skip">Pular para o conteúdo</a>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="demo-bar">Projeto demonstrativo<span class="demo-bar__more">&nbsp;de portfólio · marca, arquiteta, endereço e números fictícios</span><span class="demo-bar__short">&nbsp;· dados fictícios</span></div>
+  <div class="container header__inner">
+    <a href="#topo" class="logo">ESTÚDIO<span>/</span>PRUMO</a>
+    <nav class="nav" id="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#faq">FAQ</a>
+      <a href="../../index.html#contato" class="nav__cta js-wa" data-cta="nav">WhatsApp</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__main">
+        <p class="label">Arquitetura e interiores em São Paulo</p>
+        <h1 class="hero__title">Projetos que funcionam na obra, não só no papel</h1>
+      </div>
+      <div class="hero__side">
+        <p>Casas, apartamentos e espaços comerciais com projeto autoral, imagens 3D e custo estimado desde o primeiro estudo.</p>
+        <div class="cta">
+          <a href="../../index.html#contato" class="btn btn--wa js-wa" data-cta="hero">Conversar no WhatsApp <span aria-hidden="true">→</span></a>
+          <p class="cta__note">Primeira conversa e briefing sem compromisso.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero__img">
+      <img
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=75&auto=format"
+        srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=75&auto=format 800w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=75&auto=format 1200w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=75&auto=format 1600w, https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2200&q=75&auto=format 2200w"
+        sizes="100vw"
+        alt="Fachada de residência contemporânea com linhas minimalistas" width="1600" height="900" fetchpriority="high">
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="section__head"><p class="label">Sobre o escritório</p></div>
+      <div class="about">
+        <h2 class="h2">Técnica e estética na mesma linha</h2>
+        <div class="about__text">
+          <p>Somos um escritório de arquitetura e design de interiores dedicado a criar espaços que traduzem a rotina de quem vive neles. Cada projeto parte de uma escuta atenta e termina em soluções construtivas precisas.</p>
+          <p>Acreditamos que um bom projeto é aquele que funciona tão bem na obra quanto no papel. Por isso unimos desenho autoral, detalhamento técnico e acompanhamento próximo.</p>
+          <p class="signature"><strong>Beatriz Arantes</strong><span>Arquiteta e urbanista, responsável técnica · CAU A000000-0</span></p>
+          <div class="stats">
+            <div><strong>12+</strong><span>anos de experiência</span></div>
+            <div><strong>180</strong><span>projetos entregues</span></div>
+            <div><strong>40k</strong><span>m² projetados</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section__head"><h2 class="label">Portfólio</h2></div>
+      <!-- Fotos ilustrativas (Unsplash); os nomes dos projetos são fictícios -->
+      <div class="gallery">
+        <figure class="g g--tall">
+          <div class="g__media"><img loading="lazy" width="900" height="1125"
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=70&auto=format"
+            srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=70&auto=format 600w, https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=70&auto=format 900w"
+            sizes="(max-width: 860px) 100vw, 40vw"
+            alt="Sala de estar integrada com pé-direito duplo"></div>
+          <figcaption>Casa Serra · Residencial</figcaption>
+        </figure>
+        <figure class="g g--wide">
+          <div class="g__media"><img loading="lazy" width="1200" height="675"
+            src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=70&auto=format"
+            srcset="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=70&auto=format 700w, https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=70&auto=format 1200w"
+            sizes="(max-width: 860px) 100vw, 55vw"
+            alt="Cozinha contemporânea com ilha central"></div>
+          <figcaption>Apto Jardins · Interiores</figcaption>
+        </figure>
+        <figure class="g">
+          <div class="g__media"><img loading="lazy" width="800" height="600"
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=70&auto=format"
+            srcset="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=500&q=70&auto=format 500w, https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=70&auto=format 800w"
+            sizes="(max-width: 860px) 100vw, 25vw"
+            alt="Living com mobiliário em tons neutros"></div>
+          <figcaption>Loft Vila · Interiores</figcaption>
+        </figure>
+        <figure class="g">
+          <div class="g__media"><img loading="lazy" width="800" height="600"
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=70&auto=format"
+            srcset="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=70&auto=format 500w, https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=70&auto=format 800w"
+            sizes="(max-width: 860px) 100vw, 30vw"
+            alt="Residência com piscina e fachada em concreto"></div>
+          <figcaption>Casa Alto · Residencial</figcaption>
+        </figure>
+      </div>
+      <div class="gallery__cta">
+        <p>Gostou de algum projeto? Converse sobre o seu.</p>
+        <a href="../../index.html#contato" class="btn btn--wa js-wa" data-cta="portfolio">Conversar no WhatsApp <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section__head"><h2 class="label">Serviços</h2></div>
+      <ul class="services">
+        <li class="service">
+          <span class="num">01</span><h3>Projeto Residencial</h3><p>Casas e reformas completas, do estudo preliminar ao executivo.</p>
+          <img class="service__thumb" loading="lazy" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=70&auto=format" alt="">
+        </li>
+        <li class="service">
+          <span class="num">02</span><h3>Interiores</h3><p>Layout, marcenaria, iluminação e curadoria de mobiliário.</p>
+          <img class="service__thumb" loading="lazy" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=70&auto=format" alt="">
+        </li>
+        <li class="service">
+          <span class="num">03</span><h3>Comercial</h3><p>Lojas, escritórios e clínicas com foco em marca e operação.</p>
+          <img class="service__thumb" loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=70&auto=format" alt="">
+        </li>
+        <li class="service">
+          <span class="num">04</span><h3>Acompanhamento de Obra</h3><p>Visitas técnicas e gestão para garantir fidelidade ao projeto.</p>
+          <img class="service__thumb" loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&q=70&auto=format" alt="">
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="section" id="diferenciais">
+    <div class="container features-wrap">
+      <h2 class="h2">O que muda no seu projeto</h2>
+      <div class="features">
+        <article class="feature"><h3>Visualização 3D</h3><p>Imagens realistas de cada ambiente para você decidir com segurança antes da obra.</p></article>
+        <article class="feature"><h3>Custo dimensionado</h3><p>Projeto desenvolvido dentro do orçamento combinado, com estimativas desde o início.</p></article>
+        <article class="feature"><h3>Detalhamento técnico</h3><p>Pranchas completas que reduzem improvisos, retrabalho e desperdício no canteiro.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section" id="processo">
+    <div class="container">
+      <div class="section__head"><h2 class="label">Como funciona</h2></div>
+      <ol class="steps">
+        <li class="step"><span class="num">01</span><h3>Conversa</h3><p>Você nos chama no WhatsApp e conta sobre o espaço, a cidade e a metragem.</p></li>
+        <li class="step"><span class="num">02</span><h3>Briefing</h3><p>Reunião sem compromisso para entender sua rotina, seu estilo e seu orçamento.</p></li>
+        <li class="step"><span class="num">03</span><h3>Proposta</h3><p>Você recebe escopo, etapas e prazos por escrito antes de qualquer contrato.</p></li>
+        <li class="step"><span class="num">04</span><h3>Projeto e obra</h3><p>Estudo, imagens 3D, executivo e, se quiser, acompanhamento da obra.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ + CTA FINAL (bloco escuro de fechamento) -->
+  <section class="dark" id="faq">
+    <div class="container">
+      <div class="section__head"><h2 class="label">Perguntas frequentes</h2></div>
+      <div class="faq">
+        <details><summary>Quanto custa um projeto?</summary><p>O valor depende da metragem e do escopo. Após o briefing enviamos uma proposta detalhada, com etapas e prazos.</p></details>
+        <details><summary>Qual o prazo médio de um projeto?</summary><p>Projetos de interiores levam em média de 45 a 60 dias; projetos arquitetônicos completos, de 90 a 120 dias.</p></details>
+        <details><summary>Vocês atendem fora da cidade?</summary><p>Sim. Atendemos projetos remotos com reuniões online e visitas técnicas programadas.</p></details>
+        <details><summary>Acompanham a execução da obra?</summary><p>Sim, oferecemos acompanhamento de obra como serviço complementar, com visitas e relatórios periódicos.</p></details>
+      </div>
+
+      <div class="final-cta">
+        <h2 class="h2">Vamos projetar o seu próximo espaço?</h2>
+        <div class="cta">
+          <a href="../../index.html#contato" class="btn btn--wa btn--lg js-wa" data-cta="final">Conversar no WhatsApp <span aria-hidden="true">→</span></a>
+          <p class="cta__note">Primeira conversa e briefing sem compromisso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer">
+    <span class="logo">ESTÚDIO<span>/</span>PRUMO</span>
+    <span>Rua Exemplo, 000, São Paulo/SP</span>
+    <span>Instagram @estudioprumo</span>
+    <span>© <span id="ano">2026</span> Todos os direitos reservados</span>
+  </div>
+</footer>
+
+<!-- CTA flutuante (mobile) -->
+<a href="../../index.html#contato" class="sticky-wa js-wa" data-cta="sticky" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.3.5-.4.5c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.2 1.4z"/></svg>
+</a>
+
+<dialog class="demo-dialog" id="demoDialog" aria-labelledby="demoDialogTitle">
+  <button class="demo-dialog__close" type="button" aria-label="Fechar">×</button>
+  <p class="label">Projeto demonstrativo</p>
+  <h2 id="demoDialogTitle">Este estúdio é fictício.</h2>
+  <p>O Estúdio Prumo foi criado para mostrar a direção de design e conversão deste site. Na versão real, este botão abre o WhatsApp com uma mensagem que já pede tipo de projeto, cidade e metragem.</p>
+  <a href="../../index.html">Conheça o portfólio de Guilherme ↗</a>
+</dialog>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+<script src="motion.js" defer></script>
+</body>
+</html>
