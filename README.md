@@ -12,6 +12,7 @@ Abra `index.html` para visualizar o site.
 - Lume Terapia — saúde e bem-estar
 - Estúdio Prumo — arquitetura
 - Nina Arcanjo — fotografia
+- Clínica Aurora — clínicas médicas e nutrição
 
 Os nomes, contatos, endereços, credenciais, depoimentos e indicadores dessas demos são fictícios. Cada demo exibe um aviso de conteúdo demonstrativo.
 

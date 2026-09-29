@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    Demo de portfólio (Guilherme Liziero). Clínica Aurora, profissionais, CRM/CRN, depoimentos e endereço são fictícios.
+    Fotos ilustrativas do Unsplash. Nenhum agendamento é enviado.
+  -->
+  <title>Clínica Aurora | Medicina de família e nutrição em Jundiaí</title>
+  <meta name="description" content="Consultas particulares com tempo para ouvir. Clínica geral, pediatria, geriatria e nutrição na mesma casa, com médicos e nutricionista trabalhando juntos. Jundiaí/SP.">
+  <meta name="theme-color" content="#6C89D6">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Clínica Aurora | Medicina de família e nutrição">
+  <meta property="og:description" content="Consulta com tempo. Plano que cabe na sua rotina.">
+  <meta property="og:url" content="https://www.guilhermeliziero.com.br/projetos/clinica-aurora/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=1200&h=630&fit=crop&q=75&auto=format">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%236C89D6'/%3E%3Cpath d='M16 23s-7-4.2-7-9.2a3.8 3.8 0 0 1 7-2 3.8 3.8 0 0 1 7 2c0 5-7 9.2-7 9.2z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=800&h=900&fit=crop&crop=top&q=75&auto=format">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <div class="demo-bar"><span class="demo-bar__long">Projeto demonstrativo de portfólio · clínica, profissionais, registros e depoimentos fictícios</span><span class="demo-bar__short">Projeto demonstrativo · dados fictícios</span></div>
+
+  <!-- a página inteira fica numa "folha" branca dentro da moldura pervinca -->
+  <div class="sheet">
+    <header class="site-header">
+      <div class="topline">
+        <a class="logo" href="#topo" aria-label="Clínica Aurora, página inicial">Clínica Aur<span class="logo__heart" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9.4A3.9 3.9 0 0 1 12 8.5a3.9 3.9 0 0 1 7 2.1C19 15.7 12 20 12 20z"/></svg></span>ra</a>
+        <p class="topline__info"><span>Rua Exemplo, 480 · Centro, Jundiaí/SP</span><span>(11) 4000-0000</span><span>Seg a sex 8h–19h · Sáb 8h–12h</span></p>
+      </div>
+      <div class="navbar">
+        <nav class="nav__links" id="menu" aria-label="Navegação principal">
+          <a href="#especialidades">Especialidades</a>
+          <a href="#equipe">Equipe</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#local">Como chegar</a>
+        </nav>
+        <a class="btn btn--small" href="#comecar">Agendar consulta</a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <!-- HERO: painel pervinca, título gigante e a médica sobre o título -->
+      <section class="hero" id="topo">
+        <div class="hero__panel">
+          <h1 class="hero__title">Consulta com tempo.</h1>
+          <figure class="hero__doc">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=800&h=900&fit=crop&crop=top&q=75&auto=format"
+                 srcset="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=480&h=540&fit=crop&crop=top&q=75&auto=format 480w, https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=800&h=900&fit=crop&crop=top&q=75&auto=format 800w"
+                 sizes="(max-width: 700px) 70vw, 380px" width="800" height="900" fetchpriority="high"
+                 alt="Dra. Camila Rezende, de pijama cirúrgico azul, sorrindo de braços cruzados">
+            <figcaption><strong>Dra. Camila Rezende</strong>Médica de família</figcaption>
+          </figure>
+          <div class="hero__bottom">
+            <p class="hero__lead">Médicos e nutricionista na mesma casa, cuidando juntos de crianças, adultos e idosos. Com um plano que cabe na sua rotina.</p>
+            <div class="hero__actions">
+              <a class="btn btn--white" href="#comecar">Agendar consulta <span aria-hidden="true">→</span></a>
+              <a class="link link--dark" href="#especialidades">Ver especialidades</a>
+            </div>
+          </div>
+        </div>
+        <ul class="perks">
+          <li class="perk"><span class="perk__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><div><h2>Consultas de 40 minutos</h2><p>Tempo para ouvir, examinar e explicar. Você sai sabendo o que fazer em casa.</p></div></li>
+          <li class="perk"><span class="perk__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9.4A3.9 3.9 0 0 1 12 8.5a3.9 3.9 0 0 1 7 2.1C19 15.7 12 20 12 20z"/></svg></span><div><h2>Médico e nutri juntos</h2><p>Um prontuário só, um plano só, com retorno em conjunto em 30 dias.</p></div></li>
+          <li class="perk"><span class="perk__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2.5"/><path d="M9 8.5h6M9 12h6M9 15.5h3.5"/></svg></span><div><h2>Recibo para reembolso</h2><p>Atendimento particular com nota e recibo detalhado para o seu convênio.</p></div></li>
+        </ul>
+      </section>
+
+      <!-- POR ONDE COMEÇAR (triagem) -->
+      <section class="section" id="comecar">
+        <div class="book">
+          <div class="book__card">
+            <div class="book__form">
+              <p class="eyebrow">Agendar consulta</p>
+              <h2 class="h2">Não sabe com quem marcar? Responda 3 perguntas.</h2>
+              <form class="quiz" id="quiz" novalidate>
+                <ol class="quiz__progress" aria-hidden="true"><li class="is-on"></li><li></li><li></li></ol>
+
+                <fieldset class="quiz__step is-active" data-step="1">
+                  <legend>1. Para quem é a consulta?</legend>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="quem" value="criança"><span>Uma criança<small>até 12 anos</small></span></label>
+                    <label class="option"><input type="radio" name="quem" value="adulto"><span>Um adulto<small>13 a 64 anos</small></span></label>
+                    <label class="option"><input type="radio" name="quem" value="idoso"><span>Uma pessoa idosa<small>65 anos ou mais</small></span></label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="quiz__step" data-step="2" hidden>
+                  <legend>2. O que mais te traz aqui?</legend>
+                  <div class="options">
+                    <label class="option"><input type="radio" name="motivo" value="checkup"><span>Check-up e prevenção<small>exames de rotina, vacinas</small></span></label>
+                    <label class="option"><input type="radio" name="motivo" value="sintoma"><span>Um sintoma ou incômodo<small>que está durando</small></span></label>
+                    <label class="option"><input type="radio" name="motivo" value="alimentacao"><span>Alimentação e peso<small>emagrecer, ganhar massa, reeducar</small></span></label>
+                    <label class="option"><input type="radio" name="motivo" value="cronico"><span>Acompanhar uma condição<small>pressão, diabetes, colesterol</small></span></label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="quiz__step" data-step="3" hidden>
+                  <legend>3. Qual período fica melhor?</legend>
+                  <div class="options options--row">
+                    <label class="option"><input type="radio" name="periodo" value="manhã"><span>Manhã<small>8h às 12h</small></span></label>
+                    <label class="option"><input type="radio" name="periodo" value="tarde"><span>Tarde<small>13h às 18h</small></span></label>
+                    <label class="option"><input type="radio" name="periodo" value="sábado"><span>Sábado<small>8h às 12h</small></span></label>
+                  </div>
+                </fieldset>
+
+                <div class="quiz__result" id="quizResult" hidden tabindex="-1">
+                  <p class="eyebrow">Nossa indicação</p>
+                  <h3 id="resultTitle"></h3>
+                  <p id="resultText"></p>
+                  <div class="result__who" id="resultWho"></div>
+                  <button class="btn" type="button" id="quizSend">Pedir horário pelo WhatsApp <span aria-hidden="true">→</span></button>
+                  <button class="link link--small" type="button" id="quizReset">Refazer as perguntas</button>
+                </div>
+
+                <div class="quiz__nav" id="quizNav">
+                  <button class="link link--small" type="button" id="quizBack" hidden>← Voltar</button>
+                  <p class="quiz__error" id="quizError" role="alert"></p>
+                  <button class="btn btn--small" type="button" id="quizNext">Continuar</button>
+                </div>
+              </form>
+              <p class="book__note">Isto não é diagnóstico. Em caso de urgência, procure um pronto-socorro ou ligue 192.</p>
+            </div>
+            <figure class="book__photo">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1659989693409-5adc97274bed?w=800&h=1000&fit=crop&q=75&auto=format" width="800" height="1000" alt="Médica explicando um exame para uma paciente no consultório">
+              <figcaption>Resposta da recepção em até 1 hora, em horário comercial</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ESPECIALIDADES: grade de fotos com rótulo -->
+      <section class="section" id="especialidades">
+        <div class="section-head">
+          <h2 class="h2">Especialidades</h2>
+          <p>Cuidado para cada fase da vida, no mesmo endereço.</p>
+        </div>
+        <ul class="specs">
+          <li class="spec"><img loading="lazy" src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=700&h=560&fit=crop&q=75&auto=format" width="700" height="560" alt="Médica conversando com paciente idosa no consultório"><div><h3>Clínica geral</h3><p>Check-up, pressão, diabetes, colesterol e aquele sintoma que não passa.</p></div></li>
+          <li class="spec"><img loading="lazy" src="https://images.unsplash.com/photo-1708687045030-26702e62fc65?w=700&h=560&fit=crop&q=75&auto=format" width="700" height="560" alt="Pediatra fazendo um toca aqui com um menino na maca"><div><h3>Pediatria</h3><p>Puericultura, vacinas e orientação aos pais, do recém-nascido aos 12 anos.</p></div></li>
+          <li class="spec"><img loading="lazy" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=700&h=560&fit=crop&q=75&auto=format" width="700" height="560" alt="Tigela com salada, legumes coloridos e proteína grelhada"><div><h3>Nutrição</h3><p>Reeducação alimentar, emagrecimento, gestantes e nutrição infantil. Sem dieta impossível.</p></div></li>
+          <li class="spec"><img loading="lazy" src="https://images.unsplash.com/photo-1758691462123-8a17ae95d203?w=700&h=560&fit=crop&q=75&auto=format" width="700" height="560" alt="Médico aferindo a pressão de um paciente idoso"><div><h3>Geriatria</h3><p>Autonomia, revisão de remédios e cuidado junto com a família.</p></div></li>
+          <li class="spec"><img loading="lazy" src="https://images.unsplash.com/photo-1631217871099-88310a909a32?w=700&h=560&fit=crop&q=75&auto=format" width="700" height="560" alt="Médico conversando com paciente em leito de clínica"><div><h3>Cardiologia</h3><p>Avaliação do coração, eletrocardiograma e acompanhamento preventivo.</p></div></li>
+          <li class="spec"><img loading="lazy" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=700&h=560&fit=crop&q=75&auto=format" width="700" height="560" alt="Estetoscópio sobre fundo azul claro"><div><h3>Exames e check-up</h3><p>Coleta de exames laboratoriais, bioimpedância e papanicolau no local.</p></div></li>
+        </ul>
+      </section>
+
+      <!-- CUIDADO INTEGRADO -->
+      <section class="section together">
+        <div class="together__grid">
+          <div>
+            <p class="eyebrow">Cuidado integrado</p>
+            <h2 class="h2">Médico e nutricionista olhando o mesmo prontuário.</h2>
+            <ol class="flow">
+              <li><strong>Consulta médica</strong>A Dra. Camila avalia sua saúde e pede os exames necessários.</li>
+              <li><strong>Plano alimentar</strong>A Júlia monta o plano com a sua rotina, o seu orçamento e a sua comida.</li>
+              <li><strong>Retorno em conjunto</strong>Em 30 dias vocês revisam juntos o que funcionou e o que ajustar.</li>
+            </ol>
+            <p class="together__note">Os resultados variam de pessoa para pessoa. Aqui o combinado é acompanhar de perto.</p>
+          </div>
+          <figure class="together__media"><img loading="lazy" src="https://images.unsplash.com/photo-1556911073-52527ac43761?w=900&h=900&fit=crop&q=75&auto=format" width="900" height="900" alt="Mulher preparando uma refeição com frutas e legumes na cozinha"></figure>
+        </div>
+      </section>
+
+      <!-- EQUIPE: carrossel com faixa vertical da especialidade -->
+      <section class="section" id="equipe">
+        <div class="section-head section-head--row">
+          <div><h2 class="h2">Nossa equipe</h2><p>Poucas pessoas, que lembram do seu nome.</p></div>
+          <div class="arrows"><button class="round" type="button" data-dir="-1" aria-label="Profissional anterior">←</button><button class="round round--fill" type="button" data-dir="1" aria-label="Próximo profissional">→</button></div>
+        </div>
+        <div class="team" id="team">
+          <div class="team__list" role="tablist" aria-label="Profissionais">
+            <button class="doc is-active" role="tab" aria-selected="true" data-i="0"><span class="doc__band">Médica de família</span><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=500&fit=crop&crop=top&q=75&auto=format" width="400" height="500" alt=""><span class="doc__name">Dra. Camila Rezende</span></button>
+            <button class="doc" role="tab" aria-selected="false" tabindex="-1" data-i="1"><span class="doc__band">Nutricionista</span><img loading="lazy" src="https://images.unsplash.com/photo-1585358682246-23acb1561f6b?w=400&h=500&fit=crop&crop=faces&q=75&auto=format" width="400" height="500" alt=""><span class="doc__name">Júlia Okuda</span></button>
+            <button class="doc" role="tab" aria-selected="false" tabindex="-1" data-i="2"><span class="doc__band">Pediatra</span><img loading="lazy" src="https://images.unsplash.com/photo-1622253694238-3b22139576c6?w=400&h=500&fit=crop&crop=faces&q=75&auto=format" width="400" height="500" alt=""><span class="doc__name">Dr. Rafael Nunes</span></button>
+            <button class="doc" role="tab" aria-selected="false" tabindex="-1" data-i="3"><span class="doc__band">Geriatra</span><img loading="lazy" src="https://images.unsplash.com/photo-1758691461935-202e2ef6b69f?w=400&h=500&fit=crop&crop=faces&q=75&auto=format" width="400" height="500" alt=""><span class="doc__name">Dr. Antônio Veloso</span></button>
+          </div>
+          <article class="team__bio" id="teamBio" role="tabpanel" aria-live="polite">
+            <p class="team__role" id="bioRole">Médica de família · Responsável técnica</p>
+            <h3 id="bioName">Dra. Camila Rezende</h3>
+            <p class="team__reg" id="bioReg">CRM-SP 000000 · RQE 00000 (fictícios)</p>
+            <blockquote id="bioQuote">“A consulta boa é a que termina com você sabendo exatamente o que fazer em casa.”</blockquote>
+            <p id="bioText">Residência em Medicina de Família e Comunidade. Atende crianças, adultos e idosos, e coordena a equipe da Aurora.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- DEPOIMENTOS: duas fileiras deslizando -->
+      <section class="section reviews" id="depoimentos">
+        <div class="section-head">
+          <h2 class="h2">Depoimentos</h2>
+          <p>Sobre o atendimento. Não divulgamos resultados de tratamento.</p>
+        </div>
+        <div class="marquee" data-dir="left">
+          <ul class="marquee__track">
+            <li class="review"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>“A Dra. Camila explicou tudo com calma e ainda mandou por escrito. Saí sem nenhuma dúvida.”</p><footer><strong>Luciana M.</strong> · há 2 semanas</footer></li>
+            <li class="review"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>“Levo meus dois filhos e minha mãe. Todo mundo é atendido no mesmo lugar.”</p><footer><strong>Roberto S.</strong> · há 1 mês</footer></li>
+            <li class="review"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>“A Júlia montou um cardápio com o que eu já compro no mercado. Finalmente consegui seguir.”</p><footer><strong>Patrícia A.</strong> · há 3 semanas</footer></li>
+            <li class="review"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>“Pontualidade de verdade. Cheguei 10 minutos antes e fui atendido na hora marcada.”</p><footer><strong>Marcelo T.</strong> · há 2 meses</footer></li>
+          </ul>
+        </div>
+        <div class="marquee" data-dir="right">
+          <ul class="marquee__track">
+            <li class="review"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>“O Dr. Rafael tem uma paciência enorme com criança. Meu filho sai rindo da consulta.”</p><footer><strong>Carla F.</strong> · há 1 semana</footer></li>
+            <li class="review"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>“Meu pai tomava nove remédios. O Dr. Antônio revisou tudo junto com a gente.”</p><footer><strong>Sônia R.</strong> · há 1 mês</footer></li>
+            <li class="review"><span class="stars" aria-label="4 de 5 estrelas">★★★★☆</span><p>“Atendimento ótimo. Só achei o estacionamento pequeno no sábado de manhã.”</p><footer><strong>Eduardo L.</strong> · há 3 meses</footer></li>
+            <li class="review"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>“Recepção atenciosa e o recibo para reembolso saiu certinho na primeira vez.”</p><footer><strong>Fernanda G.</strong> · há 2 semanas</footer></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- DÚVIDAS: grade de cartões; o aberto fica pervinca -->
+      <section class="section" id="duvidas">
+        <div class="section-head"><h2 class="h2">Dúvidas frequentes</h2></div>
+        <div class="faq">
+          <div class="faq__col">
+            <details><summary>Vocês atendem convênio?</summary><p>O atendimento é particular. Você recebe nota fiscal e recibo detalhado para pedir o reembolso ao seu plano, e a recepção ajuda com os documentos.</p></details>
+            <details><summary>O que levo na primeira consulta?</summary><p>Documento com foto, exames recentes, receitas ou remédios em uso e, para crianças, a caderneta de vacinação.</p></details>
+          </div>
+          <div class="faq__col">
+            <details open><summary>Atendem sem agendamento?</summary><p>Não. Somos uma clínica de consultas agendadas. Em caso de urgência, procure um pronto-socorro ou ligue 192.</p></details>
+            <details><summary>A nutrição pode ser online?</summary><p>O retorno de nutrição pode ser por vídeo. A primeira consulta é presencial, para a avaliação com bioimpedância.</p></details>
+          </div>
+          <div class="faq__col">
+            <details><summary>Quanto custa a consulta?</summary><p>O valor é informado pela recepção antes de qualquer confirmação. Consulta médica e de nutrição têm retorno incluso em até 30 dias.</p></details>
+            <details><summary>Tem estacionamento?</summary><p>Sim, estacionamento próprio e gratuito durante o atendimento, com vagas para idosos e pessoas com deficiência.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOCAL + CTA -->
+      <section class="section" id="local">
+        <div class="local">
+          <div class="local__copy">
+            <h2 class="h2">Estamos no centro de Jundiaí.</h2>
+            <p>Rua Exemplo, 480 · Centro, Jundiaí/SP<br>Estacionamento próprio, brinquedoteca e acesso para cadeira de rodas.</p>
+            <dl class="hours">
+              <div><dt>Segunda a sexta</dt><dd>8h às 19h</dd></div>
+              <div><dt>Sábado</dt><dd>8h às 12h</dd></div>
+              <div><dt>Domingo e feriados</dt><dd>Fechado</dd></div>
+            </dl>
+            <a class="btn btn--white" href="#comecar">Agendar consulta <span aria-hidden="true">→</span></a>
+          </div>
+          <figure class="local__photo"><img loading="lazy" src="https://images.unsplash.com/photo-1762625570087-6d98fca29531?w=900&h=700&fit=crop&q=75&auto=format" width="900" height="700" alt="Sala de espera clara da clínica, com cadeiras pretas e uma planta"></figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <p class="logo">Clínica Aur<span class="logo__heart" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9.4A3.9 3.9 0 0 1 12 8.5a3.9 3.9 0 0 1 7 2.1C19 15.7 12 20 12 20z"/></svg></span>ra</p>
+        <p class="footer__small">Responsável técnica: Dra. Camila Rezende · CRM-SP 000000 (fictício)</p>
+      </div>
+      <nav aria-label="Rodapé"><strong>Clínica</strong><a href="#especialidades">Especialidades</a><a href="#equipe">Equipe</a><a href="#duvidas">Dúvidas</a></nav>
+      <div><strong>Contato</strong><p>(11) 4000-0000<br>Seg a sex 8h–19h · Sáb 8h–12h<br>Rua Exemplo, 480 · Jundiaí/SP</p></div>
+      <p class="footer__small footer__legal">As informações deste site não substituem uma consulta. Projeto demonstrativo criado para o portfólio de Guilherme Liziero. <a href="../../index.html">Voltar ao portfólio</a></p>
+    </footer>
+  </div>
+
+  <a class="sticky-cta btn" href="#comecar" id="stickyCta">Agendar consulta <span aria-hidden="true">→</span></a>
+
+  <dialog class="demo-dialog" id="demoDialog" aria-labelledby="demoTitle">
+    <button class="demo-dialog__close" type="button" aria-label="Fechar">×</button>
+    <p class="eyebrow">Projeto demonstrativo</p>
+    <h2 id="demoTitle">A Clínica Aurora é fictícia.</h2>
+    <p>Este site foi criado para mostrar a direção de design e o fluxo de agendamento. Na versão real, esta mensagem abriria no WhatsApp da recepção:</p>
+    <p class="demo-dialog__msg" id="demoMsg"></p>
+    <a href="../../index.html">Conheça o portfólio de Guilherme ↗</a>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
