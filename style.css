@@ -14,3 +14,4 @@
 html,body{overflow-x:clip}
 .photo{background:#bba7da;color:#161412}.photo:before{background:rgba(255,255,255,.22)}.photo .browser{outline:10px solid rgba(22,20,18,.08)}
 .gastronomy:before{background:rgba(244,237,225,.08)}
+.clinic{background:#6c89d6;color:#172039}.clinic:before{background:rgba(255,255,255,.18)}.clinic .browser{outline:10px solid rgba(255,255,255,.25)}
